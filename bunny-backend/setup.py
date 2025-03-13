@@ -63,15 +63,15 @@ setup(
     ],
     tests_require=["pytest"],
     install_requires=[
-        "requests>=2.32.3",
+        "requests>=2.18.4",
         "websockets>=15.0.1",
-        "pyyaml>=6.0.2",
-        "aiohttp>=3.8.4",
-        "aiofile>=3.9.0",
-        "yapic.json>=1.9.5",
+        "pyyaml",
+        "aiohttp>=3.11.13",
+        "aiofile>=2.0.0",
+        "yapic.json",
         'uvloop ; platform_system!="Windows"',
-        "numpy>=2.2.3",
-        "aioodbc>=0.5.0",
-        "redis>=5.2.1"
+        "numpy==1.24.4",
+        "asyncpg>=0.30.0",
+        "redis"
     ]
 )
