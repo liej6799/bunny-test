@@ -1,7 +1,10 @@
 
+from datetime import time
+from bunnybackend.backends.postgres import FlowPostgres, TargetPostgres
 from bunnybackend.defines import *
+from bunnybackend.exchanges.common import Common
 from prefect import task, flow, get_run_logger
-
+from bunnybackend.types import Flow
 from bunnybackend.exchanges import Bunny
 
 
@@ -19,12 +22,22 @@ def get_all_exhanges(exchanges):
 def has_method(o, name):
     return callable(getattr(o, name, None))
 
+@task
+def get_start_flow_database():
+    return [(FlowPostgres(TargetPostgres()), START_FLOW)]
 
 @task
-def _initiate(exchange):
- 
+def get_end_flow_database():
+    return [(FlowPostgres(TargetPostgres()), END_FLOW)]
+
+  
+
+@task
+def _initiate(exchange, flow):
     if exchange == BUNNY:
-        return Bunny(config='config.yaml')
+        return Bunny(config='config.yaml',flow=flow)
+    elif exchange == FLOW:
+        return Common(config='config.yaml',flow=flow)
 
 @task
 def _initiate_connection(feed, type):
@@ -40,7 +53,6 @@ def _initiate_connection(feed, type):
 
 @task(retries=2, retry_delay_seconds=5)
 def _extract(feed, method):
-
     return feed[method](), method, feed
 
 
@@ -54,7 +66,7 @@ def _transform(feed, method, data, table):
 
 @task
 async def _load(conn, data):
-    await conn[0].write(data)
+    return await conn[0].write(data)
 
 @task
 async def _load_empty(conn):
@@ -75,9 +87,29 @@ def init_paramteter(data):
         return [data]
     return data
 
+@task
+def start_flow(flow_id, flow_name):
+    db_conns = get_start_flow_database.submit()
+    exchanges = get_all_exhanges(init_paramteter(FLOW))
+    feeds = get_feeds(exchanges, {'flow_id':flow_id, 'flow_name':flow_name})
+    conns = get_conn(feeds, START_FLOW)         
+    extract = get_extract(conns)
+    transform = get_transform(extract, START_FLOW)
+    get_load(prepare_load(transform, db_conns))
 
-def get_feeds(exchanges):
-    return [_initiate.submit(exchange) for exchange in exchanges]
+@task
+def end_flow(flow_id, flow_name):
+    db_conns = get_end_flow_database.submit()
+    exchanges = get_all_exhanges(init_paramteter(FLOW))
+    feeds = get_feeds(exchanges, {'flow_id':flow_id, 'flow_name':flow_name})
+    conns = get_conn(feeds, END_FLOW)         
+    extract = get_extract(conns)
+    transform = get_transform(extract, END_FLOW)
+    get_load(prepare_load(transform, db_conns))
+
+
+def get_feeds(exchanges, flow):
+    return [_initiate.submit(exchange, flow) for exchange in exchanges]
 
 
 def get_conn(feeds, type):

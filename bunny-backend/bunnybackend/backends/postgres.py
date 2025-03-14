@@ -61,7 +61,6 @@ class Postgres():
         await self._connect()
 
         batch = []
-
         for data in updates:
             data = data.to_dict(numeric_type=float)
             ts = dt.utcfromtimestamp(
@@ -72,6 +71,7 @@ class Postgres():
         # args_raw_str = ','.join([self._raw(u) for u in batch])
         self.n = ', '.join([f'${i+1}' for i in range(len(args_str[0]))])
         self.col = self._col()
+       
         async with self.conn.transaction():
             try:
                 await self.conn.executemany(f'INSERT INTO {self.table}{self.col} VALUES({self.n}) ON CONFLICT DO NOTHING', args_str)
@@ -118,12 +118,27 @@ class RefreshVideoLibraryPostgres(Postgres):
     default_table = TABLE + REFRESH_VIDEO_LIBRARY
 
     def _read(self):
-        return f"id,name,video_count,traffic_usage,storage_usage,date_created,timestamp"
+        return f"id,flow_id,name,video_count,traffic_usage,storage_usage,date_created,timestamp"
 
     def _col(self):
-        return f"(id,name,video_count,traffic_usage,storage_usage,date_created,timestamp)"
+        return f"(id,flow_id,name,video_count,traffic_usage,storage_usage,date_created,timestamp)"
 
     def _write(self, data: Tuple):
         timestamp, data = data
-        return (data['id'], data['name'], data['video_count'], data['traffic_usage'], data['storage_usage'],data['date_created'],timestamp)
+    
+        return (data['id'], data['flow_id'], data['name'], data['video_count'], data['traffic_usage'], data['storage_usage'],data['date_created'],timestamp)
+
+class FlowPostgres(Postgres):
+    default_table = TABLE + FLOW
+
+    def _read(self):
+        return f"flow_name,flow_id,status,timestamp"
+
+    def _col(self):
+        return f"(flow_name,flow_id,status,timestamp)"
+
+    def _write(self, data: Tuple):
+        timestamp, data = data
+      
+        return (data['flow_name'],data['flow_id'],data['status'],timestamp)
 

@@ -7,8 +7,10 @@ associated with this software.
 from bunnybackend.defines import *
 
 from .bunny import Bunny
+from .common import Common
 
 # Maps string name to class name for use with config
 EXCHANGE_MAP = {
-    BUNNY: Bunny
+    BUNNY: Bunny,
+    COMMON: Common
 }

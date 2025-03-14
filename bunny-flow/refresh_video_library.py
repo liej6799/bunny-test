@@ -3,6 +3,7 @@ from bunnybackend.backends.postgres import RefreshVideoLibraryPostgres, TargetPo
 from bunnybackend.common.flow import _load
 from prefect import task, flow, get_run_logger
 import asyncio
+import prefect
 from prefect.task_runners import ConcurrentTaskRunner
 
 from bunnybackend.common.flow import *
@@ -13,15 +14,19 @@ def get_database():
 
 @flow(task_runner=ConcurrentTaskRunner())
 async def flow(exchanges):
-    id = REFRESH_VIDEO_LIBRARY
-    exchanges = get_all_exhanges(init_paramteter(exchanges))
+    flow_name = REFRESH_VIDEO_LIBRARY
+    flow_id = prefect.context.get_run_context().flow_run.dict().get('id')
+    start_flow.submit(flow_id, flow_name)
 
-    feeds = get_feeds(exchanges)
+    exchanges = get_all_exhanges(init_paramteter(exchanges))
+    feeds = get_feeds(exchanges,  {'flow_id':flow_id, 'flow_name':flow_name}) 
     db_conns = get_database.submit()
-    conns = get_conn(feeds, id)         
+    conns = get_conn(feeds, flow_name)         
     extract = get_extract(conns)
-    transform = get_transform(extract, id)
+    transform = get_transform(extract, flow_name)
     get_load(prepare_load(transform, db_conns))
+
+    end_flow(flow_id, flow_name)
 
 if __name__ == '__main__':
     asyncio.run(flow("BUNNY"))

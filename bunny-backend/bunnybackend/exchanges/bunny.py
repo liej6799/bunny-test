@@ -35,6 +35,7 @@ class Bunny(Exchange, BunnyRestMixin):
             try:
                 data.append(RefreshVideoLibrary(
                             id=(i['Id']),
+                            flow_id=self.flow_id,
                             name=(i['Name']),
                             video_count=(i['VideoCount']),
                             traffic_usage=(i['TrafficUsage']),
@@ -47,9 +48,10 @@ class Bunny(Exchange, BunnyRestMixin):
                             ))
       
 
-            except Exception:
+            except Exception as a:
+                print(a)
                 pass
-            
+        
         return data
 
     def message_handler(self, type, msg, symbol=None):

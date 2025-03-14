@@ -16,9 +16,11 @@ class Exchange:
     request_limit = NotImplemented
     valid_candle_intervals = NotImplemented
     candle_interval_map = NotImplemented
+    flow_id = NotImplemented
+    flow_name = NotImplemented
     http_sync = HTTPSync()
     
-    def __init__(self, config=None, sandbox=False, subaccount=None, symbols=None, **kwargs):
+    def __init__(self, config=None, sandbox=False, flow=None, subaccount=None, symbols=None, **kwargs):
         self.config = Config(config=config)
         self.sandbox = sandbox
         self.subaccount = subaccount
@@ -29,6 +31,11 @@ class Exchange:
         self.key_secret = keys.key_secret
         self.key_passphrase = keys.key_passphrase
         self.account_name = keys.account_name
+        self.flow_id= flow['flow_id']
+        self.flow_name= flow['flow_name']
+        
+        # self.flow_id = if flow is None else flow.flow_id 
+        # self.flow_name = flow_name
 
         self.ignore_invalid_instruments = self.config.ignore_invalid_instruments
 
