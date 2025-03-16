@@ -15,7 +15,7 @@ from urllib.parse import urlencode
 
 from yapic import json
 
-from bunnybackend.defines import BUNNY_VIDEO, GET, POST, BUNNY_VIDEO_LIBRARY, VIDEO
+from bunnybackend.defines import BUNNY_VIDEO, BUNNY_VIDEO_STREAM, GET, POST, BUNNY_VIDEO_LIBRARY, VIDEO
 from bunnybackend.exchange import RestExchange
 
 LOG = logging.getLogger('feedhandler')
@@ -71,3 +71,14 @@ class BunnyRestMixin(RestExchange):
         self.api = "https://video.bunnycdn.com/"
         library_id = self.payload['library_id']
         return self._request(GET, f'library/{library_id}/videos', auth=True)
+
+    def refresh_video_stream(self):
+        return [BUNNY_VIDEO_STREAM]
+            
+    def get_video_stream(self):
+        self.api = "https://video.bunnycdn.com/"
+        library_id = self.payload['library_id']
+        video_id = self.payload['video_id']
+
+        return self._request(GET, f'library/{library_id}/videos/{video_id}/play', auth=True)    
+    

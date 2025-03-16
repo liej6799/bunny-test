@@ -244,3 +244,110 @@ cdef class Video:
 
     def __hash__(self):
         return hash(self.__repr__())
+
+
+
+
+cdef class VideoAPI:
+    # common
+    cdef readonly object id
+    cdef readonly object video_library_id
+
+    def __init__(self, id, video_library_id):
+
+        self.id = id
+        self.video_library_id = video_library_id
+
+
+    @staticmethod
+    def from_dict(data: dict) -> VideoAPI:
+        return VideoAPI(
+            data['id'],
+            data['video_library_id']              
+        )
+
+    cpdef dict to_dict(self, numeric_type=None, none_to=False):
+        if numeric_type is None:
+            data = {'id': self.id, 'video_library_id': self.video_library_id }
+        else:
+            data = {'id': self.id, 'video_library_id': self.video_library_id }
+
+        return data if not none_to else convert_none_values(data, none_to)
+
+    def __repr__(self):
+        return f"id: {self.id} video_library_id: {self.video_library_id} "
+
+    def __eq__(self, cmp):
+        return self.id == cmp.id and self.video_library_id == cmp.video_library_id
+
+    def __hash__(self):
+        return hash(self.__repr__())
+
+
+
+
+cdef class VideoStream:
+    # common
+    cdef readonly object id
+    cdef readonly object video_library_id
+    cdef readonly object flow_id
+
+    cdef readonly object captions_path
+    cdef readonly object seek_path
+    cdef readonly object thumbnail_path
+    cdef readonly object fallback_url
+    cdef readonly object video_playlist_url
+    cdef readonly object preview_url
+
+    cdef readonly object timestamp
+    cdef readonly object raw
+
+    def __init__(self, id, video_library_id, flow_id, captions_path, seek_path, thumbnail_path, fallback_url, video_playlist_url, preview_url, timestamp, raw=None):
+        self.id = id
+        self.video_library_id = video_library_id
+        self.flow_id = flow_id
+
+        self.captions_path = captions_path
+        self.seek_path = seek_path
+        self.thumbnail_path = thumbnail_path
+        self.fallback_url = fallback_url
+        self.video_playlist_url = video_playlist_url
+        self.preview_url = preview_url
+        
+        self.timestamp = timestamp
+        self.raw = raw
+
+    @staticmethod
+    def from_dict(data: dict) -> VideoStream:
+        return VideoStream(
+            data['id'],
+            data['video_library_id'],
+            data['flow_id'],
+            data['captions_path'],
+            data['seek_path'],
+            data['thumbnail_path'],
+            data['fallback_url'],
+            data['video_playlist_url'],
+            data['preview_url'],
+            data['timestamp']            
+        )
+
+    cpdef dict to_dict(self, numeric_type=None, none_to=False):
+        if numeric_type is None:
+            data = {'id': self.id, 'video_library_id': self.video_library_id, 'flow_id': self.flow_id, 'captions_path': self.captions_path, 'seek_path': self.seek_path, 'thumbnail_path': self.thumbnail_path, 'fallback_url': self.fallback_url, 'video_playlist_url': self.video_playlist_url, 'preview_url': self.preview_url, 'timestamp': self.timestamp}
+        else:
+            data = {'id': self.id, 'video_library_id': self.video_library_id, 'flow_id': self.flow_id, 'captions_path': self.captions_path, 'seek_path': self.seek_path, 'thumbnail_path': self.thumbnail_path, 'fallback_url': self.fallback_url, 'video_playlist_url': self.video_playlist_url, 'preview_url': self.preview_url, 'timestamp': self.timestamp}
+        
+        return data if not none_to else convert_none_values(data, none_to)
+
+    def __repr__(self):
+        return f"id: {self.id} video_library_id: {self.video_library_id} flow_id: {self.flow_id} captions_path: {self.captions_path} seek_path: {self.seek_path} thumbnail_path: {self.thumbnail_path} fallback_url: {self.fallback_url} video_playlist_url: {self.video_playlist_url} preview_url: {self.preview_url} timestamp: {self.timestamp}"
+   
+
+    def __eq__(self, cmp):
+        return self.id == cmp.id and self.video_library_id == cmp.video_library_id and self.flow_id == cmp.flow_id and self.captions_path == cmp.captions_path and self.seek_path == cmp.seek_path and self.thumbnail_path == cmp.thumbnail_path and self.fallback_url == cmp.fallback_url and self.video_playlist_url == cmp.video_playlist_url and self.preview_url == cmp.preview_url and self.timestamp == cmp.timestamp        
+
+
+    def __hash__(self):
+        return hash(self.__repr__())
+

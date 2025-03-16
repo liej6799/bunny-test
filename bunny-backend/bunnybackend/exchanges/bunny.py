@@ -17,7 +17,7 @@ from decimal import Decimal
 import csv
 from time import time
 from yapic import json
-from bunnybackend.types import RefreshVideoLibrary, Video
+from bunnybackend.types import RefreshVideoLibrary, Video, VideoStream
 from prefect import flow, task
 
 
@@ -78,6 +78,33 @@ class Bunny(Exchange, BunnyRestMixin):
                 print(a)
                 pass
         return data
+ 
+    def _get_video_stream(self, msg, ts):
+        data = []
+        # print(msg['video'])
+
+        try:
+
+            data.append(VideoStream(
+                        id=(msg['video']['guid']),
+                        video_library_id = (msg['video']['videoLibraryId']),
+                        flow_id=self.flow_id,
+                        
+                        captions_path = (msg['captionsPath']),
+                        seek_path = (msg['seekPath']),
+                        thumbnail_path = (msg['thumbnailUrl']),
+                        fallback_url = (msg['fallbackUrl']),
+                        video_playlist_url = (msg['videoPlaylistUrl']),
+                        preview_url = (msg['previewUrl']),
+
+                        timestamp=ts,
+                        raw=msg
+                        ))
+
+        except Exception as a:
+            print(a)
+            pass  
+        return data    
     def message_handler(self, type, msg, symbol=None):
 
         try:
@@ -91,6 +118,9 @@ class Bunny(Exchange, BunnyRestMixin):
         elif type == BUNNY_VIDEO:
            return self._get_video(msg, time())   
         
+        elif type == BUNNY_VIDEO_STREAM:
+           return self._get_video_stream(msg, time())   
+               
     def __getitem__(self, key):
         if key == REFRESH_VIDEO_LIBRARY:
             return self.refresh_video_library
@@ -102,4 +132,8 @@ class Bunny(Exchange, BunnyRestMixin):
         elif key == BUNNY_VIDEO:
             return self.get_video
         
-       
+        elif key == REFRESH_VIDEO_STREAM:
+            return self.refresh_video_stream
+        elif key == BUNNY_VIDEO_STREAM:
+            return self.get_video_stream
+    

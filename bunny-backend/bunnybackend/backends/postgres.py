@@ -162,3 +162,24 @@ class RefreshVideoPostgres(Postgres):
     def _write(self, data: Tuple):
         timestamp, data = data
         return (data['id'],data['flow_id'],data['video_library_id'],data['name'],data['date_upload'],data['views'],data['encode_process'],data['storage_size'],timestamp)
+
+class VideoPostgres(Postgres):
+    default_table=  VIEW + VIDEO
+    
+    def _read(self):
+        return f"id,flow_id,video_library_id,name,date_upload,views,encode_process,storage_size,timestamp"
+    
+class RefreshVideoStreamPostgres(Postgres):
+    default_table = TABLE + REFRESH_VIDEO_STREAM
+
+    def _read(self):
+        return f"id,flow_id,video_library_id,captions_path,seek_path,thumbnail_path,fallback_url,video_playlist_url,preview_url,timestamp"
+
+    def _col(self):
+        return f"(id,flow_id,video_library_id,captions_path,seek_path,thumbnail_path,fallback_url,video_playlist_url,preview_url,timestamp)"
+
+    def _write(self, data: Tuple):
+        timestamp, data = data
+        return (data['id'],data['flow_id'],data['video_library_id'],data['captions_path'],data['seek_path'],data['thumbnail_path'],data['fallback_url'],data['video_playlist_url'],data['preview_url'],timestamp)
+
+    
