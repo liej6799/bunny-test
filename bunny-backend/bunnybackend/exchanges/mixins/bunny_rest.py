@@ -15,7 +15,7 @@ from urllib.parse import urlencode
 
 from yapic import json
 
-from bunnybackend.defines import GET, POST, BUNNY_VIDEO_LIBRARY
+from bunnybackend.defines import BUNNY_VIDEO, GET, POST, BUNNY_VIDEO_LIBRARY, VIDEO
 from bunnybackend.exchange import RestExchange
 
 LOG = logging.getLogger('feedhandler')
@@ -27,10 +27,16 @@ class BunnyRestMixin(RestExchange):
         query_string = urlencode(payload)
         
         if auth:
-            header = {
-                "accept": "application/json",
-                "AccessKey": self.key_id
-            }
+            if 'api_key' in self.payload:
+                 header = {
+                    "accept": "application/json",
+                    "AccessKey": self.payload['api_key']
+                 }
+            else:                    
+                header = {
+                    "accept": "application/json",
+                    "AccessKey": self.key_id
+                }
         else:
             header = {
                 "accept": "application/json"
@@ -42,7 +48,7 @@ class BunnyRestMixin(RestExchange):
         url = f'{api}{endpoint}?{query_string}'
     
         if method == GET:
-            return self.http_sync.read(address=url, headers=header, isCache=True, retry_message=self.retry_message)
+            return self.http_sync.read(address=url, headers=header, isCache=False, retry_message=self.retry_message)
         elif method == POST:
             return self.http_sync.write(address=url, data=None)
 
@@ -57,3 +63,11 @@ class BunnyRestMixin(RestExchange):
 
     def get_video_library(self):
         return self._request(GET, 'videolibrary', auth=True)
+
+    def refresh_video(self):
+        return [BUNNY_VIDEO]
+
+    def get_video(self):
+        self.api = "https://video.bunnycdn.com/"
+        library_id = self.payload['library_id']
+        return self._request(GET, f'library/{library_id}/videos', auth=True)

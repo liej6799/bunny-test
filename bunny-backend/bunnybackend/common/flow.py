@@ -122,6 +122,7 @@ def get_extract(conns):
             for conn in conns if conn.result() is not None for method in conn.result()[0]]
 
 
+
 def get_transform(extract, table):
     return [_transform.submit(e.result()[2], e.result()[1], e.result()[0], table) for e in extract]
 
@@ -147,8 +148,8 @@ async def get_delete(conns, wait=None):
     return [await _delete.submit(conn[0], conn[1], wait_for=wait) for conn in conns if conn[1] != []]
 
 
-async def get_extract_database(conns, wait=None):
-    return [await _extract_database.submit(conn, wait_for=wait) for conn in conns]
+def get_extract_database(conns, wait=None):
+    return [_extract_database.submit(conn, wait_for=wait) for conn in conns]
 
 async def get_refresh(conns):
     return [await _refresh.submit(conn) for conn in conns]

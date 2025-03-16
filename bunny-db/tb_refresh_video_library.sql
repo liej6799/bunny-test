@@ -9,5 +9,7 @@ CREATE TABLE IF NOT EXISTS tb_refresh_video_library
     video_count INTEGER,
     traffic_usage INTEGER,
     storage_usage INTEGER,
-    date_created DATE
+    date_created DATE,
+    api_key TEXT,
+    read_only_api_key TEXT
 );

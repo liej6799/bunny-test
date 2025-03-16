@@ -36,12 +36,15 @@ cdef class RefreshVideoLibrary:
     cdef readonly object traffic_usage
     cdef readonly object storage_usage
 
+    cdef readonly object api_key
+    cdef readonly object read_only_api_key
+
     cdef readonly object date_created
 
     cdef readonly object timestamp
     cdef readonly object raw
 
-    def __init__(self, id, flow_id, name, video_count, traffic_usage, storage_usage, date_created, timestamp, raw=None):
+    def __init__(self, id, flow_id, name, video_count, traffic_usage, storage_usage, date_created, api_key, read_only_api_key, timestamp, raw=None):
 
         self.id = id
         self.flow_id = flow_id
@@ -51,6 +54,9 @@ cdef class RefreshVideoLibrary:
 
         self.storage_usage = storage_usage
         self.date_created = date_created
+
+        self.api_key = api_key
+        self.read_only_api_key = read_only_api_key
 
         self.timestamp = timestamp
         self.raw = raw
@@ -66,25 +72,73 @@ cdef class RefreshVideoLibrary:
 
             data['storage_usage'],
             data['date_created'],
+
+            data['api_key'],
+            data['read_only_api_key'],                        
             data['timestamp']
         )
 
     cpdef dict to_dict(self, numeric_type=None, none_to=False):
         if numeric_type is None:
-            data = {'id': self.id, 'flow_id': self.flow_id, 'name': self.name, 'video_count': self.video_count, 'traffic_usage': self.traffic_usage, 'storage_usage': self.storage_usage, 'date_created': self.date_created, 'timestamp': self.timestamp}
+            data = {'id': self.id, 'flow_id': self.flow_id, 'name': self.name, 'video_count': self.video_count, 'traffic_usage': self.traffic_usage, 'storage_usage': self.storage_usage, 'date_created': self.date_created, 'api_key': self.api_key, 'read_only_api_key': self.read_only_api_key, 'timestamp': self.timestamp}
         else:
-            data = {'id': self.id, 'flow_id': self.flow_id, 'name': self.name, 'video_count': self.video_count, 'traffic_usage': self.traffic_usage, 'storage_usage': self.storage_usage, 'date_created': self.date_created, 'timestamp': self.timestamp}
+            data = {'id': self.id, 'flow_id': self.flow_id, 'name': self.name, 'video_count': self.video_count, 'traffic_usage': self.traffic_usage, 'storage_usage': self.storage_usage, 'date_created': self.date_created, 'api_key': self.api_key, 'read_only_api_key': self.read_only_api_key, 'timestamp': self.timestamp}
 
         return data if not none_to else convert_none_values(data, none_to)
 
     def __repr__(self):
-        return f"id: {self.id} flow_id: {self.flow_id} name: {self.name} video_count: {self.video_count} traffic_usage: {self.traffic_usage} storage_usage: {self.storage_usage} date_created: {self.date_created}  timestamp: {self.timestamp}"
+        return f"id: {self.id} flow_id: {self.flow_id} name: {self.name} video_count: {self.video_count} traffic_usage: {self.traffic_usage} storage_usage: {self.storage_usage} date_created: {self.date_created} api_key: {self.api_key} read_only_api_key: {self.read_only_api_key} timestamp: {self.timestamp}"
 
     def __eq__(self, cmp):
-        return self.id == cmp.id and self.flow_id == cmp.flow_id and self.name == cmp.name and self.video_count == cmp.video_count and self.traffic_usage == cmp.traffic_usage and self.storage_usage == cmp.storage_usage and self.date_created == cmp.date_created and self.timestamp == cmp.timestamp
+        return self.id == cmp.id and self.flow_id == cmp.flow_id and self.name == cmp.name and self.video_count == cmp.video_count and self.traffic_usage == cmp.traffic_usage and self.storage_usage == cmp.storage_usage and self.date_created == cmp.date_created and self.api_key == cmp.api_key and self.read_only_api_key == cmp.read_only_api_key and self.timestamp == cmp.timestamp
 
     def __hash__(self):
         return hash(self.__repr__())
+
+
+
+cdef class VideoLibraryAPI:
+    # common
+    cdef readonly object id
+    cdef readonly object api_key
+    cdef readonly object read_only_api_key
+
+    def __init__(self, id, api_key, read_only_api_key):
+
+        self.id = id
+        self.api_key = api_key
+        self.read_only_api_key = read_only_api_key
+
+  
+
+    @staticmethod
+    def from_dict(data: dict) -> VideoLibraryAPI:
+        return VideoLibraryAPI(
+            data['id'],
+
+            data['api_key'],
+            data['read_only_api_key']                     
+  
+        )
+
+    cpdef dict to_dict(self, numeric_type=None, none_to=False):
+        if numeric_type is None:
+            data = {'id': self.id, 'api_key': self.api_key, 'read_only_api_key': self.read_only_api_key }
+        else:
+            data = {'id': self.id, 'api_key': self.api_key, 'read_only_api_key': self.read_only_api_key }
+
+        return data if not none_to else convert_none_values(data, none_to)
+
+    def __repr__(self):
+        return f"id: {self.id} api_key: {self.api_key} read_only_api_key: {self.read_only_api_key}"
+
+    def __eq__(self, cmp):
+        return self.id == cmp.id and self.api_key == cmp.api_key and self.read_only_api_key == cmp.read_only_api_key 
+
+    def __hash__(self):
+        return hash(self.__repr__())
+
+
 
 
 
@@ -103,8 +157,8 @@ cdef class Flow:
 
 
     @staticmethod
-    def from_dict(data: dict) -> RefreshVideoLibrary:
-        return RefreshVideoLibrary(
+    def from_dict(data: dict) -> Flow:
+        return Flow(
             data['flow_name'],
             data['flow_id'],
             data['status'],
@@ -128,3 +182,65 @@ cdef class Flow:
     def __hash__(self):
         return hash(self.__repr__())
  
+
+
+ 
+
+cdef class Video:
+    # common
+    cdef readonly object id
+    cdef readonly object video_library_id
+    cdef readonly object flow_id
+    cdef readonly object name
+    cdef readonly object date_upload
+    cdef readonly object views
+    cdef readonly object encode_process
+    cdef readonly object storage_size
+
+    cdef readonly object timestamp
+    cdef readonly object raw
+
+    def __init__(self, id, video_library_id, flow_id, name, date_upload, views, encode_process, storage_size, timestamp, raw=None):
+        self.id = id
+        self.video_library_id = video_library_id
+        self.flow_id = flow_id
+        self.name = name
+        self.date_upload = date_upload
+        self.views = views
+        self.encode_process = encode_process
+        self.storage_size = storage_size
+        self.timestamp = timestamp
+        self.raw = raw
+
+    
+
+    @staticmethod
+    def from_dict(data: dict) -> Video:
+        return Video(
+            data['id'],
+            data['video_library_id'],
+            data['flow_id'],
+            data['name'],
+            data['date_upload'],
+            data['views'],
+            data['encode_process'],
+            data['storage_size'],
+            data['timestamp']            
+        )
+
+    cpdef dict to_dict(self, numeric_type=None, none_to=False):
+        if numeric_type is None:
+            data = {'id': self.id, 'video_library_id': self.video_library_id, 'flow_id': self.flow_id, 'name': self.name, 'date_upload': self.date_upload, 'views': self.views, 'encode_process': self.encode_process, 'storage_size': self.storage_size, 'timestamp': self.timestamp}
+        else:
+            data = {'id': self.id, 'video_library_id': self.video_library_id, 'flow_id': self.flow_id, 'name': self.name, 'date_upload': self.date_upload, 'views': self.views, 'encode_process': self.encode_process, 'storage_size': self.storage_size, 'timestamp': self.timestamp }
+
+        return data if not none_to else convert_none_values(data, none_to)
+
+    def __repr__(self):
+        return f"id: {self.id} video_library_id: {self.video_library_id} flow_id: {self.flow_id} self.name: {self.name} date_upload: {self.date_upload} views: {self.views} encode_process: {self.encode_process} storage_size: {self.storage_size} timestamp: {self.timestamp}"
+
+    def __eq__(self, cmp):
+        return self.id == cmp.id and self.video_library_id == cmp.video_library_id and self.flow_id == cmp.flow_id and self.name == cmp.name and self.date_upload == cmp.date_upload and self.views == cmp.views and self.encode_process == cmp.encode_process and self.storage_size == cmp.storage_size and self.timestamp == cmp.timestamp
+
+    def __hash__(self):
+        return hash(self.__repr__())

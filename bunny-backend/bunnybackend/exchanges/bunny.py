@@ -17,7 +17,7 @@ from decimal import Decimal
 import csv
 from time import time
 from yapic import json
-from bunnybackend.types import RefreshVideoLibrary
+from bunnybackend.types import RefreshVideoLibrary, Video
 from prefect import flow, task
 
 
@@ -42,18 +42,42 @@ class Bunny(Exchange, BunnyRestMixin):
 
                             storage_usage=(i['StorageUsage']),
                             date_created=(i['DateCreated']),
-
+                            api_key=(i['ApiKey']),
+                            read_only_api_key=(i['ReadOnlyApiKey']),
                             timestamp=ts,
                             raw=i
                             ))
-      
-
+    
             except Exception as a:
                 print(a)
                 pass
         
         return data
+    
+    def _get_video(self, msg, ts):
+        data = []
 
+        for i in msg['items']:
+            try:
+                data.append(Video(
+                            id=(i['guid']),
+                            video_library_id = (i['videoLibraryId']),
+                            flow_id=self.flow_id,
+                            name=(i['title']),
+                            date_upload=(i['dateUploaded']),
+
+                            views=(i['views']),
+                            encode_process=(i['encodeProgress']),
+                            storage_size=(i['storageSize']),
+                            
+                            timestamp=ts,
+                            raw=i
+                            ))
+
+            except Exception as a:
+                print(a)
+                pass
+        return data
     def message_handler(self, type, msg, symbol=None):
 
         try:
@@ -63,7 +87,9 @@ class Bunny(Exchange, BunnyRestMixin):
 
         if type == BUNNY_VIDEO_LIBRARY:
            return self._get_video_library(msg, time())
-      
+   
+        elif type == BUNNY_VIDEO:
+           return self._get_video(msg, time())   
         
     def __getitem__(self, key):
         if key == REFRESH_VIDEO_LIBRARY:
@@ -71,6 +97,9 @@ class Bunny(Exchange, BunnyRestMixin):
         elif key == BUNNY_VIDEO_LIBRARY:
             return self.get_video_library
             
-        
+        elif key == REFRESH_VIDEO:
+            return self.refresh_video
+        elif key == BUNNY_VIDEO:
+            return self.get_video
         
        

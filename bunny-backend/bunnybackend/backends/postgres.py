@@ -51,6 +51,7 @@ class Postgres():
         args_str = self._read()
         async with self.conn.transaction():
             try:
+    
                 return await self.conn.fetch(f"SELECT {args_str} FROM {self.table}")
             except Exception as a:
                 print(a)
@@ -59,7 +60,7 @@ class Postgres():
 
     async def write(self, updates: list):
         await self._connect()
-
+  
         batch = []
         for data in updates:
             data = data.to_dict(numeric_type=float)
@@ -71,7 +72,7 @@ class Postgres():
         # args_raw_str = ','.join([self._raw(u) for u in batch])
         self.n = ', '.join([f'${i+1}' for i in range(len(args_str[0]))])
         self.col = self._col()
-       
+   
         async with self.conn.transaction():
             try:
                 await self.conn.executemany(f'INSERT INTO {self.table}{self.col} VALUES({self.n}) ON CONFLICT DO NOTHING', args_str)
@@ -118,15 +119,15 @@ class RefreshVideoLibraryPostgres(Postgres):
     default_table = TABLE + REFRESH_VIDEO_LIBRARY
 
     def _read(self):
-        return f"id,flow_id,name,video_count,traffic_usage,storage_usage,date_created,timestamp"
+        return f"id,flow_id,name,video_count,traffic_usage,storage_usage,date_created,api_key,read_only_api_key,timestamp"
 
     def _col(self):
-        return f"(id,flow_id,name,video_count,traffic_usage,storage_usage,date_created,timestamp)"
+        return f"(id,flow_id,name,video_count,traffic_usage,storage_usage,date_created,api_key,read_only_api_key,timestamp)"
 
     def _write(self, data: Tuple):
         timestamp, data = data
     
-        return (data['id'], data['flow_id'], data['name'], data['video_count'], data['traffic_usage'], data['storage_usage'],data['date_created'],timestamp)
+        return (data['id'], data['flow_id'], data['name'], data['video_count'], data['traffic_usage'], data['storage_usage'],data['date_created'],data['api_key'],data['read_only_api_key'],timestamp)
 
 class FlowPostgres(Postgres):
     default_table = TABLE + FLOW
@@ -142,3 +143,22 @@ class FlowPostgres(Postgres):
       
         return (data['flow_name'],data['flow_id'],data['status'],timestamp)
 
+class VideoLibraryPostgres(Postgres):
+    default_table=  VIEW + VIDEO_LIBRARY
+    
+    def _read(self):
+        return f"id,flow_id,name,video_count,traffic_usage,storage_usage,date_created,api_key,read_only_api_key,timestamp"
+    
+
+class RefreshVideoPostgres(Postgres):
+    default_table = TABLE + REFRESH_VIDEO
+
+    def _read(self):
+        return f"id,flow_id,video_library_id,name,date_upload,views,encode_process,storage_size,timestamp"
+
+    def _col(self):
+        return f"(id,flow_id,video_library_id,name,date_upload,views,encode_process,storage_size,timestamp)"
+
+    def _write(self, data: Tuple):
+        timestamp, data = data
+        return (data['id'],data['flow_id'],data['video_library_id'],data['name'],data['date_upload'],data['views'],data['encode_process'],data['storage_size'],timestamp)
