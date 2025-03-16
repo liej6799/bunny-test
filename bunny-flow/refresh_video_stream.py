@@ -31,13 +31,10 @@ async def flow(exchanges):
 
     tr_res = [transform([ex.result() for ex in e_res_1 if ex.result()], types)
             for types in [VIDEO]]
-    
-    video_id = [a[0][0].id for a in tr_res][0]
-    library_id = [a[0][0].video_library_id for a in tr_res][0]
 
-    print(video_id, library_id)
     exchanges = get_all_exhanges(init_paramteter(exchanges))
-    feeds = get_feeds(exchanges,  {'flow_id':flow_id, 'flow_name':flow_name, 'payload': {'library_id': library_id, 'video_id': video_id}}) 
+    feeds = get_feeds(exchanges, payloads = tr_res, flow = {'flow_id': flow_id, 'flow_name': flow_name}) 
+
     conns = get_conn(feeds, flow_name)         
     extract = get_extract(conns)
     transform_data = get_transform(extract, flow_name)

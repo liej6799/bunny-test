@@ -25,12 +25,12 @@ class BunnyRestMixin(RestExchange):
 
     def _request(self, method: str, endpoint: str, auth: bool = False, payload={}, api=None):
         query_string = urlencode(payload)
-        
+        print
         if auth:
-            if 'api_key' in self.payload:
+            if self.payload is not None and hasattr(self.payload, 'api_key'):
                  header = {
                     "accept": "application/json",
-                    "AccessKey": self.payload['api_key']
+                    "AccessKey": self.payload.api_key
                  }
             else:                    
                 header = {
@@ -62,6 +62,7 @@ class BunnyRestMixin(RestExchange):
         return [BUNNY_VIDEO_LIBRARY]
 
     def get_video_library(self):
+        print('payload', self.payload)
         return self._request(GET, 'videolibrary', auth=True)
 
     def refresh_video(self):
@@ -69,7 +70,7 @@ class BunnyRestMixin(RestExchange):
 
     def get_video(self):
         self.api = "https://video.bunnycdn.com/"
-        library_id = self.payload['library_id']
+        library_id = self.payload.id
         return self._request(GET, f'library/{library_id}/videos', auth=True)
 
     def refresh_video_stream(self):
@@ -77,8 +78,8 @@ class BunnyRestMixin(RestExchange):
             
     def get_video_stream(self):
         self.api = "https://video.bunnycdn.com/"
-        library_id = self.payload['library_id']
-        video_id = self.payload['video_id']
+        video_library_id = self.payload.video_library_id
+        video_id = self.payload.id
 
-        return self._request(GET, f'library/{library_id}/videos/{video_id}/play', auth=True)    
+        return self._request(GET, f'library/{video_library_id}/videos/{video_id}/play', auth=True)    
     

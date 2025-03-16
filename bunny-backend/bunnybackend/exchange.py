@@ -21,7 +21,7 @@ class Exchange:
     payload = NotImplemented
     http_sync = HTTPSync()
     
-    def __init__(self, config=None, sandbox=False, flow=None, subaccount=None, symbols=None, **kwargs):
+    def __init__(self, config=None, sandbox=False, flow=None, payload=None, subaccount=None, symbols=None, **kwargs):
         self.config = Config(config=config)
         self.sandbox = sandbox
         self.subaccount = subaccount
@@ -34,8 +34,8 @@ class Exchange:
         self.account_name = keys.account_name
         self.flow_id= flow['flow_id']
         self.flow_name= flow['flow_name']
-        if 'payload' in flow:
-            self.payload = flow['payload']
+        
+        self.payload = payload
         
         # self.flow_id = if flow is None else flow.flow_id 
         # self.flow_name = flow_name

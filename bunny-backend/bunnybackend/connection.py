@@ -69,7 +69,7 @@ class HTTPSync(Connection):
             if isCache:
                 self.conn_redis.write(address, res)
                 res = self.conn_redis.read(address)
-  
+        
         return res
 
     def write(self, address: str, data=None, json_data=None, headers=None, json=False, text=True, uuid=None):

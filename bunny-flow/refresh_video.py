@@ -30,26 +30,23 @@ async def flow(exchanges):
 
     tr_res = [transform([ex.result() for ex in e_res_1 if ex.result()], types)
             for types in [VIDEO_LIBRARY]]
+    
+    exchanges = get_all_exhanges(init_paramteter(exchanges))            
+    feeds = get_feeds(exchanges, payloads = tr_res, flow = {'flow_id': flow_id, 'flow_name': flow_name}) 
 
-    library_id = [a[0][0].id for a in tr_res][0]
-    api_key = [a[0][0].api_key for a in tr_res][0]
-
-    exchanges = get_all_exhanges(init_paramteter(exchanges))
-    feeds = get_feeds(exchanges,  {'flow_id':flow_id, 'flow_name':flow_name, 'payload': {'library_id': library_id, 'api_key': api_key}}) 
     conns = get_conn(feeds, flow_name)         
     extract = get_extract(conns)
-    transform_data = get_transform(extract, flow_name)
-    get_load(prepare_load(transform_data, db_conns))
+    transform_data = get_transform(extract, flow_name)  
+    get_load(prepare_load(transform_data, db_conns))              
 
     end_flow(flow_id, flow_name)
 @task(cache_policy=TASK_SOURCE)
 def transform(data, type):
-    # print(data, type)
     if type == VIDEO_LIBRARY:
         return transform_video_library(data), type
  
 def transform_video_library(msg):
-    return list(set([VideoLibraryAPI(id=(j['id']), api_key=escape_string(j['api_key']), read_only_api_key=escape_string(j['read_only_api_key'])) for i in msg if i[1] == VIDEO_LIBRARY for j in i[0] if j['name'] == 'test']))
+    return list(set([VideoLibraryAPI(id=(j['id']), api_key=escape_string(j['api_key']), read_only_api_key=escape_string(j['read_only_api_key'])) for i in msg if i[1] == VIDEO_LIBRARY for j in i[0]] ))
 
 if __name__ == '__main__':
     asyncio.run(flow("BUNNY"))

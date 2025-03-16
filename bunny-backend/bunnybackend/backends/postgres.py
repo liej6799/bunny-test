@@ -60,7 +60,6 @@ class Postgres():
 
     async def write(self, updates: list):
         await self._connect()
-  
         batch = []
         for data in updates:
             data = data.to_dict(numeric_type=float)

@@ -33,11 +33,11 @@ def get_end_flow_database():
   
 
 @task
-def _initiate(exchange, flow):
+def _initiate(exchange, payload, flow):
     if exchange == BUNNY:
-        return Bunny(config='config.yaml',flow=flow)
+        return Bunny(config='config.yaml',payload=payload,flow=flow)
     elif exchange == FLOW:
-        return Common(config='config.yaml',flow=flow)
+        return Common(config='config.yaml',payload=payload,flow=flow)
 
 @task
 def _initiate_connection(feed, type):
@@ -91,7 +91,7 @@ def init_paramteter(data):
 def start_flow(flow_id, flow_name):
     db_conns = get_start_flow_database.submit()
     exchanges = get_all_exhanges(init_paramteter(FLOW))
-    feeds = get_feeds(exchanges, {'flow_id':flow_id, 'flow_name':flow_name})
+    feeds = get_feeds_empty(exchanges, flow={'flow_id':flow_id, 'flow_name':flow_name})
     conns = get_conn(feeds, START_FLOW)         
     extract = get_extract(conns)
     transform = get_transform(extract, START_FLOW)
@@ -101,15 +101,21 @@ def start_flow(flow_id, flow_name):
 def end_flow(flow_id, flow_name):
     db_conns = get_end_flow_database.submit()
     exchanges = get_all_exhanges(init_paramteter(FLOW))
-    feeds = get_feeds(exchanges, {'flow_id':flow_id, 'flow_name':flow_name})
+    feeds = get_feeds_empty(exchanges, flow={'flow_id':flow_id, 'flow_name':flow_name})
     conns = get_conn(feeds, END_FLOW)         
     extract = get_extract(conns)
     transform = get_transform(extract, END_FLOW)
     get_load(prepare_load(transform, db_conns))
 
 
-def get_feeds(exchanges, flow):
-    return [_initiate.submit(exchange, flow) for exchange in exchanges]
+def get_feeds(exchanges, flow, payloads):
+
+    return [_initiate.submit(exchange, x, flow) for exchange in exchanges for payload in payloads for x in payload[0]]
+
+
+def get_feeds_empty(exchanges, flow):
+
+    return [_initiate.submit(exchange, None, flow) for exchange in exchanges]
 
 
 def get_conn(feeds, type):

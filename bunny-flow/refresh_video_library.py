@@ -19,7 +19,7 @@ async def flow(exchanges):
     start_flow.submit(flow_id, flow_name)
 
     exchanges = get_all_exhanges(init_paramteter(exchanges))
-    feeds = get_feeds(exchanges,  {'flow_id':flow_id, 'flow_name':flow_name, 'payload': {}}) 
+    feeds = get_feeds_empty(exchanges, flow={'flow_id':flow_id, 'flow_name':flow_name}) 
     db_conns = get_database.submit()
     conns = get_conn(feeds, flow_name)         
     extract = get_extract(conns)
