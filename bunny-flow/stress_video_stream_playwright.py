@@ -12,7 +12,7 @@ def run(i):
         chromium = playwright.chromium # or "firefox" or "webkit".
         browser = chromium.launch()
         page = browser.new_page()
-        page.goto('file://root/Development/bunny-test/bunny-flow/script/videojs/index.html')
+        page.goto('https://raw.githubusercontent.com/liej6799/bunny-test/refs/heads/main/bunny-flow/script/videojs/index.html')
         time.sleep(60)
         # other actions...
         page.screenshot(path='video_stream_playwright/screenshot' + str(i) + '.png')
