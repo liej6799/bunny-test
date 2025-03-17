@@ -5,6 +5,15 @@
 <input type="text" id="url" style="width:100%" value="https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"> <input type="button" id="btn" value="play">
 
 <br><br>
-
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script>
+    $(document).ready(function() {
+    $("#btn").on("click", function() {
+      $("#video").html("<source src='"+ $("#url").val() +"' type='application/x-mpegURL'>");
+      var ply = videojs("video");
+      ply.play();
+    });
+  });
+</script>
 <video id="video" class="video-js vjs-default-skin" preload="none" crossorigin="true" autoplay controls width="640" height="268" controls>
 </video>
