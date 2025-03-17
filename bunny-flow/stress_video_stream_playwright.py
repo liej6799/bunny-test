@@ -12,7 +12,7 @@ def run(i):
         chromium = playwright.chromium # or "firefox" or "webkit".
         browser = chromium.launch()
         page = browser.new_page()
-        page.goto('https://storage.bunnycdn.com/test-st/tears_of_steel_1080p.webm?accessKey=5efa6332-74ea-47da-8a3f39020dff-0281-4d1b')
+        page.goto('file://root/Development/bunny-test/bunny-flow/script/videojs/index.html')
         time.sleep(60)
         # other actions...
         page.screenshot(path='video_stream_playwright/screenshot' + str(i) + '.png')
@@ -21,7 +21,7 @@ def run(i):
 
 @flow(task_runner=ConcurrentTaskRunner())
 def main():
-    for i in range(10):
+    for i in range(2):
         run.submit(i)
 
         
