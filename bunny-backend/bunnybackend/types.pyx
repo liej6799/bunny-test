@@ -351,3 +351,37 @@ cdef class VideoStream:
     def __hash__(self):
         return hash(self.__repr__())
 
+
+
+cdef class PlayerModel:
+    # common
+    cdef readonly object stream
+    cdef readonly object browser
+
+    def __init__(self, stream, browser):
+        self.stream = stream
+        self.browser = browser
+
+    @staticmethod
+    def from_dict(data: dict) -> PlayerModel:
+        return PlayerModel(
+            data['stream'],
+            data['browser']              
+        )
+
+    cpdef dict to_dict(self, numeric_type=None, none_to=False):
+        if numeric_type is None:
+            data = {'stream': self.stream, 'browser': self.browser }
+        else:
+            data = {'stream': self.stream, 'browser': self.browser }
+
+        return data if not none_to else convert_none_values(data, none_to)
+
+    def __repr__(self):
+        return f"stream: {self.stream} browser: {self.browser} "
+
+    def __eq__(self, cmp):
+        return self.stream == cmp.stream and self.browser == cmp.browser
+
+    def __hash__(self):
+        return hash(self.__repr__())

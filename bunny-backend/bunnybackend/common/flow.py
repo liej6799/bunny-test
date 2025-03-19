@@ -3,6 +3,7 @@ from datetime import time
 from bunnybackend.backends.postgres import FlowPostgres, TargetPostgres
 from bunnybackend.defines import *
 from bunnybackend.exchanges.common import Common
+from bunnybackend.exchanges.videojs import VideoJS
 from prefect import task, flow, get_run_logger
 from bunnybackend.types import Flow
 from bunnybackend.exchanges import Bunny
@@ -38,9 +39,12 @@ def _initiate(exchange, payload, flow):
         return Bunny(config='config.yaml',payload=payload,flow=flow)
     elif exchange == FLOW:
         return Common(config='config.yaml',payload=payload,flow=flow)
+    elif exchange == VIDEOJS:
+        return VideoJS(config='config.yaml',payload=payload,flow=flow)
 
 @task
 def _initiate_connection(feed, type):
+    print(feed, type)
     try:
         if feed is None:
             return None
