@@ -23,7 +23,7 @@ class VideoJS(Player):
         return [VIDEOJS_STREAM_PLAY]
     
     def process_stream_play(self):
-        self.page.locator('#url').fill(self.payload.stream)
+        self.page.locator('#url').fill(self.payload.stream.get_url())
         self.page.locator('#btn').click()
 
     def stream_play_test(self):

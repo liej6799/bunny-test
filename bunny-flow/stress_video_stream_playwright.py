@@ -95,8 +95,6 @@ def run(browser, lib, stream, n):
             
             browser, lib, console, error, exception
   
-           
-
             selected_browser.close()
 
         except Exception as ex:

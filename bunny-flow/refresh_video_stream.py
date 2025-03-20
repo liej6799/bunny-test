@@ -18,7 +18,6 @@ def get_database():
     return [(RefreshVideoStreamPostgres(TargetPostgres()), REFRESH_VIDEO_STREAM),
             (VideoPostgres(TargetPostgres()), VIDEO)]
 
-
 @flow(task_runner=ConcurrentTaskRunner())
 async def flow(exchanges):
     flow_name = REFRESH_VIDEO_STREAM

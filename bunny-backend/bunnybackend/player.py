@@ -43,11 +43,11 @@ class Player(Exchange):
         return []          
 
     def set_browser(self):
-        if self.payload.browser == CHROME:
+        if self.payload.browser.id == CHROME:
             self.browser = self.playwright.chromium.launch(channel="chrome", headless=True)
-        elif self.payload.browser == MSEDGE:
+        elif self.payload.browser.id == MSEDGE:
             self.browser = self.playwright.chromium.launch(channel="msedge", headless=True)
-        elif self.payload.browser == FIREFOX:
+        elif self.payload.browser.id == FIREFOX:
             self.browser = self.playwright.firefox.launch(headless=True)
   
 

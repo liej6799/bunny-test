@@ -1,8 +1,10 @@
 
 from bunnybackend.backends.folder import ScreenshotFolder
 from bunnybackend.backends.postgres import RefreshVideoLibraryPostgres, TargetPostgres
-from bunnybackend.backends.stream import DemoStream
+from bunnybackend.backends.test import DemoTest
+from bunnybackend.browser import FirefoxBrowser
 from bunnybackend.common.flow import _load
+from bunnybackend.stream import BunnyStream
 from prefect import task, flow, get_run_logger
 from bunnybackend.types import PlayerModel
 import asyncio
@@ -14,7 +16,7 @@ from bunnybackend.common.flow import *
 
 @task
 def get_stream():
-    return [(DemoStream(), STREAM_PLAY),(ScreenshotFolder(), REFRESH_STREAM_PLAY)]
+    return [(DemoTest(), STREAM_PLAY),(ScreenshotFolder(), REFRESH_STREAM_PLAY)]
 
 @flow(task_runner=ConcurrentTaskRunner())
 def flow(exchanges):
@@ -29,7 +31,6 @@ def flow(exchanges):
     db_conns = get_stream.submit()
     e_res_1 =  get_extract_database([conn for conn in db_conns.result() if conn[1] in [STREAM_PLAY]])
 
-
     tr_res = [transform([ex.result() for ex in e_res_1 if ex.result()], types)
         for types in [STREAM_PLAY]]
     
@@ -38,7 +39,7 @@ def flow(exchanges):
     extract = get_extract(conns)
     transform_data = get_transform(extract, flow_name)
 
-    # prep=prepare_load(transform_data, db_conns)
+    # # prep=prepare_load(transform_data, db_conns)
 
     get_load(prepare_load(transform_data, db_conns))
 

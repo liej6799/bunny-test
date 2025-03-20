@@ -30,7 +30,7 @@ class ScreenshotFolder(Folder):
         from PIL import Image
 
         for i in args:
-            self.folder = os.path.join(self.base_folder, i.library + '-' + i.stream + '-' + i.browser)
+            self.folder = os.path.join(self.base_folder, i.library + '-' + i.stream.id + '-' + i.browser.id)
             Path(self.folder).mkdir(parents=True, exist_ok=True)
             file = os.path.join(self.folder, 'screenshot' + '-' + str(i.iter) + '.png')
             image = Image.open(io.BytesIO(i.screenshot))
