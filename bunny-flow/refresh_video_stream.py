@@ -49,7 +49,7 @@ def transform(data, type):
         return transform_video(data), type
  
 def transform_video(msg):
-    return list(set([VideoAPI(id=(j['id']), video_library_id=(j['video_library_id'])) for i in msg if i[1] == VIDEO for j in i[0]]))
+    return list(set([VideoAPI(id=(j['id']),  video_library_id=(j['video_library_id'])) for i in msg if i[1] == VIDEO for j in i[0]]))
 
 if __name__ == '__main__':
     asyncio.run(flow("BUNNY"))

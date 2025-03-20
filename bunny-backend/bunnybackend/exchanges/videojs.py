@@ -8,6 +8,11 @@ associated with this software.
 from bunnybackend.defines import *
 from bunnybackend.player import Player
 from playwright.sync_api import sync_playwright, Playwright
+from bunnybackend.types import StreamPlay
+
+from time import time
+from yapic import json
+from decimal import Decimal
 
 class VideoJS(Player):
     id = VIDEOJS
@@ -24,8 +29,36 @@ class VideoJS(Player):
     def stream_play_test(self):
         return self.run_playwright(self.process_stream_play)
 
+    def _stream_play_test(self, msg, ts):
+        data = []
+        try:
+            data.append(StreamPlay(
+                        library=self.id,
+                        stream=(self.stream),
+                        browser = (self.selected_browser),
+                        iter=self.iter,
+                        screenshot=self.screenshot,
+
+                        console=(msg['console']),
+                        error=(msg['error']),
+                        exception=(msg['exception']),
+                        
+                        ))
+
+        except Exception as a:
+            print(a)
+            pass
+        return data
+
     def message_handler(self, type, msg, symbol=None):
-        return []
+
+        try:
+            msg = json.loads(msg, parse_float=Decimal)
+        except Exception:
+            pass
+
+        if type == VIDEOJS_STREAM_PLAY:
+           return self._stream_play_test(msg, time())
 
     def __getitem__(self, key):
         print('getitem', key)

@@ -11,6 +11,7 @@ from playwright.sync_api import sync_playwright
 
 class Player(Exchange):
 
+        
     def init_playwright(self):
         self.set_browser()
         self.set_page()
@@ -20,6 +21,10 @@ class Player(Exchange):
         self.exception = list()
     
     def exit_playwright(self):
+        self.iter = self.payload.iter
+        self.stream = self.payload.stream
+        self.selected_browser = self.payload.browser
+
         self.screenshot = self.page.screenshot()
         self.browser.close()
 
@@ -33,7 +38,7 @@ class Player(Exchange):
             time.sleep(10)
         
             self.exit_playwright()
-            return [self.console, self.error, self.exception]
+            return {'console':self.console, 'error':self.error, 'exception':self.exception}
         
         return []          
 

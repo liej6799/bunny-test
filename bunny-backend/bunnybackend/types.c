@@ -1516,6 +1516,7 @@ struct __pyx_obj_12bunnybackend_5types_Video;
 struct __pyx_obj_12bunnybackend_5types_VideoAPI;
 struct __pyx_obj_12bunnybackend_5types_VideoStream;
 struct __pyx_obj_12bunnybackend_5types_PlayerModel;
+struct __pyx_obj_12bunnybackend_5types_StreamPlay;
 struct __pyx_opt_args_12bunnybackend_5types_19RefreshVideoLibrary_to_dict;
 struct __pyx_opt_args_12bunnybackend_5types_15VideoLibraryAPI_to_dict;
 struct __pyx_opt_args_12bunnybackend_5types_4Flow_to_dict;
@@ -1523,6 +1524,7 @@ struct __pyx_opt_args_12bunnybackend_5types_5Video_to_dict;
 struct __pyx_opt_args_12bunnybackend_5types_8VideoAPI_to_dict;
 struct __pyx_opt_args_12bunnybackend_5types_11VideoStream_to_dict;
 struct __pyx_opt_args_12bunnybackend_5types_11PlayerModel_to_dict;
+struct __pyx_opt_args_12bunnybackend_5types_10StreamPlay_to_dict;
 
 /* "bunnybackend/types.pyx":81
  *         )
@@ -1602,14 +1604,27 @@ struct __pyx_opt_args_12bunnybackend_5types_11VideoStream_to_dict {
   PyObject *none_to;
 };
 
-/* "bunnybackend/types.pyx":372
+/* "bunnybackend/types.pyx":375
  *         )
  * 
  *     cpdef dict to_dict(self, numeric_type=None, none_to=False):             # <<<<<<<<<<<<<<
  *         if numeric_type is None:
- *             data = {'stream': self.stream, 'browser': self.browser }
+ *             data = {'stream': self.stream, 'browser': self.browser, 'iter': self.iter }
  */
 struct __pyx_opt_args_12bunnybackend_5types_11PlayerModel_to_dict {
+  int __pyx_n;
+  PyObject *numeric_type;
+  PyObject *none_to;
+};
+
+/* "bunnybackend/types.pyx":431
+ *         )
+ * 
+ *     cpdef dict to_dict(self, numeric_type=None, none_to=False):             # <<<<<<<<<<<<<<
+ *         if numeric_type is None:
+ *             data = {'library': self.library, 'stream': self.stream, 'browser': self.browser, 'iter': self.iter, 'console': self.console, 'error': self.error, 'exception': self.exception, 'screenshot': self.screenshot }
+ */
+struct __pyx_opt_args_12bunnybackend_5types_10StreamPlay_to_dict {
   int __pyx_n;
   PyObject *numeric_type;
   PyObject *none_to;
@@ -1746,6 +1761,28 @@ struct __pyx_obj_12bunnybackend_5types_PlayerModel {
   struct __pyx_vtabstruct_12bunnybackend_5types_PlayerModel *__pyx_vtab;
   PyObject *stream;
   PyObject *browser;
+  PyObject *iter;
+};
+
+
+/* "bunnybackend/types.pyx":395
+ * 
+ * 
+ * cdef class StreamPlay:             # <<<<<<<<<<<<<<
+ *     # common
+ *     cdef readonly object library
+ */
+struct __pyx_obj_12bunnybackend_5types_StreamPlay {
+  PyObject_HEAD
+  struct __pyx_vtabstruct_12bunnybackend_5types_StreamPlay *__pyx_vtab;
+  PyObject *library;
+  PyObject *stream;
+  PyObject *browser;
+  PyObject *iter;
+  PyObject *console;
+  PyObject *error;
+  PyObject *exception;
+  PyObject *screenshot;
 };
 
 
@@ -1846,6 +1883,20 @@ struct __pyx_vtabstruct_12bunnybackend_5types_PlayerModel {
   PyObject *(*to_dict)(struct __pyx_obj_12bunnybackend_5types_PlayerModel *, int __pyx_skip_dispatch, struct __pyx_opt_args_12bunnybackend_5types_11PlayerModel_to_dict *__pyx_optional_args);
 };
 static struct __pyx_vtabstruct_12bunnybackend_5types_PlayerModel *__pyx_vtabptr_12bunnybackend_5types_PlayerModel;
+
+
+/* "bunnybackend/types.pyx":395
+ * 
+ * 
+ * cdef class StreamPlay:             # <<<<<<<<<<<<<<
+ *     # common
+ *     cdef readonly object library
+ */
+
+struct __pyx_vtabstruct_12bunnybackend_5types_StreamPlay {
+  PyObject *(*to_dict)(struct __pyx_obj_12bunnybackend_5types_StreamPlay *, int __pyx_skip_dispatch, struct __pyx_opt_args_12bunnybackend_5types_10StreamPlay_to_dict *__pyx_optional_args);
+};
+static struct __pyx_vtabstruct_12bunnybackend_5types_StreamPlay *__pyx_vtabptr_12bunnybackend_5types_StreamPlay;
 /* #### Code section: utility_code_proto ### */
 
 /* --- Runtime support code (head) --- */
@@ -2587,6 +2638,7 @@ static PyObject *__pyx_f_12bunnybackend_5types_5Video_to_dict(struct __pyx_obj_1
 static PyObject *__pyx_f_12bunnybackend_5types_8VideoAPI_to_dict(struct __pyx_obj_12bunnybackend_5types_VideoAPI *__pyx_v_self, int __pyx_skip_dispatch, struct __pyx_opt_args_12bunnybackend_5types_8VideoAPI_to_dict *__pyx_optional_args); /* proto*/
 static PyObject *__pyx_f_12bunnybackend_5types_11VideoStream_to_dict(struct __pyx_obj_12bunnybackend_5types_VideoStream *__pyx_v_self, int __pyx_skip_dispatch, struct __pyx_opt_args_12bunnybackend_5types_11VideoStream_to_dict *__pyx_optional_args); /* proto*/
 static PyObject *__pyx_f_12bunnybackend_5types_11PlayerModel_to_dict(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v_self, int __pyx_skip_dispatch, struct __pyx_opt_args_12bunnybackend_5types_11PlayerModel_to_dict *__pyx_optional_args); /* proto*/
+static PyObject *__pyx_f_12bunnybackend_5types_10StreamPlay_to_dict(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self, int __pyx_skip_dispatch, struct __pyx_opt_args_12bunnybackend_5types_10StreamPlay_to_dict *__pyx_optional_args); /* proto*/
 
 /* Module declarations from "cython" */
 
@@ -2599,6 +2651,7 @@ static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_Video__set_state(s
 static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_VideoAPI__set_state(struct __pyx_obj_12bunnybackend_5types_VideoAPI *, PyObject *); /*proto*/
 static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_VideoStream__set_state(struct __pyx_obj_12bunnybackend_5types_VideoStream *, PyObject *); /*proto*/
 static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_PlayerModel__set_state(struct __pyx_obj_12bunnybackend_5types_PlayerModel *, PyObject *); /*proto*/
+static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_StreamPlay__set_state(struct __pyx_obj_12bunnybackend_5types_StreamPlay *, PyObject *); /*proto*/
 /* #### Code section: typeinfo ### */
 /* #### Code section: before_global_var ### */
 #define __Pyx_MODULE_NAME "bunnybackend.types"
@@ -2613,19 +2666,21 @@ static const char __pyx_k_[] = " ";
 static const char __pyx_k__3[] = ".";
 static const char __pyx_k_gc[] = "gc";
 static const char __pyx_k_id[] = "id";
-static const char __pyx_k__57[] = "?";
+static const char __pyx_k__64[] = "?";
 static const char __pyx_k_new[] = "__new__";
 static const char __pyx_k_raw[] = "raw";
 static const char __pyx_k_Flow[] = "Flow";
 static const char __pyx_k_data[] = "data";
 static const char __pyx_k_dict[] = "__dict__";
 static const char __pyx_k_id_2[] = "id: ";
+static const char __pyx_k_iter[] = "iter";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "name";
 static const char __pyx_k_repr[] = "__repr__";
 static const char __pyx_k_self[] = "self";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_Video[] = "Video";
+static const char __pyx_k_error[] = "error";
 static const char __pyx_k_items[] = "items";
 static const char __pyx_k_state[] = "state";
 static const char __pyx_k_views[] = "views";
@@ -2633,6 +2688,7 @@ static const char __pyx_k_dict_2[] = "dict";
 static const char __pyx_k_dict_3[] = "_dict";
 static const char __pyx_k_enable[] = "enable";
 static const char __pyx_k_import[] = "__import__";
+static const char __pyx_k_iter_2[] = " iter ";
 static const char __pyx_k_name_2[] = " name: ";
 static const char __pyx_k_name_3[] = "__name__";
 static const char __pyx_k_pickle[] = "pickle";
@@ -2644,9 +2700,12 @@ static const char __pyx_k_update[] = "update";
 static const char __pyx_k_Decimal[] = "Decimal";
 static const char __pyx_k_api_key[] = "api_key";
 static const char __pyx_k_browser[] = "browser";
+static const char __pyx_k_console[] = "console";
 static const char __pyx_k_decimal[] = "decimal";
 static const char __pyx_k_disable[] = "disable";
+static const char __pyx_k_error_2[] = " error ";
 static const char __pyx_k_flow_id[] = "flow_id";
+static const char __pyx_k_library[] = "library";
 static const char __pyx_k_none_to[] = "none_to";
 static const char __pyx_k_to_dict[] = "to_dict";
 static const char __pyx_k_views_2[] = " views: ";
@@ -2656,23 +2715,30 @@ static const char __pyx_k_pyx_type[] = "__pyx_type";
 static const char __pyx_k_setstate[] = "__setstate__";
 static const char __pyx_k_status_2[] = " status: ";
 static const char __pyx_k_stream_2[] = "stream: ";
+static const char __pyx_k_stream_3[] = " stream: ";
 static const char __pyx_k_api_key_2[] = " api_key: ";
 static const char __pyx_k_browser_2[] = " browser: ";
+static const char __pyx_k_console_2[] = " console ";
+static const char __pyx_k_exception[] = "exception";
 static const char __pyx_k_flow_id_2[] = " flow_id: ";
 static const char __pyx_k_flow_name[] = "flow_name";
 static const char __pyx_k_from_dict[] = "from_dict";
 static const char __pyx_k_isenabled[] = "isenabled";
+static const char __pyx_k_library_2[] = "library ";
 static const char __pyx_k_pyx_state[] = "__pyx_state";
 static const char __pyx_k_reduce_ex[] = "__reduce_ex__";
 static const char __pyx_k_seek_path[] = "seek_path";
 static const char __pyx_k_self_name[] = " self.name: ";
 static const char __pyx_k_timestamp[] = "timestamp";
+static const char __pyx_k_StreamPlay[] = "StreamPlay";
 static const char __pyx_k_pyx_result[] = "__pyx_result";
 static const char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
+static const char __pyx_k_screenshot[] = "screenshot";
 static const char __pyx_k_PickleError[] = "PickleError";
 static const char __pyx_k_PlayerModel[] = "PlayerModel";
 static const char __pyx_k_VideoStream[] = "VideoStream";
 static const char __pyx_k_date_upload[] = "date_upload";
+static const char __pyx_k_exception_2[] = " exception ";
 static const char __pyx_k_flow_name_2[] = "flow_name: ";
 static const char __pyx_k_preview_url[] = "preview_url";
 static const char __pyx_k_seek_path_2[] = " seek_path: ";
@@ -2684,6 +2750,7 @@ static const char __pyx_k_fallback_url[] = "fallback_url";
 static const char __pyx_k_is_coroutine[] = "_is_coroutine";
 static const char __pyx_k_numeric_type[] = "numeric_type";
 static const char __pyx_k_pyx_checksum[] = "__pyx_checksum";
+static const char __pyx_k_screenshot_2[] = " screenshot ";
 static const char __pyx_k_staticmethod[] = "staticmethod";
 static const char __pyx_k_storage_size[] = "storage_size";
 static const char __pyx_k_stringsource[] = "<stringsource>";
@@ -2715,6 +2782,7 @@ static const char __pyx_k_thumbnail_path_2[] = " thumbnail_path: ";
 static const char __pyx_k_video_library_id[] = "video_library_id";
 static const char __pyx_k_pyx_unpickle_Flow[] = "__pyx_unpickle_Flow";
 static const char __pyx_k_read_only_api_key[] = "read_only_api_key";
+static const char __pyx_k_StreamPlay_to_dict[] = "StreamPlay.to_dict";
 static const char __pyx_k_VideoAPI_from_dict[] = "VideoAPI.from_dict";
 static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_bunnybackend_types[] = "bunnybackend.types";
@@ -2727,6 +2795,7 @@ static const char __pyx_k_RefreshVideoLibrary[] = "RefreshVideoLibrary";
 static const char __pyx_k_VideoStream_to_dict[] = "VideoStream.to_dict";
 static const char __pyx_k_read_only_api_key_2[] = " read_only_api_key: ";
 static const char __pyx_k_Flow___reduce_cython[] = "Flow.__reduce_cython__";
+static const char __pyx_k_StreamPlay_from_dict[] = "StreamPlay.from_dict";
 static const char __pyx_k_video_playlist_url_2[] = " video_playlist_url: ";
 static const char __pyx_k_PlayerModel_from_dict[] = "PlayerModel.from_dict";
 static const char __pyx_k_VideoStream_from_dict[] = "VideoStream.from_dict";
@@ -2736,15 +2805,18 @@ static const char __pyx_k_Flow___setstate_cython[] = "Flow.__setstate_cython__";
 static const char __pyx_k_bunnybackend_types_pyx[] = "bunnybackend/types.pyx";
 static const char __pyx_k_VideoLibraryAPI_to_dict[] = "VideoLibraryAPI.to_dict";
 static const char __pyx_k_Video___setstate_cython[] = "Video.__setstate_cython__";
+static const char __pyx_k_pyx_unpickle_StreamPlay[] = "__pyx_unpickle_StreamPlay";
 static const char __pyx_k_COMPILED_WITH_ASSERTIONS[] = "COMPILED_WITH_ASSERTIONS";
 static const char __pyx_k_VideoAPI___reduce_cython[] = "VideoAPI.__reduce_cython__";
 static const char __pyx_k_pyx_unpickle_PlayerModel[] = "__pyx_unpickle_PlayerModel";
 static const char __pyx_k_pyx_unpickle_VideoStream[] = "__pyx_unpickle_VideoStream";
 static const char __pyx_k_VideoLibraryAPI_from_dict[] = "VideoLibraryAPI.from_dict";
+static const char __pyx_k_StreamPlay___reduce_cython[] = "StreamPlay.__reduce_cython__";
 static const char __pyx_k_VideoAPI___setstate_cython[] = "VideoAPI.__setstate_cython__";
 static const char __pyx_k_PlayerModel___reduce_cython[] = "PlayerModel.__reduce_cython__";
 static const char __pyx_k_RefreshVideoLibrary_to_dict[] = "RefreshVideoLibrary.to_dict";
 static const char __pyx_k_VideoStream___reduce_cython[] = "VideoStream.__reduce_cython__";
+static const char __pyx_k_StreamPlay___setstate_cython[] = "StreamPlay.__setstate_cython__";
 static const char __pyx_k_pyx_unpickle_VideoLibraryAPI[] = "__pyx_unpickle_VideoLibraryAPI";
 static const char __pyx_k_PlayerModel___setstate_cython[] = "PlayerModel.__setstate_cython__";
 static const char __pyx_k_RefreshVideoLibrary_from_dict[] = "RefreshVideoLibrary.from_dict";
@@ -2761,7 +2833,8 @@ static const char __pyx_k_Incompatible_checksums_0x_x_vs_0_3[] = "Incompatible c
 static const char __pyx_k_Incompatible_checksums_0x_x_vs_0_4[] = "Incompatible checksums (0x%x vs (0xf626a2d, 0xc9b81b8, 0x614b12a) = (date_upload, encode_process, flow_id, id, name, raw, storage_size, timestamp, video_library_id, views))";
 static const char __pyx_k_Incompatible_checksums_0x_x_vs_0_5[] = "Incompatible checksums (0x%x vs (0xbb43199, 0xe062dc1, 0xa3f7b8a) = (id, video_library_id))";
 static const char __pyx_k_Incompatible_checksums_0x_x_vs_0_6[] = "Incompatible checksums (0x%x vs (0xc4fe196, 0x7b21322, 0xb4eeedb) = (captions_path, fallback_url, flow_id, id, preview_url, raw, seek_path, thumbnail_path, timestamp, video_library_id, video_playlist_url))";
-static const char __pyx_k_Incompatible_checksums_0x_x_vs_0_7[] = "Incompatible checksums (0x%x vs (0xe22de57, 0x2069f42, 0x4d141ec) = (browser, stream))";
+static const char __pyx_k_Incompatible_checksums_0x_x_vs_0_7[] = "Incompatible checksums (0x%x vs (0x9009a3b, 0xace74fa, 0x7770076) = (browser, iter, stream))";
+static const char __pyx_k_Incompatible_checksums_0x_x_vs_0_8[] = "Incompatible checksums (0x%x vs (0xbb6197d, 0x5209fa0, 0x9c7f3db) = (browser, console, error, exception, iter, library, screenshot, stream))";
 /* #### Code section: decls ### */
 static int __pyx_pf_12bunnybackend_5types_19RefreshVideoLibrary___init__(struct __pyx_obj_12bunnybackend_5types_RefreshVideoLibrary *__pyx_v_self, PyObject *__pyx_v_id, PyObject *__pyx_v_flow_id, PyObject *__pyx_v_name, PyObject *__pyx_v_video_count, PyObject *__pyx_v_traffic_usage, PyObject *__pyx_v_storage_usage, PyObject *__pyx_v_date_created, PyObject *__pyx_v_api_key, PyObject *__pyx_v_read_only_api_key, PyObject *__pyx_v_timestamp, PyObject *__pyx_v_raw); /* proto */
 static struct __pyx_obj_12bunnybackend_5types_RefreshVideoLibrary *__pyx_pf_12bunnybackend_5types_19RefreshVideoLibrary_2from_dict(PyObject *__pyx_v_data); /* proto */
@@ -2852,7 +2925,7 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11VideoStream_9timestamp___get__
 static PyObject *__pyx_pf_12bunnybackend_5types_11VideoStream_3raw___get__(struct __pyx_obj_12bunnybackend_5types_VideoStream *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_12bunnybackend_5types_11VideoStream_12__reduce_cython__(struct __pyx_obj_12bunnybackend_5types_VideoStream *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_12bunnybackend_5types_11VideoStream_14__setstate_cython__(struct __pyx_obj_12bunnybackend_5types_VideoStream *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
-static int __pyx_pf_12bunnybackend_5types_11PlayerModel___init__(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v_self, PyObject *__pyx_v_stream, PyObject *__pyx_v_browser); /* proto */
+static int __pyx_pf_12bunnybackend_5types_11PlayerModel___init__(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v_self, PyObject *__pyx_v_stream, PyObject *__pyx_v_browser, PyObject *__pyx_v_iter); /* proto */
 static struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_pf_12bunnybackend_5types_11PlayerModel_2from_dict(PyObject *__pyx_v_data); /* proto */
 static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_4to_dict(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v_self, PyObject *__pyx_v_numeric_type, PyObject *__pyx_v_none_to); /* proto */
 static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_6__repr__(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v_self); /* proto */
@@ -2860,8 +2933,25 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_8__eq__(struct __p
 static Py_hash_t __pyx_pf_12bunnybackend_5types_11PlayerModel_10__hash__(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_6stream___get__(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_7browser___get__(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_4iter___get__(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_12__reduce_cython__(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_14__setstate_cython__(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
+static int __pyx_pf_12bunnybackend_5types_10StreamPlay___init__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self, PyObject *__pyx_v_library, PyObject *__pyx_v_stream, PyObject *__pyx_v_browser, PyObject *__pyx_v_iter, PyObject *__pyx_v_console, PyObject *__pyx_v_error, PyObject *__pyx_v_exception, PyObject *__pyx_v_screenshot); /* proto */
+static struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_pf_12bunnybackend_5types_10StreamPlay_2from_dict(PyObject *__pyx_v_data); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_4to_dict(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self, PyObject *__pyx_v_numeric_type, PyObject *__pyx_v_none_to); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_6__repr__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_8__eq__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self, PyObject *__pyx_v_cmp); /* proto */
+static Py_hash_t __pyx_pf_12bunnybackend_5types_10StreamPlay_10__hash__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_7library___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_6stream___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_7browser___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_4iter___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_7console___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_5error___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_9exception___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_10screenshot___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_12__reduce_cython__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_14__setstate_cython__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self, PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_pf_12bunnybackend_5types___pyx_unpickle_RefreshVideoLibrary(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_pf_12bunnybackend_5types_2__pyx_unpickle_VideoLibraryAPI(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_pf_12bunnybackend_5types_4__pyx_unpickle_Flow(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
@@ -2869,6 +2959,7 @@ static PyObject *__pyx_pf_12bunnybackend_5types_6__pyx_unpickle_Video(CYTHON_UNU
 static PyObject *__pyx_pf_12bunnybackend_5types_8__pyx_unpickle_VideoAPI(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_pf_12bunnybackend_5types_10__pyx_unpickle_VideoStream(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_pf_12bunnybackend_5types_12__pyx_unpickle_PlayerModel(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_pf_12bunnybackend_5types_14__pyx_unpickle_StreamPlay(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state); /* proto */
 static PyObject *__pyx_tp_new_12bunnybackend_5types_RefreshVideoLibrary(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_12bunnybackend_5types_VideoLibraryAPI(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_12bunnybackend_5types_Flow(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -2876,6 +2967,7 @@ static PyObject *__pyx_tp_new_12bunnybackend_5types_Video(PyTypeObject *t, PyObj
 static PyObject *__pyx_tp_new_12bunnybackend_5types_VideoAPI(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_12bunnybackend_5types_VideoStream(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_12bunnybackend_5types_PlayerModel(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
+static PyObject *__pyx_tp_new_12bunnybackend_5types_StreamPlay(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 /* #### Code section: late_includes ### */
 /* #### Code section: module_state ### */
 typedef struct {
@@ -2913,6 +3005,7 @@ typedef struct {
   PyObject *__pyx_type_12bunnybackend_5types_VideoAPI;
   PyObject *__pyx_type_12bunnybackend_5types_VideoStream;
   PyObject *__pyx_type_12bunnybackend_5types_PlayerModel;
+  PyObject *__pyx_type_12bunnybackend_5types_StreamPlay;
   #endif
   PyTypeObject *__pyx_ptype_12bunnybackend_5types_RefreshVideoLibrary;
   PyTypeObject *__pyx_ptype_12bunnybackend_5types_VideoLibraryAPI;
@@ -2921,6 +3014,7 @@ typedef struct {
   PyTypeObject *__pyx_ptype_12bunnybackend_5types_VideoAPI;
   PyTypeObject *__pyx_ptype_12bunnybackend_5types_VideoStream;
   PyTypeObject *__pyx_ptype_12bunnybackend_5types_PlayerModel;
+  PyTypeObject *__pyx_ptype_12bunnybackend_5types_StreamPlay;
   PyObject *__pyx_kp_u_;
   PyObject *__pyx_n_s_COMPILED_WITH_ASSERTIONS;
   PyObject *__pyx_n_s_Decimal;
@@ -2936,6 +3030,7 @@ typedef struct {
   PyObject *__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_5;
   PyObject *__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_6;
   PyObject *__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_7;
+  PyObject *__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_8;
   PyObject *__pyx_n_s_PickleError;
   PyObject *__pyx_n_s_PlayerModel;
   PyObject *__pyx_n_s_PlayerModel___reduce_cython;
@@ -2947,6 +3042,11 @@ typedef struct {
   PyObject *__pyx_n_s_RefreshVideoLibrary___setstate_c;
   PyObject *__pyx_n_s_RefreshVideoLibrary_from_dict;
   PyObject *__pyx_n_s_RefreshVideoLibrary_to_dict;
+  PyObject *__pyx_n_s_StreamPlay;
+  PyObject *__pyx_n_s_StreamPlay___reduce_cython;
+  PyObject *__pyx_n_s_StreamPlay___setstate_cython;
+  PyObject *__pyx_n_s_StreamPlay_from_dict;
+  PyObject *__pyx_n_s_StreamPlay_to_dict;
   PyObject *__pyx_n_s_Video;
   PyObject *__pyx_n_s_VideoAPI;
   PyObject *__pyx_n_s_VideoAPI___reduce_cython;
@@ -2968,7 +3068,7 @@ typedef struct {
   PyObject *__pyx_n_s_Video_from_dict;
   PyObject *__pyx_n_s_Video_to_dict;
   PyObject *__pyx_kp_u__3;
-  PyObject *__pyx_n_s__57;
+  PyObject *__pyx_n_s__64;
   PyObject *__pyx_n_s_api_key;
   PyObject *__pyx_n_u_api_key;
   PyObject *__pyx_kp_u_api_key_2;
@@ -2982,6 +3082,9 @@ typedef struct {
   PyObject *__pyx_n_u_captions_path;
   PyObject *__pyx_kp_u_captions_path_2;
   PyObject *__pyx_n_s_cline_in_traceback;
+  PyObject *__pyx_n_s_console;
+  PyObject *__pyx_n_u_console;
+  PyObject *__pyx_kp_u_console_2;
   PyObject *__pyx_n_s_data;
   PyObject *__pyx_n_s_date_created;
   PyObject *__pyx_n_u_date_created;
@@ -2998,6 +3101,12 @@ typedef struct {
   PyObject *__pyx_n_s_encode_process;
   PyObject *__pyx_n_u_encode_process;
   PyObject *__pyx_kp_u_encode_process_2;
+  PyObject *__pyx_n_s_error;
+  PyObject *__pyx_n_u_error;
+  PyObject *__pyx_kp_u_error_2;
+  PyObject *__pyx_n_s_exception;
+  PyObject *__pyx_n_u_exception;
+  PyObject *__pyx_kp_u_exception_2;
   PyObject *__pyx_n_s_fallback_url;
   PyObject *__pyx_n_u_fallback_url;
   PyObject *__pyx_kp_u_fallback_url_2;
@@ -3017,6 +3126,12 @@ typedef struct {
   PyObject *__pyx_n_s_is_coroutine;
   PyObject *__pyx_kp_u_isenabled;
   PyObject *__pyx_n_s_items;
+  PyObject *__pyx_n_s_iter;
+  PyObject *__pyx_n_u_iter;
+  PyObject *__pyx_kp_u_iter_2;
+  PyObject *__pyx_n_s_library;
+  PyObject *__pyx_n_u_library;
+  PyObject *__pyx_kp_u_library_2;
   PyObject *__pyx_n_s_main;
   PyObject *__pyx_n_s_name;
   PyObject *__pyx_n_u_name;
@@ -3037,6 +3152,7 @@ typedef struct {
   PyObject *__pyx_n_s_pyx_unpickle_Flow;
   PyObject *__pyx_n_s_pyx_unpickle_PlayerModel;
   PyObject *__pyx_n_s_pyx_unpickle_RefreshVideoLibra;
+  PyObject *__pyx_n_s_pyx_unpickle_StreamPlay;
   PyObject *__pyx_n_s_pyx_unpickle_Video;
   PyObject *__pyx_n_s_pyx_unpickle_VideoAPI;
   PyObject *__pyx_n_s_pyx_unpickle_VideoLibraryAPI;
@@ -3051,6 +3167,9 @@ typedef struct {
   PyObject *__pyx_n_s_reduce_ex;
   PyObject *__pyx_n_s_repr;
   PyObject *__pyx_n_s_return;
+  PyObject *__pyx_n_s_screenshot;
+  PyObject *__pyx_n_u_screenshot;
+  PyObject *__pyx_kp_u_screenshot_2;
   PyObject *__pyx_n_s_seek_path;
   PyObject *__pyx_n_u_seek_path;
   PyObject *__pyx_kp_u_seek_path_2;
@@ -3072,6 +3191,7 @@ typedef struct {
   PyObject *__pyx_n_s_stream;
   PyObject *__pyx_n_u_stream;
   PyObject *__pyx_kp_u_stream_2;
+  PyObject *__pyx_kp_u_stream_3;
   PyObject *__pyx_kp_s_stringsource;
   PyObject *__pyx_n_s_test;
   PyObject *__pyx_n_s_thumbnail_path;
@@ -3100,23 +3220,26 @@ typedef struct {
   PyObject *__pyx_kp_u_views_2;
   PyObject *__pyx_int_17670018;
   PyObject *__pyx_int_19903718;
-  PyObject *__pyx_int_33988418;
-  PyObject *__pyx_int_80822764;
   PyObject *__pyx_int_81172964;
+  PyObject *__pyx_int_86024096;
   PyObject *__pyx_int_102019370;
   PyObject *__pyx_int_110783672;
+  PyObject *__pyx_int_125239414;
   PyObject *__pyx_int_129110818;
   PyObject *__pyx_int_149218237;
+  PyObject *__pyx_int_151034427;
+  PyObject *__pyx_int_164099035;
   PyObject *__pyx_int_165026440;
   PyObject *__pyx_int_171932554;
   PyObject *__pyx_int_176929229;
+  PyObject *__pyx_int_181302522;
   PyObject *__pyx_int_189722331;
   PyObject *__pyx_int_196358553;
+  PyObject *__pyx_int_196483453;
   PyObject *__pyx_int_206561686;
   PyObject *__pyx_int_210659880;
   PyObject *__pyx_int_211517880;
   PyObject *__pyx_int_235285953;
-  PyObject *__pyx_int_237166167;
   PyObject *__pyx_int_244845213;
   PyObject *__pyx_int_258107949;
   PyObject *__pyx_tuple__2;
@@ -3127,52 +3250,59 @@ typedef struct {
   PyObject *__pyx_tuple__8;
   PyObject *__pyx_tuple__9;
   PyObject *__pyx_tuple__10;
-  PyObject *__pyx_tuple__12;
-  PyObject *__pyx_tuple__14;
+  PyObject *__pyx_tuple__11;
+  PyObject *__pyx_tuple__13;
   PyObject *__pyx_tuple__15;
-  PyObject *__pyx_tuple__17;
-  PyObject *__pyx_tuple__21;
-  PyObject *__pyx_tuple__26;
-  PyObject *__pyx_tuple__31;
-  PyObject *__pyx_tuple__36;
-  PyObject *__pyx_tuple__41;
-  PyObject *__pyx_tuple__46;
-  PyObject *__pyx_tuple__49;
-  PyObject *__pyx_codeobj__11;
-  PyObject *__pyx_codeobj__13;
-  PyObject *__pyx_codeobj__16;
-  PyObject *__pyx_codeobj__18;
+  PyObject *__pyx_tuple__16;
+  PyObject *__pyx_tuple__18;
+  PyObject *__pyx_tuple__22;
+  PyObject *__pyx_tuple__27;
+  PyObject *__pyx_tuple__32;
+  PyObject *__pyx_tuple__37;
+  PyObject *__pyx_tuple__42;
+  PyObject *__pyx_tuple__47;
+  PyObject *__pyx_tuple__52;
+  PyObject *__pyx_tuple__55;
+  PyObject *__pyx_codeobj__12;
+  PyObject *__pyx_codeobj__14;
+  PyObject *__pyx_codeobj__17;
   PyObject *__pyx_codeobj__19;
   PyObject *__pyx_codeobj__20;
-  PyObject *__pyx_codeobj__22;
+  PyObject *__pyx_codeobj__21;
   PyObject *__pyx_codeobj__23;
   PyObject *__pyx_codeobj__24;
   PyObject *__pyx_codeobj__25;
-  PyObject *__pyx_codeobj__27;
+  PyObject *__pyx_codeobj__26;
   PyObject *__pyx_codeobj__28;
   PyObject *__pyx_codeobj__29;
   PyObject *__pyx_codeobj__30;
-  PyObject *__pyx_codeobj__32;
+  PyObject *__pyx_codeobj__31;
   PyObject *__pyx_codeobj__33;
   PyObject *__pyx_codeobj__34;
   PyObject *__pyx_codeobj__35;
-  PyObject *__pyx_codeobj__37;
+  PyObject *__pyx_codeobj__36;
   PyObject *__pyx_codeobj__38;
   PyObject *__pyx_codeobj__39;
   PyObject *__pyx_codeobj__40;
-  PyObject *__pyx_codeobj__42;
+  PyObject *__pyx_codeobj__41;
   PyObject *__pyx_codeobj__43;
   PyObject *__pyx_codeobj__44;
   PyObject *__pyx_codeobj__45;
-  PyObject *__pyx_codeobj__47;
+  PyObject *__pyx_codeobj__46;
   PyObject *__pyx_codeobj__48;
+  PyObject *__pyx_codeobj__49;
   PyObject *__pyx_codeobj__50;
   PyObject *__pyx_codeobj__51;
-  PyObject *__pyx_codeobj__52;
   PyObject *__pyx_codeobj__53;
   PyObject *__pyx_codeobj__54;
-  PyObject *__pyx_codeobj__55;
   PyObject *__pyx_codeobj__56;
+  PyObject *__pyx_codeobj__57;
+  PyObject *__pyx_codeobj__58;
+  PyObject *__pyx_codeobj__59;
+  PyObject *__pyx_codeobj__60;
+  PyObject *__pyx_codeobj__61;
+  PyObject *__pyx_codeobj__62;
+  PyObject *__pyx_codeobj__63;
 } __pyx_mstate;
 
 #if CYTHON_USE_MODULE_STATE
@@ -3229,6 +3359,8 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_type_12bunnybackend_5types_VideoStream);
   Py_CLEAR(clear_module_state->__pyx_ptype_12bunnybackend_5types_PlayerModel);
   Py_CLEAR(clear_module_state->__pyx_type_12bunnybackend_5types_PlayerModel);
+  Py_CLEAR(clear_module_state->__pyx_ptype_12bunnybackend_5types_StreamPlay);
+  Py_CLEAR(clear_module_state->__pyx_type_12bunnybackend_5types_StreamPlay);
   Py_CLEAR(clear_module_state->__pyx_kp_u_);
   Py_CLEAR(clear_module_state->__pyx_n_s_COMPILED_WITH_ASSERTIONS);
   Py_CLEAR(clear_module_state->__pyx_n_s_Decimal);
@@ -3244,6 +3376,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_5);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_6);
   Py_CLEAR(clear_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_7);
+  Py_CLEAR(clear_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_8);
   Py_CLEAR(clear_module_state->__pyx_n_s_PickleError);
   Py_CLEAR(clear_module_state->__pyx_n_s_PlayerModel);
   Py_CLEAR(clear_module_state->__pyx_n_s_PlayerModel___reduce_cython);
@@ -3255,6 +3388,11 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_RefreshVideoLibrary___setstate_c);
   Py_CLEAR(clear_module_state->__pyx_n_s_RefreshVideoLibrary_from_dict);
   Py_CLEAR(clear_module_state->__pyx_n_s_RefreshVideoLibrary_to_dict);
+  Py_CLEAR(clear_module_state->__pyx_n_s_StreamPlay);
+  Py_CLEAR(clear_module_state->__pyx_n_s_StreamPlay___reduce_cython);
+  Py_CLEAR(clear_module_state->__pyx_n_s_StreamPlay___setstate_cython);
+  Py_CLEAR(clear_module_state->__pyx_n_s_StreamPlay_from_dict);
+  Py_CLEAR(clear_module_state->__pyx_n_s_StreamPlay_to_dict);
   Py_CLEAR(clear_module_state->__pyx_n_s_Video);
   Py_CLEAR(clear_module_state->__pyx_n_s_VideoAPI);
   Py_CLEAR(clear_module_state->__pyx_n_s_VideoAPI___reduce_cython);
@@ -3276,7 +3414,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_Video_from_dict);
   Py_CLEAR(clear_module_state->__pyx_n_s_Video_to_dict);
   Py_CLEAR(clear_module_state->__pyx_kp_u__3);
-  Py_CLEAR(clear_module_state->__pyx_n_s__57);
+  Py_CLEAR(clear_module_state->__pyx_n_s__64);
   Py_CLEAR(clear_module_state->__pyx_n_s_api_key);
   Py_CLEAR(clear_module_state->__pyx_n_u_api_key);
   Py_CLEAR(clear_module_state->__pyx_kp_u_api_key_2);
@@ -3290,6 +3428,9 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_u_captions_path);
   Py_CLEAR(clear_module_state->__pyx_kp_u_captions_path_2);
   Py_CLEAR(clear_module_state->__pyx_n_s_cline_in_traceback);
+  Py_CLEAR(clear_module_state->__pyx_n_s_console);
+  Py_CLEAR(clear_module_state->__pyx_n_u_console);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_console_2);
   Py_CLEAR(clear_module_state->__pyx_n_s_data);
   Py_CLEAR(clear_module_state->__pyx_n_s_date_created);
   Py_CLEAR(clear_module_state->__pyx_n_u_date_created);
@@ -3306,6 +3447,12 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_encode_process);
   Py_CLEAR(clear_module_state->__pyx_n_u_encode_process);
   Py_CLEAR(clear_module_state->__pyx_kp_u_encode_process_2);
+  Py_CLEAR(clear_module_state->__pyx_n_s_error);
+  Py_CLEAR(clear_module_state->__pyx_n_u_error);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_error_2);
+  Py_CLEAR(clear_module_state->__pyx_n_s_exception);
+  Py_CLEAR(clear_module_state->__pyx_n_u_exception);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_exception_2);
   Py_CLEAR(clear_module_state->__pyx_n_s_fallback_url);
   Py_CLEAR(clear_module_state->__pyx_n_u_fallback_url);
   Py_CLEAR(clear_module_state->__pyx_kp_u_fallback_url_2);
@@ -3325,6 +3472,12 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_is_coroutine);
   Py_CLEAR(clear_module_state->__pyx_kp_u_isenabled);
   Py_CLEAR(clear_module_state->__pyx_n_s_items);
+  Py_CLEAR(clear_module_state->__pyx_n_s_iter);
+  Py_CLEAR(clear_module_state->__pyx_n_u_iter);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_iter_2);
+  Py_CLEAR(clear_module_state->__pyx_n_s_library);
+  Py_CLEAR(clear_module_state->__pyx_n_u_library);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_library_2);
   Py_CLEAR(clear_module_state->__pyx_n_s_main);
   Py_CLEAR(clear_module_state->__pyx_n_s_name);
   Py_CLEAR(clear_module_state->__pyx_n_u_name);
@@ -3345,6 +3498,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_pyx_unpickle_Flow);
   Py_CLEAR(clear_module_state->__pyx_n_s_pyx_unpickle_PlayerModel);
   Py_CLEAR(clear_module_state->__pyx_n_s_pyx_unpickle_RefreshVideoLibra);
+  Py_CLEAR(clear_module_state->__pyx_n_s_pyx_unpickle_StreamPlay);
   Py_CLEAR(clear_module_state->__pyx_n_s_pyx_unpickle_Video);
   Py_CLEAR(clear_module_state->__pyx_n_s_pyx_unpickle_VideoAPI);
   Py_CLEAR(clear_module_state->__pyx_n_s_pyx_unpickle_VideoLibraryAPI);
@@ -3359,6 +3513,9 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_reduce_ex);
   Py_CLEAR(clear_module_state->__pyx_n_s_repr);
   Py_CLEAR(clear_module_state->__pyx_n_s_return);
+  Py_CLEAR(clear_module_state->__pyx_n_s_screenshot);
+  Py_CLEAR(clear_module_state->__pyx_n_u_screenshot);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_screenshot_2);
   Py_CLEAR(clear_module_state->__pyx_n_s_seek_path);
   Py_CLEAR(clear_module_state->__pyx_n_u_seek_path);
   Py_CLEAR(clear_module_state->__pyx_kp_u_seek_path_2);
@@ -3380,6 +3537,7 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_n_s_stream);
   Py_CLEAR(clear_module_state->__pyx_n_u_stream);
   Py_CLEAR(clear_module_state->__pyx_kp_u_stream_2);
+  Py_CLEAR(clear_module_state->__pyx_kp_u_stream_3);
   Py_CLEAR(clear_module_state->__pyx_kp_s_stringsource);
   Py_CLEAR(clear_module_state->__pyx_n_s_test);
   Py_CLEAR(clear_module_state->__pyx_n_s_thumbnail_path);
@@ -3408,23 +3566,26 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_kp_u_views_2);
   Py_CLEAR(clear_module_state->__pyx_int_17670018);
   Py_CLEAR(clear_module_state->__pyx_int_19903718);
-  Py_CLEAR(clear_module_state->__pyx_int_33988418);
-  Py_CLEAR(clear_module_state->__pyx_int_80822764);
   Py_CLEAR(clear_module_state->__pyx_int_81172964);
+  Py_CLEAR(clear_module_state->__pyx_int_86024096);
   Py_CLEAR(clear_module_state->__pyx_int_102019370);
   Py_CLEAR(clear_module_state->__pyx_int_110783672);
+  Py_CLEAR(clear_module_state->__pyx_int_125239414);
   Py_CLEAR(clear_module_state->__pyx_int_129110818);
   Py_CLEAR(clear_module_state->__pyx_int_149218237);
+  Py_CLEAR(clear_module_state->__pyx_int_151034427);
+  Py_CLEAR(clear_module_state->__pyx_int_164099035);
   Py_CLEAR(clear_module_state->__pyx_int_165026440);
   Py_CLEAR(clear_module_state->__pyx_int_171932554);
   Py_CLEAR(clear_module_state->__pyx_int_176929229);
+  Py_CLEAR(clear_module_state->__pyx_int_181302522);
   Py_CLEAR(clear_module_state->__pyx_int_189722331);
   Py_CLEAR(clear_module_state->__pyx_int_196358553);
+  Py_CLEAR(clear_module_state->__pyx_int_196483453);
   Py_CLEAR(clear_module_state->__pyx_int_206561686);
   Py_CLEAR(clear_module_state->__pyx_int_210659880);
   Py_CLEAR(clear_module_state->__pyx_int_211517880);
   Py_CLEAR(clear_module_state->__pyx_int_235285953);
-  Py_CLEAR(clear_module_state->__pyx_int_237166167);
   Py_CLEAR(clear_module_state->__pyx_int_244845213);
   Py_CLEAR(clear_module_state->__pyx_int_258107949);
   Py_CLEAR(clear_module_state->__pyx_tuple__2);
@@ -3435,52 +3596,59 @@ static int __pyx_m_clear(PyObject *m) {
   Py_CLEAR(clear_module_state->__pyx_tuple__8);
   Py_CLEAR(clear_module_state->__pyx_tuple__9);
   Py_CLEAR(clear_module_state->__pyx_tuple__10);
-  Py_CLEAR(clear_module_state->__pyx_tuple__12);
-  Py_CLEAR(clear_module_state->__pyx_tuple__14);
+  Py_CLEAR(clear_module_state->__pyx_tuple__11);
+  Py_CLEAR(clear_module_state->__pyx_tuple__13);
   Py_CLEAR(clear_module_state->__pyx_tuple__15);
-  Py_CLEAR(clear_module_state->__pyx_tuple__17);
-  Py_CLEAR(clear_module_state->__pyx_tuple__21);
-  Py_CLEAR(clear_module_state->__pyx_tuple__26);
-  Py_CLEAR(clear_module_state->__pyx_tuple__31);
-  Py_CLEAR(clear_module_state->__pyx_tuple__36);
-  Py_CLEAR(clear_module_state->__pyx_tuple__41);
-  Py_CLEAR(clear_module_state->__pyx_tuple__46);
-  Py_CLEAR(clear_module_state->__pyx_tuple__49);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__11);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__13);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__16);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__18);
+  Py_CLEAR(clear_module_state->__pyx_tuple__16);
+  Py_CLEAR(clear_module_state->__pyx_tuple__18);
+  Py_CLEAR(clear_module_state->__pyx_tuple__22);
+  Py_CLEAR(clear_module_state->__pyx_tuple__27);
+  Py_CLEAR(clear_module_state->__pyx_tuple__32);
+  Py_CLEAR(clear_module_state->__pyx_tuple__37);
+  Py_CLEAR(clear_module_state->__pyx_tuple__42);
+  Py_CLEAR(clear_module_state->__pyx_tuple__47);
+  Py_CLEAR(clear_module_state->__pyx_tuple__52);
+  Py_CLEAR(clear_module_state->__pyx_tuple__55);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__12);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__14);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__17);
   Py_CLEAR(clear_module_state->__pyx_codeobj__19);
   Py_CLEAR(clear_module_state->__pyx_codeobj__20);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__22);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__21);
   Py_CLEAR(clear_module_state->__pyx_codeobj__23);
   Py_CLEAR(clear_module_state->__pyx_codeobj__24);
   Py_CLEAR(clear_module_state->__pyx_codeobj__25);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__27);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__26);
   Py_CLEAR(clear_module_state->__pyx_codeobj__28);
   Py_CLEAR(clear_module_state->__pyx_codeobj__29);
   Py_CLEAR(clear_module_state->__pyx_codeobj__30);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__32);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__31);
   Py_CLEAR(clear_module_state->__pyx_codeobj__33);
   Py_CLEAR(clear_module_state->__pyx_codeobj__34);
   Py_CLEAR(clear_module_state->__pyx_codeobj__35);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__37);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__36);
   Py_CLEAR(clear_module_state->__pyx_codeobj__38);
   Py_CLEAR(clear_module_state->__pyx_codeobj__39);
   Py_CLEAR(clear_module_state->__pyx_codeobj__40);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__42);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__41);
   Py_CLEAR(clear_module_state->__pyx_codeobj__43);
   Py_CLEAR(clear_module_state->__pyx_codeobj__44);
   Py_CLEAR(clear_module_state->__pyx_codeobj__45);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__47);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__46);
   Py_CLEAR(clear_module_state->__pyx_codeobj__48);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__49);
   Py_CLEAR(clear_module_state->__pyx_codeobj__50);
   Py_CLEAR(clear_module_state->__pyx_codeobj__51);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__52);
   Py_CLEAR(clear_module_state->__pyx_codeobj__53);
   Py_CLEAR(clear_module_state->__pyx_codeobj__54);
-  Py_CLEAR(clear_module_state->__pyx_codeobj__55);
   Py_CLEAR(clear_module_state->__pyx_codeobj__56);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__57);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__58);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__59);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__60);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__61);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__62);
+  Py_CLEAR(clear_module_state->__pyx_codeobj__63);
   return 0;
 }
 #endif
@@ -3515,6 +3683,8 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_type_12bunnybackend_5types_VideoStream);
   Py_VISIT(traverse_module_state->__pyx_ptype_12bunnybackend_5types_PlayerModel);
   Py_VISIT(traverse_module_state->__pyx_type_12bunnybackend_5types_PlayerModel);
+  Py_VISIT(traverse_module_state->__pyx_ptype_12bunnybackend_5types_StreamPlay);
+  Py_VISIT(traverse_module_state->__pyx_type_12bunnybackend_5types_StreamPlay);
   Py_VISIT(traverse_module_state->__pyx_kp_u_);
   Py_VISIT(traverse_module_state->__pyx_n_s_COMPILED_WITH_ASSERTIONS);
   Py_VISIT(traverse_module_state->__pyx_n_s_Decimal);
@@ -3530,6 +3700,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_5);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_6);
   Py_VISIT(traverse_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_7);
+  Py_VISIT(traverse_module_state->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_8);
   Py_VISIT(traverse_module_state->__pyx_n_s_PickleError);
   Py_VISIT(traverse_module_state->__pyx_n_s_PlayerModel);
   Py_VISIT(traverse_module_state->__pyx_n_s_PlayerModel___reduce_cython);
@@ -3541,6 +3712,11 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_RefreshVideoLibrary___setstate_c);
   Py_VISIT(traverse_module_state->__pyx_n_s_RefreshVideoLibrary_from_dict);
   Py_VISIT(traverse_module_state->__pyx_n_s_RefreshVideoLibrary_to_dict);
+  Py_VISIT(traverse_module_state->__pyx_n_s_StreamPlay);
+  Py_VISIT(traverse_module_state->__pyx_n_s_StreamPlay___reduce_cython);
+  Py_VISIT(traverse_module_state->__pyx_n_s_StreamPlay___setstate_cython);
+  Py_VISIT(traverse_module_state->__pyx_n_s_StreamPlay_from_dict);
+  Py_VISIT(traverse_module_state->__pyx_n_s_StreamPlay_to_dict);
   Py_VISIT(traverse_module_state->__pyx_n_s_Video);
   Py_VISIT(traverse_module_state->__pyx_n_s_VideoAPI);
   Py_VISIT(traverse_module_state->__pyx_n_s_VideoAPI___reduce_cython);
@@ -3562,7 +3738,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_Video_from_dict);
   Py_VISIT(traverse_module_state->__pyx_n_s_Video_to_dict);
   Py_VISIT(traverse_module_state->__pyx_kp_u__3);
-  Py_VISIT(traverse_module_state->__pyx_n_s__57);
+  Py_VISIT(traverse_module_state->__pyx_n_s__64);
   Py_VISIT(traverse_module_state->__pyx_n_s_api_key);
   Py_VISIT(traverse_module_state->__pyx_n_u_api_key);
   Py_VISIT(traverse_module_state->__pyx_kp_u_api_key_2);
@@ -3576,6 +3752,9 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_u_captions_path);
   Py_VISIT(traverse_module_state->__pyx_kp_u_captions_path_2);
   Py_VISIT(traverse_module_state->__pyx_n_s_cline_in_traceback);
+  Py_VISIT(traverse_module_state->__pyx_n_s_console);
+  Py_VISIT(traverse_module_state->__pyx_n_u_console);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_console_2);
   Py_VISIT(traverse_module_state->__pyx_n_s_data);
   Py_VISIT(traverse_module_state->__pyx_n_s_date_created);
   Py_VISIT(traverse_module_state->__pyx_n_u_date_created);
@@ -3592,6 +3771,12 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_encode_process);
   Py_VISIT(traverse_module_state->__pyx_n_u_encode_process);
   Py_VISIT(traverse_module_state->__pyx_kp_u_encode_process_2);
+  Py_VISIT(traverse_module_state->__pyx_n_s_error);
+  Py_VISIT(traverse_module_state->__pyx_n_u_error);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_error_2);
+  Py_VISIT(traverse_module_state->__pyx_n_s_exception);
+  Py_VISIT(traverse_module_state->__pyx_n_u_exception);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_exception_2);
   Py_VISIT(traverse_module_state->__pyx_n_s_fallback_url);
   Py_VISIT(traverse_module_state->__pyx_n_u_fallback_url);
   Py_VISIT(traverse_module_state->__pyx_kp_u_fallback_url_2);
@@ -3611,6 +3796,12 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_is_coroutine);
   Py_VISIT(traverse_module_state->__pyx_kp_u_isenabled);
   Py_VISIT(traverse_module_state->__pyx_n_s_items);
+  Py_VISIT(traverse_module_state->__pyx_n_s_iter);
+  Py_VISIT(traverse_module_state->__pyx_n_u_iter);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_iter_2);
+  Py_VISIT(traverse_module_state->__pyx_n_s_library);
+  Py_VISIT(traverse_module_state->__pyx_n_u_library);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_library_2);
   Py_VISIT(traverse_module_state->__pyx_n_s_main);
   Py_VISIT(traverse_module_state->__pyx_n_s_name);
   Py_VISIT(traverse_module_state->__pyx_n_u_name);
@@ -3631,6 +3822,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_pyx_unpickle_Flow);
   Py_VISIT(traverse_module_state->__pyx_n_s_pyx_unpickle_PlayerModel);
   Py_VISIT(traverse_module_state->__pyx_n_s_pyx_unpickle_RefreshVideoLibra);
+  Py_VISIT(traverse_module_state->__pyx_n_s_pyx_unpickle_StreamPlay);
   Py_VISIT(traverse_module_state->__pyx_n_s_pyx_unpickle_Video);
   Py_VISIT(traverse_module_state->__pyx_n_s_pyx_unpickle_VideoAPI);
   Py_VISIT(traverse_module_state->__pyx_n_s_pyx_unpickle_VideoLibraryAPI);
@@ -3645,6 +3837,9 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_reduce_ex);
   Py_VISIT(traverse_module_state->__pyx_n_s_repr);
   Py_VISIT(traverse_module_state->__pyx_n_s_return);
+  Py_VISIT(traverse_module_state->__pyx_n_s_screenshot);
+  Py_VISIT(traverse_module_state->__pyx_n_u_screenshot);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_screenshot_2);
   Py_VISIT(traverse_module_state->__pyx_n_s_seek_path);
   Py_VISIT(traverse_module_state->__pyx_n_u_seek_path);
   Py_VISIT(traverse_module_state->__pyx_kp_u_seek_path_2);
@@ -3666,6 +3861,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_n_s_stream);
   Py_VISIT(traverse_module_state->__pyx_n_u_stream);
   Py_VISIT(traverse_module_state->__pyx_kp_u_stream_2);
+  Py_VISIT(traverse_module_state->__pyx_kp_u_stream_3);
   Py_VISIT(traverse_module_state->__pyx_kp_s_stringsource);
   Py_VISIT(traverse_module_state->__pyx_n_s_test);
   Py_VISIT(traverse_module_state->__pyx_n_s_thumbnail_path);
@@ -3694,23 +3890,26 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_kp_u_views_2);
   Py_VISIT(traverse_module_state->__pyx_int_17670018);
   Py_VISIT(traverse_module_state->__pyx_int_19903718);
-  Py_VISIT(traverse_module_state->__pyx_int_33988418);
-  Py_VISIT(traverse_module_state->__pyx_int_80822764);
   Py_VISIT(traverse_module_state->__pyx_int_81172964);
+  Py_VISIT(traverse_module_state->__pyx_int_86024096);
   Py_VISIT(traverse_module_state->__pyx_int_102019370);
   Py_VISIT(traverse_module_state->__pyx_int_110783672);
+  Py_VISIT(traverse_module_state->__pyx_int_125239414);
   Py_VISIT(traverse_module_state->__pyx_int_129110818);
   Py_VISIT(traverse_module_state->__pyx_int_149218237);
+  Py_VISIT(traverse_module_state->__pyx_int_151034427);
+  Py_VISIT(traverse_module_state->__pyx_int_164099035);
   Py_VISIT(traverse_module_state->__pyx_int_165026440);
   Py_VISIT(traverse_module_state->__pyx_int_171932554);
   Py_VISIT(traverse_module_state->__pyx_int_176929229);
+  Py_VISIT(traverse_module_state->__pyx_int_181302522);
   Py_VISIT(traverse_module_state->__pyx_int_189722331);
   Py_VISIT(traverse_module_state->__pyx_int_196358553);
+  Py_VISIT(traverse_module_state->__pyx_int_196483453);
   Py_VISIT(traverse_module_state->__pyx_int_206561686);
   Py_VISIT(traverse_module_state->__pyx_int_210659880);
   Py_VISIT(traverse_module_state->__pyx_int_211517880);
   Py_VISIT(traverse_module_state->__pyx_int_235285953);
-  Py_VISIT(traverse_module_state->__pyx_int_237166167);
   Py_VISIT(traverse_module_state->__pyx_int_244845213);
   Py_VISIT(traverse_module_state->__pyx_int_258107949);
   Py_VISIT(traverse_module_state->__pyx_tuple__2);
@@ -3721,52 +3920,59 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
   Py_VISIT(traverse_module_state->__pyx_tuple__8);
   Py_VISIT(traverse_module_state->__pyx_tuple__9);
   Py_VISIT(traverse_module_state->__pyx_tuple__10);
-  Py_VISIT(traverse_module_state->__pyx_tuple__12);
-  Py_VISIT(traverse_module_state->__pyx_tuple__14);
+  Py_VISIT(traverse_module_state->__pyx_tuple__11);
+  Py_VISIT(traverse_module_state->__pyx_tuple__13);
   Py_VISIT(traverse_module_state->__pyx_tuple__15);
-  Py_VISIT(traverse_module_state->__pyx_tuple__17);
-  Py_VISIT(traverse_module_state->__pyx_tuple__21);
-  Py_VISIT(traverse_module_state->__pyx_tuple__26);
-  Py_VISIT(traverse_module_state->__pyx_tuple__31);
-  Py_VISIT(traverse_module_state->__pyx_tuple__36);
-  Py_VISIT(traverse_module_state->__pyx_tuple__41);
-  Py_VISIT(traverse_module_state->__pyx_tuple__46);
-  Py_VISIT(traverse_module_state->__pyx_tuple__49);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__11);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__13);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__16);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__18);
+  Py_VISIT(traverse_module_state->__pyx_tuple__16);
+  Py_VISIT(traverse_module_state->__pyx_tuple__18);
+  Py_VISIT(traverse_module_state->__pyx_tuple__22);
+  Py_VISIT(traverse_module_state->__pyx_tuple__27);
+  Py_VISIT(traverse_module_state->__pyx_tuple__32);
+  Py_VISIT(traverse_module_state->__pyx_tuple__37);
+  Py_VISIT(traverse_module_state->__pyx_tuple__42);
+  Py_VISIT(traverse_module_state->__pyx_tuple__47);
+  Py_VISIT(traverse_module_state->__pyx_tuple__52);
+  Py_VISIT(traverse_module_state->__pyx_tuple__55);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__12);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__14);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__17);
   Py_VISIT(traverse_module_state->__pyx_codeobj__19);
   Py_VISIT(traverse_module_state->__pyx_codeobj__20);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__22);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__21);
   Py_VISIT(traverse_module_state->__pyx_codeobj__23);
   Py_VISIT(traverse_module_state->__pyx_codeobj__24);
   Py_VISIT(traverse_module_state->__pyx_codeobj__25);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__27);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__26);
   Py_VISIT(traverse_module_state->__pyx_codeobj__28);
   Py_VISIT(traverse_module_state->__pyx_codeobj__29);
   Py_VISIT(traverse_module_state->__pyx_codeobj__30);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__32);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__31);
   Py_VISIT(traverse_module_state->__pyx_codeobj__33);
   Py_VISIT(traverse_module_state->__pyx_codeobj__34);
   Py_VISIT(traverse_module_state->__pyx_codeobj__35);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__37);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__36);
   Py_VISIT(traverse_module_state->__pyx_codeobj__38);
   Py_VISIT(traverse_module_state->__pyx_codeobj__39);
   Py_VISIT(traverse_module_state->__pyx_codeobj__40);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__42);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__41);
   Py_VISIT(traverse_module_state->__pyx_codeobj__43);
   Py_VISIT(traverse_module_state->__pyx_codeobj__44);
   Py_VISIT(traverse_module_state->__pyx_codeobj__45);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__47);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__46);
   Py_VISIT(traverse_module_state->__pyx_codeobj__48);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__49);
   Py_VISIT(traverse_module_state->__pyx_codeobj__50);
   Py_VISIT(traverse_module_state->__pyx_codeobj__51);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__52);
   Py_VISIT(traverse_module_state->__pyx_codeobj__53);
   Py_VISIT(traverse_module_state->__pyx_codeobj__54);
-  Py_VISIT(traverse_module_state->__pyx_codeobj__55);
   Py_VISIT(traverse_module_state->__pyx_codeobj__56);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__57);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__58);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__59);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__60);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__61);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__62);
+  Py_VISIT(traverse_module_state->__pyx_codeobj__63);
   return 0;
 }
 #endif
@@ -3805,6 +4011,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_type_12bunnybackend_5types_VideoAPI __pyx_mstate_global->__pyx_type_12bunnybackend_5types_VideoAPI
 #define __pyx_type_12bunnybackend_5types_VideoStream __pyx_mstate_global->__pyx_type_12bunnybackend_5types_VideoStream
 #define __pyx_type_12bunnybackend_5types_PlayerModel __pyx_mstate_global->__pyx_type_12bunnybackend_5types_PlayerModel
+#define __pyx_type_12bunnybackend_5types_StreamPlay __pyx_mstate_global->__pyx_type_12bunnybackend_5types_StreamPlay
 #endif
 #define __pyx_ptype_12bunnybackend_5types_RefreshVideoLibrary __pyx_mstate_global->__pyx_ptype_12bunnybackend_5types_RefreshVideoLibrary
 #define __pyx_ptype_12bunnybackend_5types_VideoLibraryAPI __pyx_mstate_global->__pyx_ptype_12bunnybackend_5types_VideoLibraryAPI
@@ -3813,6 +4020,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_ptype_12bunnybackend_5types_VideoAPI __pyx_mstate_global->__pyx_ptype_12bunnybackend_5types_VideoAPI
 #define __pyx_ptype_12bunnybackend_5types_VideoStream __pyx_mstate_global->__pyx_ptype_12bunnybackend_5types_VideoStream
 #define __pyx_ptype_12bunnybackend_5types_PlayerModel __pyx_mstate_global->__pyx_ptype_12bunnybackend_5types_PlayerModel
+#define __pyx_ptype_12bunnybackend_5types_StreamPlay __pyx_mstate_global->__pyx_ptype_12bunnybackend_5types_StreamPlay
 #define __pyx_kp_u_ __pyx_mstate_global->__pyx_kp_u_
 #define __pyx_n_s_COMPILED_WITH_ASSERTIONS __pyx_mstate_global->__pyx_n_s_COMPILED_WITH_ASSERTIONS
 #define __pyx_n_s_Decimal __pyx_mstate_global->__pyx_n_s_Decimal
@@ -3828,6 +4036,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_s_Incompatible_checksums_0x_x_vs_0_5 __pyx_mstate_global->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_5
 #define __pyx_kp_s_Incompatible_checksums_0x_x_vs_0_6 __pyx_mstate_global->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_6
 #define __pyx_kp_s_Incompatible_checksums_0x_x_vs_0_7 __pyx_mstate_global->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_7
+#define __pyx_kp_s_Incompatible_checksums_0x_x_vs_0_8 __pyx_mstate_global->__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_8
 #define __pyx_n_s_PickleError __pyx_mstate_global->__pyx_n_s_PickleError
 #define __pyx_n_s_PlayerModel __pyx_mstate_global->__pyx_n_s_PlayerModel
 #define __pyx_n_s_PlayerModel___reduce_cython __pyx_mstate_global->__pyx_n_s_PlayerModel___reduce_cython
@@ -3839,6 +4048,11 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_RefreshVideoLibrary___setstate_c __pyx_mstate_global->__pyx_n_s_RefreshVideoLibrary___setstate_c
 #define __pyx_n_s_RefreshVideoLibrary_from_dict __pyx_mstate_global->__pyx_n_s_RefreshVideoLibrary_from_dict
 #define __pyx_n_s_RefreshVideoLibrary_to_dict __pyx_mstate_global->__pyx_n_s_RefreshVideoLibrary_to_dict
+#define __pyx_n_s_StreamPlay __pyx_mstate_global->__pyx_n_s_StreamPlay
+#define __pyx_n_s_StreamPlay___reduce_cython __pyx_mstate_global->__pyx_n_s_StreamPlay___reduce_cython
+#define __pyx_n_s_StreamPlay___setstate_cython __pyx_mstate_global->__pyx_n_s_StreamPlay___setstate_cython
+#define __pyx_n_s_StreamPlay_from_dict __pyx_mstate_global->__pyx_n_s_StreamPlay_from_dict
+#define __pyx_n_s_StreamPlay_to_dict __pyx_mstate_global->__pyx_n_s_StreamPlay_to_dict
 #define __pyx_n_s_Video __pyx_mstate_global->__pyx_n_s_Video
 #define __pyx_n_s_VideoAPI __pyx_mstate_global->__pyx_n_s_VideoAPI
 #define __pyx_n_s_VideoAPI___reduce_cython __pyx_mstate_global->__pyx_n_s_VideoAPI___reduce_cython
@@ -3860,7 +4074,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_Video_from_dict __pyx_mstate_global->__pyx_n_s_Video_from_dict
 #define __pyx_n_s_Video_to_dict __pyx_mstate_global->__pyx_n_s_Video_to_dict
 #define __pyx_kp_u__3 __pyx_mstate_global->__pyx_kp_u__3
-#define __pyx_n_s__57 __pyx_mstate_global->__pyx_n_s__57
+#define __pyx_n_s__64 __pyx_mstate_global->__pyx_n_s__64
 #define __pyx_n_s_api_key __pyx_mstate_global->__pyx_n_s_api_key
 #define __pyx_n_u_api_key __pyx_mstate_global->__pyx_n_u_api_key
 #define __pyx_kp_u_api_key_2 __pyx_mstate_global->__pyx_kp_u_api_key_2
@@ -3874,6 +4088,9 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_u_captions_path __pyx_mstate_global->__pyx_n_u_captions_path
 #define __pyx_kp_u_captions_path_2 __pyx_mstate_global->__pyx_kp_u_captions_path_2
 #define __pyx_n_s_cline_in_traceback __pyx_mstate_global->__pyx_n_s_cline_in_traceback
+#define __pyx_n_s_console __pyx_mstate_global->__pyx_n_s_console
+#define __pyx_n_u_console __pyx_mstate_global->__pyx_n_u_console
+#define __pyx_kp_u_console_2 __pyx_mstate_global->__pyx_kp_u_console_2
 #define __pyx_n_s_data __pyx_mstate_global->__pyx_n_s_data
 #define __pyx_n_s_date_created __pyx_mstate_global->__pyx_n_s_date_created
 #define __pyx_n_u_date_created __pyx_mstate_global->__pyx_n_u_date_created
@@ -3890,6 +4107,12 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_encode_process __pyx_mstate_global->__pyx_n_s_encode_process
 #define __pyx_n_u_encode_process __pyx_mstate_global->__pyx_n_u_encode_process
 #define __pyx_kp_u_encode_process_2 __pyx_mstate_global->__pyx_kp_u_encode_process_2
+#define __pyx_n_s_error __pyx_mstate_global->__pyx_n_s_error
+#define __pyx_n_u_error __pyx_mstate_global->__pyx_n_u_error
+#define __pyx_kp_u_error_2 __pyx_mstate_global->__pyx_kp_u_error_2
+#define __pyx_n_s_exception __pyx_mstate_global->__pyx_n_s_exception
+#define __pyx_n_u_exception __pyx_mstate_global->__pyx_n_u_exception
+#define __pyx_kp_u_exception_2 __pyx_mstate_global->__pyx_kp_u_exception_2
 #define __pyx_n_s_fallback_url __pyx_mstate_global->__pyx_n_s_fallback_url
 #define __pyx_n_u_fallback_url __pyx_mstate_global->__pyx_n_u_fallback_url
 #define __pyx_kp_u_fallback_url_2 __pyx_mstate_global->__pyx_kp_u_fallback_url_2
@@ -3909,6 +4132,12 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_is_coroutine __pyx_mstate_global->__pyx_n_s_is_coroutine
 #define __pyx_kp_u_isenabled __pyx_mstate_global->__pyx_kp_u_isenabled
 #define __pyx_n_s_items __pyx_mstate_global->__pyx_n_s_items
+#define __pyx_n_s_iter __pyx_mstate_global->__pyx_n_s_iter
+#define __pyx_n_u_iter __pyx_mstate_global->__pyx_n_u_iter
+#define __pyx_kp_u_iter_2 __pyx_mstate_global->__pyx_kp_u_iter_2
+#define __pyx_n_s_library __pyx_mstate_global->__pyx_n_s_library
+#define __pyx_n_u_library __pyx_mstate_global->__pyx_n_u_library
+#define __pyx_kp_u_library_2 __pyx_mstate_global->__pyx_kp_u_library_2
 #define __pyx_n_s_main __pyx_mstate_global->__pyx_n_s_main
 #define __pyx_n_s_name __pyx_mstate_global->__pyx_n_s_name
 #define __pyx_n_u_name __pyx_mstate_global->__pyx_n_u_name
@@ -3929,6 +4158,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_pyx_unpickle_Flow __pyx_mstate_global->__pyx_n_s_pyx_unpickle_Flow
 #define __pyx_n_s_pyx_unpickle_PlayerModel __pyx_mstate_global->__pyx_n_s_pyx_unpickle_PlayerModel
 #define __pyx_n_s_pyx_unpickle_RefreshVideoLibra __pyx_mstate_global->__pyx_n_s_pyx_unpickle_RefreshVideoLibra
+#define __pyx_n_s_pyx_unpickle_StreamPlay __pyx_mstate_global->__pyx_n_s_pyx_unpickle_StreamPlay
 #define __pyx_n_s_pyx_unpickle_Video __pyx_mstate_global->__pyx_n_s_pyx_unpickle_Video
 #define __pyx_n_s_pyx_unpickle_VideoAPI __pyx_mstate_global->__pyx_n_s_pyx_unpickle_VideoAPI
 #define __pyx_n_s_pyx_unpickle_VideoLibraryAPI __pyx_mstate_global->__pyx_n_s_pyx_unpickle_VideoLibraryAPI
@@ -3943,6 +4173,9 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_reduce_ex __pyx_mstate_global->__pyx_n_s_reduce_ex
 #define __pyx_n_s_repr __pyx_mstate_global->__pyx_n_s_repr
 #define __pyx_n_s_return __pyx_mstate_global->__pyx_n_s_return
+#define __pyx_n_s_screenshot __pyx_mstate_global->__pyx_n_s_screenshot
+#define __pyx_n_u_screenshot __pyx_mstate_global->__pyx_n_u_screenshot
+#define __pyx_kp_u_screenshot_2 __pyx_mstate_global->__pyx_kp_u_screenshot_2
 #define __pyx_n_s_seek_path __pyx_mstate_global->__pyx_n_s_seek_path
 #define __pyx_n_u_seek_path __pyx_mstate_global->__pyx_n_u_seek_path
 #define __pyx_kp_u_seek_path_2 __pyx_mstate_global->__pyx_kp_u_seek_path_2
@@ -3964,6 +4197,7 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_n_s_stream __pyx_mstate_global->__pyx_n_s_stream
 #define __pyx_n_u_stream __pyx_mstate_global->__pyx_n_u_stream
 #define __pyx_kp_u_stream_2 __pyx_mstate_global->__pyx_kp_u_stream_2
+#define __pyx_kp_u_stream_3 __pyx_mstate_global->__pyx_kp_u_stream_3
 #define __pyx_kp_s_stringsource __pyx_mstate_global->__pyx_kp_s_stringsource
 #define __pyx_n_s_test __pyx_mstate_global->__pyx_n_s_test
 #define __pyx_n_s_thumbnail_path __pyx_mstate_global->__pyx_n_s_thumbnail_path
@@ -3992,23 +4226,26 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_kp_u_views_2 __pyx_mstate_global->__pyx_kp_u_views_2
 #define __pyx_int_17670018 __pyx_mstate_global->__pyx_int_17670018
 #define __pyx_int_19903718 __pyx_mstate_global->__pyx_int_19903718
-#define __pyx_int_33988418 __pyx_mstate_global->__pyx_int_33988418
-#define __pyx_int_80822764 __pyx_mstate_global->__pyx_int_80822764
 #define __pyx_int_81172964 __pyx_mstate_global->__pyx_int_81172964
+#define __pyx_int_86024096 __pyx_mstate_global->__pyx_int_86024096
 #define __pyx_int_102019370 __pyx_mstate_global->__pyx_int_102019370
 #define __pyx_int_110783672 __pyx_mstate_global->__pyx_int_110783672
+#define __pyx_int_125239414 __pyx_mstate_global->__pyx_int_125239414
 #define __pyx_int_129110818 __pyx_mstate_global->__pyx_int_129110818
 #define __pyx_int_149218237 __pyx_mstate_global->__pyx_int_149218237
+#define __pyx_int_151034427 __pyx_mstate_global->__pyx_int_151034427
+#define __pyx_int_164099035 __pyx_mstate_global->__pyx_int_164099035
 #define __pyx_int_165026440 __pyx_mstate_global->__pyx_int_165026440
 #define __pyx_int_171932554 __pyx_mstate_global->__pyx_int_171932554
 #define __pyx_int_176929229 __pyx_mstate_global->__pyx_int_176929229
+#define __pyx_int_181302522 __pyx_mstate_global->__pyx_int_181302522
 #define __pyx_int_189722331 __pyx_mstate_global->__pyx_int_189722331
 #define __pyx_int_196358553 __pyx_mstate_global->__pyx_int_196358553
+#define __pyx_int_196483453 __pyx_mstate_global->__pyx_int_196483453
 #define __pyx_int_206561686 __pyx_mstate_global->__pyx_int_206561686
 #define __pyx_int_210659880 __pyx_mstate_global->__pyx_int_210659880
 #define __pyx_int_211517880 __pyx_mstate_global->__pyx_int_211517880
 #define __pyx_int_235285953 __pyx_mstate_global->__pyx_int_235285953
-#define __pyx_int_237166167 __pyx_mstate_global->__pyx_int_237166167
 #define __pyx_int_244845213 __pyx_mstate_global->__pyx_int_244845213
 #define __pyx_int_258107949 __pyx_mstate_global->__pyx_int_258107949
 #define __pyx_tuple__2 __pyx_mstate_global->__pyx_tuple__2
@@ -4019,52 +4256,59 @@ static int __pyx_m_traverse(PyObject *m, visitproc visit, void *arg) {
 #define __pyx_tuple__8 __pyx_mstate_global->__pyx_tuple__8
 #define __pyx_tuple__9 __pyx_mstate_global->__pyx_tuple__9
 #define __pyx_tuple__10 __pyx_mstate_global->__pyx_tuple__10
-#define __pyx_tuple__12 __pyx_mstate_global->__pyx_tuple__12
-#define __pyx_tuple__14 __pyx_mstate_global->__pyx_tuple__14
+#define __pyx_tuple__11 __pyx_mstate_global->__pyx_tuple__11
+#define __pyx_tuple__13 __pyx_mstate_global->__pyx_tuple__13
 #define __pyx_tuple__15 __pyx_mstate_global->__pyx_tuple__15
-#define __pyx_tuple__17 __pyx_mstate_global->__pyx_tuple__17
-#define __pyx_tuple__21 __pyx_mstate_global->__pyx_tuple__21
-#define __pyx_tuple__26 __pyx_mstate_global->__pyx_tuple__26
-#define __pyx_tuple__31 __pyx_mstate_global->__pyx_tuple__31
-#define __pyx_tuple__36 __pyx_mstate_global->__pyx_tuple__36
-#define __pyx_tuple__41 __pyx_mstate_global->__pyx_tuple__41
-#define __pyx_tuple__46 __pyx_mstate_global->__pyx_tuple__46
-#define __pyx_tuple__49 __pyx_mstate_global->__pyx_tuple__49
-#define __pyx_codeobj__11 __pyx_mstate_global->__pyx_codeobj__11
-#define __pyx_codeobj__13 __pyx_mstate_global->__pyx_codeobj__13
-#define __pyx_codeobj__16 __pyx_mstate_global->__pyx_codeobj__16
-#define __pyx_codeobj__18 __pyx_mstate_global->__pyx_codeobj__18
+#define __pyx_tuple__16 __pyx_mstate_global->__pyx_tuple__16
+#define __pyx_tuple__18 __pyx_mstate_global->__pyx_tuple__18
+#define __pyx_tuple__22 __pyx_mstate_global->__pyx_tuple__22
+#define __pyx_tuple__27 __pyx_mstate_global->__pyx_tuple__27
+#define __pyx_tuple__32 __pyx_mstate_global->__pyx_tuple__32
+#define __pyx_tuple__37 __pyx_mstate_global->__pyx_tuple__37
+#define __pyx_tuple__42 __pyx_mstate_global->__pyx_tuple__42
+#define __pyx_tuple__47 __pyx_mstate_global->__pyx_tuple__47
+#define __pyx_tuple__52 __pyx_mstate_global->__pyx_tuple__52
+#define __pyx_tuple__55 __pyx_mstate_global->__pyx_tuple__55
+#define __pyx_codeobj__12 __pyx_mstate_global->__pyx_codeobj__12
+#define __pyx_codeobj__14 __pyx_mstate_global->__pyx_codeobj__14
+#define __pyx_codeobj__17 __pyx_mstate_global->__pyx_codeobj__17
 #define __pyx_codeobj__19 __pyx_mstate_global->__pyx_codeobj__19
 #define __pyx_codeobj__20 __pyx_mstate_global->__pyx_codeobj__20
-#define __pyx_codeobj__22 __pyx_mstate_global->__pyx_codeobj__22
+#define __pyx_codeobj__21 __pyx_mstate_global->__pyx_codeobj__21
 #define __pyx_codeobj__23 __pyx_mstate_global->__pyx_codeobj__23
 #define __pyx_codeobj__24 __pyx_mstate_global->__pyx_codeobj__24
 #define __pyx_codeobj__25 __pyx_mstate_global->__pyx_codeobj__25
-#define __pyx_codeobj__27 __pyx_mstate_global->__pyx_codeobj__27
+#define __pyx_codeobj__26 __pyx_mstate_global->__pyx_codeobj__26
 #define __pyx_codeobj__28 __pyx_mstate_global->__pyx_codeobj__28
 #define __pyx_codeobj__29 __pyx_mstate_global->__pyx_codeobj__29
 #define __pyx_codeobj__30 __pyx_mstate_global->__pyx_codeobj__30
-#define __pyx_codeobj__32 __pyx_mstate_global->__pyx_codeobj__32
+#define __pyx_codeobj__31 __pyx_mstate_global->__pyx_codeobj__31
 #define __pyx_codeobj__33 __pyx_mstate_global->__pyx_codeobj__33
 #define __pyx_codeobj__34 __pyx_mstate_global->__pyx_codeobj__34
 #define __pyx_codeobj__35 __pyx_mstate_global->__pyx_codeobj__35
-#define __pyx_codeobj__37 __pyx_mstate_global->__pyx_codeobj__37
+#define __pyx_codeobj__36 __pyx_mstate_global->__pyx_codeobj__36
 #define __pyx_codeobj__38 __pyx_mstate_global->__pyx_codeobj__38
 #define __pyx_codeobj__39 __pyx_mstate_global->__pyx_codeobj__39
 #define __pyx_codeobj__40 __pyx_mstate_global->__pyx_codeobj__40
-#define __pyx_codeobj__42 __pyx_mstate_global->__pyx_codeobj__42
+#define __pyx_codeobj__41 __pyx_mstate_global->__pyx_codeobj__41
 #define __pyx_codeobj__43 __pyx_mstate_global->__pyx_codeobj__43
 #define __pyx_codeobj__44 __pyx_mstate_global->__pyx_codeobj__44
 #define __pyx_codeobj__45 __pyx_mstate_global->__pyx_codeobj__45
-#define __pyx_codeobj__47 __pyx_mstate_global->__pyx_codeobj__47
+#define __pyx_codeobj__46 __pyx_mstate_global->__pyx_codeobj__46
 #define __pyx_codeobj__48 __pyx_mstate_global->__pyx_codeobj__48
+#define __pyx_codeobj__49 __pyx_mstate_global->__pyx_codeobj__49
 #define __pyx_codeobj__50 __pyx_mstate_global->__pyx_codeobj__50
 #define __pyx_codeobj__51 __pyx_mstate_global->__pyx_codeobj__51
-#define __pyx_codeobj__52 __pyx_mstate_global->__pyx_codeobj__52
 #define __pyx_codeobj__53 __pyx_mstate_global->__pyx_codeobj__53
 #define __pyx_codeobj__54 __pyx_mstate_global->__pyx_codeobj__54
-#define __pyx_codeobj__55 __pyx_mstate_global->__pyx_codeobj__55
 #define __pyx_codeobj__56 __pyx_mstate_global->__pyx_codeobj__56
+#define __pyx_codeobj__57 __pyx_mstate_global->__pyx_codeobj__57
+#define __pyx_codeobj__58 __pyx_mstate_global->__pyx_codeobj__58
+#define __pyx_codeobj__59 __pyx_mstate_global->__pyx_codeobj__59
+#define __pyx_codeobj__60 __pyx_mstate_global->__pyx_codeobj__60
+#define __pyx_codeobj__61 __pyx_mstate_global->__pyx_codeobj__61
+#define __pyx_codeobj__62 __pyx_mstate_global->__pyx_codeobj__62
+#define __pyx_codeobj__63 __pyx_mstate_global->__pyx_codeobj__63
 /* #### Code section: module_code ### */
 
 /* "bunnybackend/types.pyx":21
@@ -16127,10 +16371,10 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11VideoStream_14__setstate_cytho
   return __pyx_r;
 }
 
-/* "bunnybackend/types.pyx":361
- *     cdef readonly object browser
+/* "bunnybackend/types.pyx":362
+ *     cdef readonly object iter
  * 
- *     def __init__(self, stream, browser):             # <<<<<<<<<<<<<<
+ *     def __init__(self, stream, browser, iter):             # <<<<<<<<<<<<<<
  *         self.stream = stream
  *         self.browser = browser
  */
@@ -16140,9 +16384,10 @@ static int __pyx_pw_12bunnybackend_5types_11PlayerModel_1__init__(PyObject *__py
 static int __pyx_pw_12bunnybackend_5types_11PlayerModel_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_stream = 0;
   PyObject *__pyx_v_browser = 0;
+  PyObject *__pyx_v_iter = 0;
   CYTHON_UNUSED Py_ssize_t __pyx_nargs;
   CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
-  PyObject* values[2] = {0,0};
+  PyObject* values[3] = {0,0,0};
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
@@ -16156,10 +16401,12 @@ static int __pyx_pw_12bunnybackend_5types_11PlayerModel_1__init__(PyObject *__py
   #endif
   __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
   {
-    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_stream,&__pyx_n_s_browser,0};
+    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_stream,&__pyx_n_s_browser,&__pyx_n_s_iter,0};
     if (__pyx_kwds) {
       Py_ssize_t kw_args;
       switch (__pyx_nargs) {
+        case  3: values[2] = __Pyx_Arg_VARARGS(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
         case  2: values[1] = __Pyx_Arg_VARARGS(__pyx_args, 1);
         CYTHON_FALLTHROUGH;
         case  1: values[0] = __Pyx_Arg_VARARGS(__pyx_args, 0);
@@ -16174,7 +16421,7 @@ static int __pyx_pw_12bunnybackend_5types_11PlayerModel_1__init__(PyObject *__py
           (void)__Pyx_Arg_NewRef_VARARGS(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 361, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 362, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
         CYTHON_FALLTHROUGH;
         case  1:
@@ -16182,27 +16429,39 @@ static int __pyx_pw_12bunnybackend_5types_11PlayerModel_1__init__(PyObject *__py
           (void)__Pyx_Arg_NewRef_VARARGS(values[1]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 361, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 362, __pyx_L3_error)
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, 1); __PYX_ERR(0, 361, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 1); __PYX_ERR(0, 362, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = __Pyx_GetKwValue_VARARGS(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_iter)) != 0)) {
+          (void)__Pyx_Arg_NewRef_VARARGS(values[2]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 362, __pyx_L3_error)
+        else {
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, 2); __PYX_ERR(0, 362, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 361, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 362, __pyx_L3_error)
       }
-    } else if (unlikely(__pyx_nargs != 2)) {
+    } else if (unlikely(__pyx_nargs != 3)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_Arg_VARARGS(__pyx_args, 0);
       values[1] = __Pyx_Arg_VARARGS(__pyx_args, 1);
+      values[2] = __Pyx_Arg_VARARGS(__pyx_args, 2);
     }
     __pyx_v_stream = values[0];
     __pyx_v_browser = values[1];
+    __pyx_v_iter = values[2];
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 361, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 3, 3, __pyx_nargs); __PYX_ERR(0, 362, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -16216,7 +16475,7 @@ static int __pyx_pw_12bunnybackend_5types_11PlayerModel_1__init__(PyObject *__py
   __Pyx_RefNannyFinishContext();
   return -1;
   __pyx_L4_argument_unpacking_done:;
-  __pyx_r = __pyx_pf_12bunnybackend_5types_11PlayerModel___init__(((struct __pyx_obj_12bunnybackend_5types_PlayerModel *)__pyx_v_self), __pyx_v_stream, __pyx_v_browser);
+  __pyx_r = __pyx_pf_12bunnybackend_5types_11PlayerModel___init__(((struct __pyx_obj_12bunnybackend_5types_PlayerModel *)__pyx_v_self), __pyx_v_stream, __pyx_v_browser, __pyx_v_iter);
 
   /* function exit code */
   {
@@ -16229,17 +16488,17 @@ static int __pyx_pw_12bunnybackend_5types_11PlayerModel_1__init__(PyObject *__py
   return __pyx_r;
 }
 
-static int __pyx_pf_12bunnybackend_5types_11PlayerModel___init__(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v_self, PyObject *__pyx_v_stream, PyObject *__pyx_v_browser) {
+static int __pyx_pf_12bunnybackend_5types_11PlayerModel___init__(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v_self, PyObject *__pyx_v_stream, PyObject *__pyx_v_browser, PyObject *__pyx_v_iter) {
   int __pyx_r;
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__init__", 1);
 
-  /* "bunnybackend/types.pyx":362
+  /* "bunnybackend/types.pyx":363
  * 
- *     def __init__(self, stream, browser):
+ *     def __init__(self, stream, browser, iter):
  *         self.stream = stream             # <<<<<<<<<<<<<<
  *         self.browser = browser
- * 
+ *         self.iter = iter
  */
   __Pyx_INCREF(__pyx_v_stream);
   __Pyx_GIVEREF(__pyx_v_stream);
@@ -16247,12 +16506,12 @@ static int __pyx_pf_12bunnybackend_5types_11PlayerModel___init__(struct __pyx_ob
   __Pyx_DECREF(__pyx_v_self->stream);
   __pyx_v_self->stream = __pyx_v_stream;
 
-  /* "bunnybackend/types.pyx":363
- *     def __init__(self, stream, browser):
+  /* "bunnybackend/types.pyx":364
+ *     def __init__(self, stream, browser, iter):
  *         self.stream = stream
  *         self.browser = browser             # <<<<<<<<<<<<<<
+ *         self.iter = iter
  * 
- *     @staticmethod
  */
   __Pyx_INCREF(__pyx_v_browser);
   __Pyx_GIVEREF(__pyx_v_browser);
@@ -16260,10 +16519,23 @@ static int __pyx_pf_12bunnybackend_5types_11PlayerModel___init__(struct __pyx_ob
   __Pyx_DECREF(__pyx_v_self->browser);
   __pyx_v_self->browser = __pyx_v_browser;
 
-  /* "bunnybackend/types.pyx":361
- *     cdef readonly object browser
+  /* "bunnybackend/types.pyx":365
+ *         self.stream = stream
+ *         self.browser = browser
+ *         self.iter = iter             # <<<<<<<<<<<<<<
  * 
- *     def __init__(self, stream, browser):             # <<<<<<<<<<<<<<
+ *     @staticmethod
+ */
+  __Pyx_INCREF(__pyx_v_iter);
+  __Pyx_GIVEREF(__pyx_v_iter);
+  __Pyx_GOTREF(__pyx_v_self->iter);
+  __Pyx_DECREF(__pyx_v_self->iter);
+  __pyx_v_self->iter = __pyx_v_iter;
+
+  /* "bunnybackend/types.pyx":362
+ *     cdef readonly object iter
+ * 
+ *     def __init__(self, stream, browser, iter):             # <<<<<<<<<<<<<<
  *         self.stream = stream
  *         self.browser = browser
  */
@@ -16274,8 +16546,8 @@ static int __pyx_pf_12bunnybackend_5types_11PlayerModel___init__(struct __pyx_ob
   return __pyx_r;
 }
 
-/* "bunnybackend/types.pyx":365
- *         self.browser = browser
+/* "bunnybackend/types.pyx":367
+ *         self.iter = iter
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def from_dict(data: dict) -> PlayerModel:
@@ -16335,12 +16607,12 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
           (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
           kw_args--;
         }
-        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 365, __pyx_L3_error)
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 367, __pyx_L3_error)
         else goto __pyx_L5_argtuple_error;
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "from_dict") < 0)) __PYX_ERR(0, 365, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "from_dict") < 0)) __PYX_ERR(0, 367, __pyx_L3_error)
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
@@ -16351,7 +16623,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("from_dict", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 365, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("from_dict", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 367, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -16365,7 +16637,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_data), (&PyDict_Type), 0, "data", 1))) __PYX_ERR(0, 366, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_data), (&PyDict_Type), 0, "data", 1))) __PYX_ERR(0, 368, __pyx_L1_error)
   __pyx_r = __pyx_pf_12bunnybackend_5types_11PlayerModel_2from_dict(__pyx_v_data);
 
   /* function exit code */
@@ -16389,64 +16661,78 @@ static struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_pf_12bunnybacke
   PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
   PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("from_dict", 1);
 
-  /* "bunnybackend/types.pyx":367
+  /* "bunnybackend/types.pyx":369
  *     @staticmethod
  *     def from_dict(data: dict) -> PlayerModel:
  *         return PlayerModel(             # <<<<<<<<<<<<<<
  *             data['stream'],
- *             data['browser']
+ *             data['browser'],
  */
   __Pyx_XDECREF((PyObject *)__pyx_r);
 
-  /* "bunnybackend/types.pyx":368
+  /* "bunnybackend/types.pyx":370
  *     def from_dict(data: dict) -> PlayerModel:
  *         return PlayerModel(
  *             data['stream'],             # <<<<<<<<<<<<<<
- *             data['browser']
- *         )
+ *             data['browser'],
+ *             data['iter']
  */
-  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_data, __pyx_n_u_stream); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 368, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_data, __pyx_n_u_stream); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 370, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "bunnybackend/types.pyx":369
+  /* "bunnybackend/types.pyx":371
  *         return PlayerModel(
  *             data['stream'],
- *             data['browser']             # <<<<<<<<<<<<<<
+ *             data['browser'],             # <<<<<<<<<<<<<<
+ *             data['iter']
+ *         )
+ */
+  __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_data, __pyx_n_u_browser); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 371, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+
+  /* "bunnybackend/types.pyx":372
+ *             data['stream'],
+ *             data['browser'],
+ *             data['iter']             # <<<<<<<<<<<<<<
  *         )
  * 
  */
-  __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_data, __pyx_n_u_browser); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 369, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_data, __pyx_n_u_iter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 372, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
 
-  /* "bunnybackend/types.pyx":367
+  /* "bunnybackend/types.pyx":369
  *     @staticmethod
  *     def from_dict(data: dict) -> PlayerModel:
  *         return PlayerModel(             # <<<<<<<<<<<<<<
  *             data['stream'],
- *             data['browser']
+ *             data['browser'],
  */
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 367, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = PyTuple_New(3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 369, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_1);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_1)) __PYX_ERR(0, 367, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_1)) __PYX_ERR(0, 369, __pyx_L1_error);
   __Pyx_GIVEREF(__pyx_t_2);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2)) __PYX_ERR(0, 367, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_t_2)) __PYX_ERR(0, 369, __pyx_L1_error);
+  __Pyx_GIVEREF(__pyx_t_3);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_4, 2, __pyx_t_3)) __PYX_ERR(0, 369, __pyx_L1_error);
   __pyx_t_1 = 0;
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_12bunnybackend_5types_PlayerModel), __pyx_t_3, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 367, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_r = ((struct __pyx_obj_12bunnybackend_5types_PlayerModel *)__pyx_t_2);
-  __pyx_t_2 = 0;
+  __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_12bunnybackend_5types_PlayerModel), __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 369, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+  __pyx_r = ((struct __pyx_obj_12bunnybackend_5types_PlayerModel *)__pyx_t_3);
+  __pyx_t_3 = 0;
   goto __pyx_L0;
 
-  /* "bunnybackend/types.pyx":365
- *         self.browser = browser
+  /* "bunnybackend/types.pyx":367
+ *         self.iter = iter
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def from_dict(data: dict) -> PlayerModel:
@@ -16458,6 +16744,7 @@ static struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_pf_12bunnybacke
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
   __Pyx_AddTraceback("bunnybackend.types.PlayerModel.from_dict", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
@@ -16466,12 +16753,12 @@ static struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_pf_12bunnybacke
   return __pyx_r;
 }
 
-/* "bunnybackend/types.pyx":372
+/* "bunnybackend/types.pyx":375
  *         )
  * 
  *     cpdef dict to_dict(self, numeric_type=None, none_to=False):             # <<<<<<<<<<<<<<
  *         if numeric_type is None:
- *             data = {'stream': self.stream, 'browser': self.browser }
+ *             data = {'stream': self.stream, 'browser': self.browser, 'iter': self.iter }
  */
 
 static PyObject *__pyx_pw_12bunnybackend_5types_11PlayerModel_5to_dict(PyObject *__pyx_v_self, 
@@ -16515,7 +16802,7 @@ static PyObject *__pyx_f_12bunnybackend_5types_11PlayerModel_to_dict(struct __py
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_to_dict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 372, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_to_dict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 375, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_12bunnybackend_5types_11PlayerModel_5to_dict)) {
         __Pyx_XDECREF(__pyx_r);
@@ -16538,11 +16825,11 @@ static PyObject *__pyx_f_12bunnybackend_5types_11PlayerModel_to_dict(struct __py
           PyObject *__pyx_callargs[3] = {__pyx_t_4, __pyx_v_numeric_type, __pyx_v_none_to};
           __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 2+__pyx_t_5);
           __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 372, __pyx_L1_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 375, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
           __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         }
-        if (!(likely(PyDict_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_2))) __PYX_ERR(0, 372, __pyx_L1_error)
+        if (!(likely(PyDict_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_2))) __PYX_ERR(0, 375, __pyx_L1_error)
         __pyx_r = ((PyObject*)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -16561,73 +16848,75 @@ static PyObject *__pyx_f_12bunnybackend_5types_11PlayerModel_to_dict(struct __py
     #endif
   }
 
-  /* "bunnybackend/types.pyx":373
+  /* "bunnybackend/types.pyx":376
  * 
  *     cpdef dict to_dict(self, numeric_type=None, none_to=False):
  *         if numeric_type is None:             # <<<<<<<<<<<<<<
- *             data = {'stream': self.stream, 'browser': self.browser }
+ *             data = {'stream': self.stream, 'browser': self.browser, 'iter': self.iter }
  *         else:
  */
   __pyx_t_6 = (__pyx_v_numeric_type == Py_None);
   if (__pyx_t_6) {
 
-    /* "bunnybackend/types.pyx":374
+    /* "bunnybackend/types.pyx":377
  *     cpdef dict to_dict(self, numeric_type=None, none_to=False):
  *         if numeric_type is None:
- *             data = {'stream': self.stream, 'browser': self.browser }             # <<<<<<<<<<<<<<
+ *             data = {'stream': self.stream, 'browser': self.browser, 'iter': self.iter }             # <<<<<<<<<<<<<<
  *         else:
- *             data = {'stream': self.stream, 'browser': self.browser }
+ *             data = {'stream': self.stream, 'browser': self.browser, 'iter': self.iter }
  */
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 374, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 377, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_stream, __pyx_v_self->stream) < 0) __PYX_ERR(0, 374, __pyx_L1_error)
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_browser, __pyx_v_self->browser) < 0) __PYX_ERR(0, 374, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_stream, __pyx_v_self->stream) < 0) __PYX_ERR(0, 377, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_browser, __pyx_v_self->browser) < 0) __PYX_ERR(0, 377, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_iter, __pyx_v_self->iter) < 0) __PYX_ERR(0, 377, __pyx_L1_error)
     __pyx_v_data = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "bunnybackend/types.pyx":373
+    /* "bunnybackend/types.pyx":376
  * 
  *     cpdef dict to_dict(self, numeric_type=None, none_to=False):
  *         if numeric_type is None:             # <<<<<<<<<<<<<<
- *             data = {'stream': self.stream, 'browser': self.browser }
+ *             data = {'stream': self.stream, 'browser': self.browser, 'iter': self.iter }
  *         else:
  */
     goto __pyx_L3;
   }
 
-  /* "bunnybackend/types.pyx":376
- *             data = {'stream': self.stream, 'browser': self.browser }
+  /* "bunnybackend/types.pyx":379
+ *             data = {'stream': self.stream, 'browser': self.browser, 'iter': self.iter }
  *         else:
- *             data = {'stream': self.stream, 'browser': self.browser }             # <<<<<<<<<<<<<<
+ *             data = {'stream': self.stream, 'browser': self.browser, 'iter': self.iter }             # <<<<<<<<<<<<<<
  * 
  *         return data if not none_to else convert_none_values(data, none_to)
  */
   /*else*/ {
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 376, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 379, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_stream, __pyx_v_self->stream) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_browser, __pyx_v_self->browser) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_stream, __pyx_v_self->stream) < 0) __PYX_ERR(0, 379, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_browser, __pyx_v_self->browser) < 0) __PYX_ERR(0, 379, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_iter, __pyx_v_self->iter) < 0) __PYX_ERR(0, 379, __pyx_L1_error)
     __pyx_v_data = ((PyObject*)__pyx_t_1);
     __pyx_t_1 = 0;
   }
   __pyx_L3:;
 
-  /* "bunnybackend/types.pyx":378
- *             data = {'stream': self.stream, 'browser': self.browser }
+  /* "bunnybackend/types.pyx":381
+ *             data = {'stream': self.stream, 'browser': self.browser, 'iter': self.iter }
  * 
  *         return data if not none_to else convert_none_values(data, none_to)             # <<<<<<<<<<<<<<
  * 
  *     def __repr__(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_none_to); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 378, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_none_to); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 381, __pyx_L1_error)
   __pyx_t_7 = (!__pyx_t_6);
   if (__pyx_t_7) {
     __Pyx_INCREF(__pyx_v_data);
     __pyx_t_1 = __pyx_v_data;
   } else {
-    if (!(likely(PyUnicode_CheckExact(__pyx_v_none_to))||((__pyx_v_none_to) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_v_none_to))) __PYX_ERR(0, 378, __pyx_L1_error)
-    __pyx_t_2 = __pyx_f_12bunnybackend_5types_convert_none_values(__pyx_v_data, ((PyObject*)__pyx_v_none_to)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 378, __pyx_L1_error)
+    if (!(likely(PyUnicode_CheckExact(__pyx_v_none_to))||((__pyx_v_none_to) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_v_none_to))) __PYX_ERR(0, 381, __pyx_L1_error)
+    __pyx_t_2 = __pyx_f_12bunnybackend_5types_convert_none_values(__pyx_v_data, ((PyObject*)__pyx_v_none_to)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 381, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_1 = __pyx_t_2;
     __pyx_t_2 = 0;
@@ -16636,12 +16925,12 @@ static PyObject *__pyx_f_12bunnybackend_5types_11PlayerModel_to_dict(struct __py
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "bunnybackend/types.pyx":372
+  /* "bunnybackend/types.pyx":375
  *         )
  * 
  *     cpdef dict to_dict(self, numeric_type=None, none_to=False):             # <<<<<<<<<<<<<<
  *         if numeric_type is None:
- *             data = {'stream': self.stream, 'browser': self.browser }
+ *             data = {'stream': self.stream, 'browser': self.browser, 'iter': self.iter }
  */
 
   /* function exit code */
@@ -16716,19 +17005,19 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_numeric_type);
           if (value) { values[0] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 372, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 375, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  1:
         if (kw_args > 0) {
           PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_none_to);
           if (value) { values[1] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
-          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 372, __pyx_L3_error)
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 375, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
         const Py_ssize_t kwd_pos_args = __pyx_nargs;
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "to_dict") < 0)) __PYX_ERR(0, 372, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "to_dict") < 0)) __PYX_ERR(0, 375, __pyx_L3_error)
       }
     } else {
       switch (__pyx_nargs) {
@@ -16745,7 +17034,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("to_dict", 0, 0, 2, __pyx_nargs); __PYX_ERR(0, 372, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("to_dict", 0, 0, 2, __pyx_nargs); __PYX_ERR(0, 375, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -16785,7 +17074,7 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_4to_dict(struct __
   __pyx_t_2.__pyx_n = 2;
   __pyx_t_2.numeric_type = __pyx_v_numeric_type;
   __pyx_t_2.none_to = __pyx_v_none_to;
-  __pyx_t_1 = __pyx_vtabptr_12bunnybackend_5types_PlayerModel->to_dict(__pyx_v_self, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 372, __pyx_L1_error)
+  __pyx_t_1 = __pyx_vtabptr_12bunnybackend_5types_PlayerModel->to_dict(__pyx_v_self, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 375, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -16802,11 +17091,11 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_4to_dict(struct __
   return __pyx_r;
 }
 
-/* "bunnybackend/types.pyx":380
+/* "bunnybackend/types.pyx":383
  *         return data if not none_to else convert_none_values(data, none_to)
  * 
  *     def __repr__(self):             # <<<<<<<<<<<<<<
- *         return f"stream: {self.stream} browser: {self.browser} "
+ *         return f"stream: {self.stream} browser: {self.browser} iter {self.iter}"
  * 
  */
 
@@ -16837,15 +17126,15 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_6__repr__(struct _
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__repr__", 1);
 
-  /* "bunnybackend/types.pyx":381
+  /* "bunnybackend/types.pyx":384
  * 
  *     def __repr__(self):
- *         return f"stream: {self.stream} browser: {self.browser} "             # <<<<<<<<<<<<<<
+ *         return f"stream: {self.stream} browser: {self.browser} iter {self.iter}"             # <<<<<<<<<<<<<<
  * 
  *     def __eq__(self, cmp):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_2 = 0;
   __pyx_t_3 = 127;
@@ -16853,7 +17142,7 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_6__repr__(struct _
   __pyx_t_2 += 8;
   __Pyx_GIVEREF(__pyx_kp_u_stream_2);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_u_stream_2);
-  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_self->stream, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_self->stream, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
   __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
@@ -16864,29 +17153,36 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_6__repr__(struct _
   __pyx_t_2 += 10;
   __Pyx_GIVEREF(__pyx_kp_u_browser_2);
   PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_u_browser_2);
-  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_self->browser, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_self->browser, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
   __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_t_4);
   __pyx_t_4 = 0;
-  __Pyx_INCREF(__pyx_kp_u_);
-  __pyx_t_2 += 1;
-  __Pyx_GIVEREF(__pyx_kp_u_);
-  PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_kp_u_);
-  __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_1, 5, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 381, __pyx_L1_error)
+  __Pyx_INCREF(__pyx_kp_u_iter_2);
+  __pyx_t_2 += 6;
+  __Pyx_GIVEREF(__pyx_kp_u_iter_2);
+  PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_kp_u_iter_2);
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_self->iter, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 384, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
+  __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_1, 5, __pyx_t_4);
+  __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_1, 6, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_4;
   __pyx_t_4 = 0;
   goto __pyx_L0;
 
-  /* "bunnybackend/types.pyx":380
+  /* "bunnybackend/types.pyx":383
  *         return data if not none_to else convert_none_values(data, none_to)
  * 
  *     def __repr__(self):             # <<<<<<<<<<<<<<
- *         return f"stream: {self.stream} browser: {self.browser} "
+ *         return f"stream: {self.stream} browser: {self.browser} iter {self.iter}"
  * 
  */
 
@@ -16902,11 +17198,11 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_6__repr__(struct _
   return __pyx_r;
 }
 
-/* "bunnybackend/types.pyx":383
- *         return f"stream: {self.stream} browser: {self.browser} "
+/* "bunnybackend/types.pyx":386
+ *         return f"stream: {self.stream} browser: {self.browser} iter {self.iter}"
  * 
  *     def __eq__(self, cmp):             # <<<<<<<<<<<<<<
- *         return self.stream == cmp.stream and self.browser == cmp.browser
+ *         return self.stream == cmp.stream and self.browser == cmp.browser and self.iter == cmp.iter
  * 
  */
 
@@ -16937,19 +17233,19 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_8__eq__(struct __p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__eq__", 1);
 
-  /* "bunnybackend/types.pyx":384
+  /* "bunnybackend/types.pyx":387
  * 
  *     def __eq__(self, cmp):
- *         return self.stream == cmp.stream and self.browser == cmp.browser             # <<<<<<<<<<<<<<
+ *         return self.stream == cmp.stream and self.browser == cmp.browser and self.iter == cmp.iter             # <<<<<<<<<<<<<<
  * 
  *     def __hash__(self):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cmp, __pyx_n_s_stream); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 384, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cmp, __pyx_n_s_stream); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyObject_RichCompare(__pyx_v_self->stream, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
+  __pyx_t_3 = PyObject_RichCompare(__pyx_v_self->stream, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 384, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 387, __pyx_L1_error)
   if (__pyx_t_4) {
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   } else {
@@ -16958,23 +17254,36 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_8__eq__(struct __p
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     goto __pyx_L3_bool_binop_done;
   }
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cmp, __pyx_n_s_browser); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cmp, __pyx_n_s_browser); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = PyObject_RichCompare(__pyx_v_self->browser, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 384, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_self->browser, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __Pyx_INCREF(__pyx_t_2);
-  __pyx_t_1 = __pyx_t_2;
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 387, __pyx_L1_error)
+  if (__pyx_t_4) {
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  } else {
+    __Pyx_INCREF(__pyx_t_2);
+    __pyx_t_1 = __pyx_t_2;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cmp, __pyx_n_s_iter); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 387, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyObject_RichCompare(__pyx_v_self->iter, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __Pyx_INCREF(__pyx_t_3);
+  __pyx_t_1 = __pyx_t_3;
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_L3_bool_binop_done:;
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "bunnybackend/types.pyx":383
- *         return f"stream: {self.stream} browser: {self.browser} "
+  /* "bunnybackend/types.pyx":386
+ *         return f"stream: {self.stream} browser: {self.browser} iter {self.iter}"
  * 
  *     def __eq__(self, cmp):             # <<<<<<<<<<<<<<
- *         return self.stream == cmp.stream and self.browser == cmp.browser
+ *         return self.stream == cmp.stream and self.browser == cmp.browser and self.iter == cmp.iter
  * 
  */
 
@@ -16991,11 +17300,12 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_8__eq__(struct __p
   return __pyx_r;
 }
 
-/* "bunnybackend/types.pyx":386
- *         return self.stream == cmp.stream and self.browser == cmp.browser
+/* "bunnybackend/types.pyx":389
+ *         return self.stream == cmp.stream and self.browser == cmp.browser and self.iter == cmp.iter
  * 
  *     def __hash__(self):             # <<<<<<<<<<<<<<
  *         return hash(self.__repr__())
+ * 
  */
 
 /* Python wrapper */
@@ -17026,12 +17336,14 @@ static Py_hash_t __pyx_pf_12bunnybackend_5types_11PlayerModel_10__hash__(struct 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__hash__", 1);
 
-  /* "bunnybackend/types.pyx":387
+  /* "bunnybackend/types.pyx":390
  * 
  *     def __hash__(self):
  *         return hash(self.__repr__())             # <<<<<<<<<<<<<<
+ * 
+ * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_repr); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 387, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_repr); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 390, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -17051,20 +17363,21 @@ static Py_hash_t __pyx_pf_12bunnybackend_5types_11PlayerModel_10__hash__(struct 
     PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
     __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 387, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 390, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   }
-  __pyx_t_5 = PyObject_Hash(__pyx_t_1); if (unlikely(__pyx_t_5 == ((Py_hash_t)-1))) __PYX_ERR(0, 387, __pyx_L1_error)
+  __pyx_t_5 = PyObject_Hash(__pyx_t_1); if (unlikely(__pyx_t_5 == ((Py_hash_t)-1))) __PYX_ERR(0, 390, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_r = __pyx_t_5;
   goto __pyx_L0;
 
-  /* "bunnybackend/types.pyx":386
- *         return self.stream == cmp.stream and self.browser == cmp.browser
+  /* "bunnybackend/types.pyx":389
+ *         return self.stream == cmp.stream and self.browser == cmp.browser and self.iter == cmp.iter
  * 
  *     def __hash__(self):             # <<<<<<<<<<<<<<
  *         return hash(self.__repr__())
+ * 
  */
 
   /* function exit code */
@@ -17085,7 +17398,7 @@ static Py_hash_t __pyx_pf_12bunnybackend_5types_11PlayerModel_10__hash__(struct 
  *     # common
  *     cdef readonly object stream             # <<<<<<<<<<<<<<
  *     cdef readonly object browser
- * 
+ *     cdef readonly object iter
  */
 
 /* Python wrapper */
@@ -17123,8 +17436,8 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_6stream___get__(st
  *     # common
  *     cdef readonly object stream
  *     cdef readonly object browser             # <<<<<<<<<<<<<<
+ *     cdef readonly object iter
  * 
- *     def __init__(self, stream, browser):
  */
 
 /* Python wrapper */
@@ -17149,6 +17462,45 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_7browser___get__(s
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_self->browser);
   __pyx_r = __pyx_v_self->browser;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":360
+ *     cdef readonly object stream
+ *     cdef readonly object browser
+ *     cdef readonly object iter             # <<<<<<<<<<<<<<
+ * 
+ *     def __init__(self, stream, browser, iter):
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_11PlayerModel_4iter_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_12bunnybackend_5types_11PlayerModel_4iter_1__get__(PyObject *__pyx_v_self) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_12bunnybackend_5types_11PlayerModel_4iter___get__(((struct __pyx_obj_12bunnybackend_5types_PlayerModel *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_4iter___get__(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__", 1);
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_self->iter);
+  __pyx_r = __pyx_v_self->iter;
   goto __pyx_L0;
 
   /* function exit code */
@@ -17224,24 +17576,27 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_12__reduce_cython_
   /* "(tree fragment)":5
  *     cdef object _dict
  *     cdef bint use_setstate
- *     state = (self.browser, self.stream)             # <<<<<<<<<<<<<<
+ *     state = (self.browser, self.iter, self.stream)             # <<<<<<<<<<<<<<
  *     _dict = getattr(self, '__dict__', None)
  *     if _dict is not None:
  */
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 5, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_v_self->browser);
   __Pyx_GIVEREF(__pyx_v_self->browser);
   if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_self->browser)) __PYX_ERR(1, 5, __pyx_L1_error);
+  __Pyx_INCREF(__pyx_v_self->iter);
+  __Pyx_GIVEREF(__pyx_v_self->iter);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_self->iter)) __PYX_ERR(1, 5, __pyx_L1_error);
   __Pyx_INCREF(__pyx_v_self->stream);
   __Pyx_GIVEREF(__pyx_v_self->stream);
-  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_self->stream)) __PYX_ERR(1, 5, __pyx_L1_error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_v_self->stream)) __PYX_ERR(1, 5, __pyx_L1_error);
   __pyx_v_state = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
   /* "(tree fragment)":6
  *     cdef bint use_setstate
- *     state = (self.browser, self.stream)
+ *     state = (self.browser, self.iter, self.stream)
  *     _dict = getattr(self, '__dict__', None)             # <<<<<<<<<<<<<<
  *     if _dict is not None:
  *         state += (_dict,)
@@ -17252,7 +17607,7 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_12__reduce_cython_
   __pyx_t_1 = 0;
 
   /* "(tree fragment)":7
- *     state = (self.browser, self.stream)
+ *     state = (self.browser, self.iter, self.stream)
  *     _dict = getattr(self, '__dict__', None)
  *     if _dict is not None:             # <<<<<<<<<<<<<<
  *         state += (_dict,)
@@ -17284,12 +17639,12 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_12__reduce_cython_
  *         state += (_dict,)
  *         use_setstate = True             # <<<<<<<<<<<<<<
  *     else:
- *         use_setstate = self.browser is not None or self.stream is not None
+ *         use_setstate = self.browser is not None or self.iter is not None or self.stream is not None
  */
     __pyx_v_use_setstate = 1;
 
     /* "(tree fragment)":7
- *     state = (self.browser, self.stream)
+ *     state = (self.browser, self.iter, self.stream)
  *     _dict = getattr(self, '__dict__', None)
  *     if _dict is not None:             # <<<<<<<<<<<<<<
  *         state += (_dict,)
@@ -17301,12 +17656,18 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_12__reduce_cython_
   /* "(tree fragment)":11
  *         use_setstate = True
  *     else:
- *         use_setstate = self.browser is not None or self.stream is not None             # <<<<<<<<<<<<<<
+ *         use_setstate = self.browser is not None or self.iter is not None or self.stream is not None             # <<<<<<<<<<<<<<
  *     if use_setstate:
- *         return __pyx_unpickle_PlayerModel, (type(self), 0xe22de57, None), state
+ *         return __pyx_unpickle_PlayerModel, (type(self), 0x9009a3b, None), state
  */
   /*else*/ {
     __pyx_t_4 = (__pyx_v_self->browser != Py_None);
+    if (!__pyx_t_4) {
+    } else {
+      __pyx_t_2 = __pyx_t_4;
+      goto __pyx_L4_bool_binop_done;
+    }
+    __pyx_t_4 = (__pyx_v_self->iter != Py_None);
     if (!__pyx_t_4) {
     } else {
       __pyx_t_2 = __pyx_t_4;
@@ -17321,19 +17682,19 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_12__reduce_cython_
 
   /* "(tree fragment)":12
  *     else:
- *         use_setstate = self.browser is not None or self.stream is not None
+ *         use_setstate = self.browser is not None or self.iter is not None or self.stream is not None
  *     if use_setstate:             # <<<<<<<<<<<<<<
- *         return __pyx_unpickle_PlayerModel, (type(self), 0xe22de57, None), state
+ *         return __pyx_unpickle_PlayerModel, (type(self), 0x9009a3b, None), state
  *     else:
  */
   if (__pyx_v_use_setstate) {
 
     /* "(tree fragment)":13
- *         use_setstate = self.browser is not None or self.stream is not None
+ *         use_setstate = self.browser is not None or self.iter is not None or self.stream is not None
  *     if use_setstate:
- *         return __pyx_unpickle_PlayerModel, (type(self), 0xe22de57, None), state             # <<<<<<<<<<<<<<
+ *         return __pyx_unpickle_PlayerModel, (type(self), 0x9009a3b, None), state             # <<<<<<<<<<<<<<
  *     else:
- *         return __pyx_unpickle_PlayerModel, (type(self), 0xe22de57, state)
+ *         return __pyx_unpickle_PlayerModel, (type(self), 0x9009a3b, state)
  */
     __Pyx_XDECREF(__pyx_r);
     __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_pyx_unpickle_PlayerModel); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 13, __pyx_L1_error)
@@ -17343,9 +17704,9 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_12__reduce_cython_
     __Pyx_INCREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
     __Pyx_GIVEREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
     if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, ((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))))) __PYX_ERR(1, 13, __pyx_L1_error);
-    __Pyx_INCREF(__pyx_int_237166167);
-    __Pyx_GIVEREF(__pyx_int_237166167);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_int_237166167)) __PYX_ERR(1, 13, __pyx_L1_error);
+    __Pyx_INCREF(__pyx_int_151034427);
+    __Pyx_GIVEREF(__pyx_int_151034427);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_int_151034427)) __PYX_ERR(1, 13, __pyx_L1_error);
     __Pyx_INCREF(Py_None);
     __Pyx_GIVEREF(Py_None);
     if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, Py_None)) __PYX_ERR(1, 13, __pyx_L1_error);
@@ -17366,17 +17727,17 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_12__reduce_cython_
 
     /* "(tree fragment)":12
  *     else:
- *         use_setstate = self.browser is not None or self.stream is not None
+ *         use_setstate = self.browser is not None or self.iter is not None or self.stream is not None
  *     if use_setstate:             # <<<<<<<<<<<<<<
- *         return __pyx_unpickle_PlayerModel, (type(self), 0xe22de57, None), state
+ *         return __pyx_unpickle_PlayerModel, (type(self), 0x9009a3b, None), state
  *     else:
  */
   }
 
   /* "(tree fragment)":15
- *         return __pyx_unpickle_PlayerModel, (type(self), 0xe22de57, None), state
+ *         return __pyx_unpickle_PlayerModel, (type(self), 0x9009a3b, None), state
  *     else:
- *         return __pyx_unpickle_PlayerModel, (type(self), 0xe22de57, state)             # <<<<<<<<<<<<<<
+ *         return __pyx_unpickle_PlayerModel, (type(self), 0x9009a3b, state)             # <<<<<<<<<<<<<<
  * def __setstate_cython__(self, __pyx_state):
  *     __pyx_unpickle_PlayerModel__set_state(self, __pyx_state)
  */
@@ -17389,9 +17750,9 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_12__reduce_cython_
     __Pyx_INCREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
     __Pyx_GIVEREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
     if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, ((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))))) __PYX_ERR(1, 15, __pyx_L1_error);
-    __Pyx_INCREF(__pyx_int_237166167);
-    __Pyx_GIVEREF(__pyx_int_237166167);
-    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_int_237166167)) __PYX_ERR(1, 15, __pyx_L1_error);
+    __Pyx_INCREF(__pyx_int_151034427);
+    __Pyx_GIVEREF(__pyx_int_151034427);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_int_151034427)) __PYX_ERR(1, 15, __pyx_L1_error);
     __Pyx_INCREF(__pyx_v_state);
     __Pyx_GIVEREF(__pyx_v_state);
     if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_v_state)) __PYX_ERR(1, 15, __pyx_L1_error);
@@ -17431,7 +17792,7 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_12__reduce_cython_
 
 /* "(tree fragment)":16
  *     else:
- *         return __pyx_unpickle_PlayerModel, (type(self), 0xe22de57, state)
+ *         return __pyx_unpickle_PlayerModel, (type(self), 0x9009a3b, state)
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_PlayerModel__set_state(self, __pyx_state)
  */
@@ -17542,7 +17903,7 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_14__setstate_cytho
   __Pyx_RefNannySetupContext("__setstate_cython__", 1);
 
   /* "(tree fragment)":17
- *         return __pyx_unpickle_PlayerModel, (type(self), 0xe22de57, state)
+ *         return __pyx_unpickle_PlayerModel, (type(self), 0x9009a3b, state)
  * def __setstate_cython__(self, __pyx_state):
  *     __pyx_unpickle_PlayerModel__set_state(self, __pyx_state)             # <<<<<<<<<<<<<<
  */
@@ -17553,7 +17914,7 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_14__setstate_cytho
 
   /* "(tree fragment)":16
  *     else:
- *         return __pyx_unpickle_PlayerModel, (type(self), 0xe22de57, state)
+ *         return __pyx_unpickle_PlayerModel, (type(self), 0x9009a3b, state)
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_PlayerModel__set_state(self, __pyx_state)
  */
@@ -17564,6 +17925,2148 @@ static PyObject *__pyx_pf_12bunnybackend_5types_11PlayerModel_14__setstate_cytho
   __pyx_L1_error:;
   __Pyx_XDECREF(__pyx_t_1);
   __Pyx_AddTraceback("bunnybackend.types.PlayerModel.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":406
+ *     cdef readonly object screenshot
+ * 
+ *     def __init__(self, library, stream, browser, iter, console, error, exception, screenshot):             # <<<<<<<<<<<<<<
+ *         self.library = library
+ *         self.stream = stream
+ */
+
+/* Python wrapper */
+static int __pyx_pw_12bunnybackend_5types_10StreamPlay_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_12bunnybackend_5types_10StreamPlay_1__init__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  PyObject *__pyx_v_library = 0;
+  PyObject *__pyx_v_stream = 0;
+  PyObject *__pyx_v_browser = 0;
+  PyObject *__pyx_v_iter = 0;
+  PyObject *__pyx_v_console = 0;
+  PyObject *__pyx_v_error = 0;
+  PyObject *__pyx_v_exception = 0;
+  PyObject *__pyx_v_screenshot = 0;
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject* values[8] = {0,0,0,0,0,0,0,0};
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__init__ (wrapper)", 0);
+  #if CYTHON_ASSUME_SAFE_MACROS
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return -1;
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  {
+    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_library,&__pyx_n_s_stream,&__pyx_n_s_browser,&__pyx_n_s_iter,&__pyx_n_s_console,&__pyx_n_s_error,&__pyx_n_s_exception,&__pyx_n_s_screenshot,0};
+    if (__pyx_kwds) {
+      Py_ssize_t kw_args;
+      switch (__pyx_nargs) {
+        case  8: values[7] = __Pyx_Arg_VARARGS(__pyx_args, 7);
+        CYTHON_FALLTHROUGH;
+        case  7: values[6] = __Pyx_Arg_VARARGS(__pyx_args, 6);
+        CYTHON_FALLTHROUGH;
+        case  6: values[5] = __Pyx_Arg_VARARGS(__pyx_args, 5);
+        CYTHON_FALLTHROUGH;
+        case  5: values[4] = __Pyx_Arg_VARARGS(__pyx_args, 4);
+        CYTHON_FALLTHROUGH;
+        case  4: values[3] = __Pyx_Arg_VARARGS(__pyx_args, 3);
+        CYTHON_FALLTHROUGH;
+        case  3: values[2] = __Pyx_Arg_VARARGS(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = __Pyx_Arg_VARARGS(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = __Pyx_Arg_VARARGS(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = __Pyx_NumKwargs_VARARGS(__pyx_kwds);
+      switch (__pyx_nargs) {
+        case  0:
+        if (likely((values[0] = __Pyx_GetKwValue_VARARGS(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_library)) != 0)) {
+          (void)__Pyx_Arg_NewRef_VARARGS(values[0]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 406, __pyx_L3_error)
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_GetKwValue_VARARGS(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_stream)) != 0)) {
+          (void)__Pyx_Arg_NewRef_VARARGS(values[1]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 406, __pyx_L3_error)
+        else {
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 8, 8, 1); __PYX_ERR(0, 406, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = __Pyx_GetKwValue_VARARGS(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_browser)) != 0)) {
+          (void)__Pyx_Arg_NewRef_VARARGS(values[2]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 406, __pyx_L3_error)
+        else {
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 8, 8, 2); __PYX_ERR(0, 406, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  3:
+        if (likely((values[3] = __Pyx_GetKwValue_VARARGS(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_iter)) != 0)) {
+          (void)__Pyx_Arg_NewRef_VARARGS(values[3]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 406, __pyx_L3_error)
+        else {
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 8, 8, 3); __PYX_ERR(0, 406, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  4:
+        if (likely((values[4] = __Pyx_GetKwValue_VARARGS(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_console)) != 0)) {
+          (void)__Pyx_Arg_NewRef_VARARGS(values[4]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 406, __pyx_L3_error)
+        else {
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 8, 8, 4); __PYX_ERR(0, 406, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  5:
+        if (likely((values[5] = __Pyx_GetKwValue_VARARGS(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_error)) != 0)) {
+          (void)__Pyx_Arg_NewRef_VARARGS(values[5]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 406, __pyx_L3_error)
+        else {
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 8, 8, 5); __PYX_ERR(0, 406, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  6:
+        if (likely((values[6] = __Pyx_GetKwValue_VARARGS(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_exception)) != 0)) {
+          (void)__Pyx_Arg_NewRef_VARARGS(values[6]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 406, __pyx_L3_error)
+        else {
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 8, 8, 6); __PYX_ERR(0, 406, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  7:
+        if (likely((values[7] = __Pyx_GetKwValue_VARARGS(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_screenshot)) != 0)) {
+          (void)__Pyx_Arg_NewRef_VARARGS(values[7]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 406, __pyx_L3_error)
+        else {
+          __Pyx_RaiseArgtupleInvalid("__init__", 1, 8, 8, 7); __PYX_ERR(0, 406, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        const Py_ssize_t kwd_pos_args = __pyx_nargs;
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__init__") < 0)) __PYX_ERR(0, 406, __pyx_L3_error)
+      }
+    } else if (unlikely(__pyx_nargs != 8)) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = __Pyx_Arg_VARARGS(__pyx_args, 0);
+      values[1] = __Pyx_Arg_VARARGS(__pyx_args, 1);
+      values[2] = __Pyx_Arg_VARARGS(__pyx_args, 2);
+      values[3] = __Pyx_Arg_VARARGS(__pyx_args, 3);
+      values[4] = __Pyx_Arg_VARARGS(__pyx_args, 4);
+      values[5] = __Pyx_Arg_VARARGS(__pyx_args, 5);
+      values[6] = __Pyx_Arg_VARARGS(__pyx_args, 6);
+      values[7] = __Pyx_Arg_VARARGS(__pyx_args, 7);
+    }
+    __pyx_v_library = values[0];
+    __pyx_v_stream = values[1];
+    __pyx_v_browser = values[2];
+    __pyx_v_iter = values[3];
+    __pyx_v_console = values[4];
+    __pyx_v_error = values[5];
+    __pyx_v_exception = values[6];
+    __pyx_v_screenshot = values[7];
+  }
+  goto __pyx_L6_skip;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__init__", 1, 8, 8, __pyx_nargs); __PYX_ERR(0, 406, __pyx_L3_error)
+  __pyx_L6_skip:;
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
+    }
+  }
+  __Pyx_AddTraceback("bunnybackend.types.StreamPlay.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return -1;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay___init__(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self), __pyx_v_library, __pyx_v_stream, __pyx_v_browser, __pyx_v_iter, __pyx_v_console, __pyx_v_error, __pyx_v_exception, __pyx_v_screenshot);
+
+  /* function exit code */
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_VARARGS(values[__pyx_temp]);
+    }
+  }
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_12bunnybackend_5types_10StreamPlay___init__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self, PyObject *__pyx_v_library, PyObject *__pyx_v_stream, PyObject *__pyx_v_browser, PyObject *__pyx_v_iter, PyObject *__pyx_v_console, PyObject *__pyx_v_error, PyObject *__pyx_v_exception, PyObject *__pyx_v_screenshot) {
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__init__", 1);
+
+  /* "bunnybackend/types.pyx":407
+ * 
+ *     def __init__(self, library, stream, browser, iter, console, error, exception, screenshot):
+ *         self.library = library             # <<<<<<<<<<<<<<
+ *         self.stream = stream
+ *         self.browser = browser
+ */
+  __Pyx_INCREF(__pyx_v_library);
+  __Pyx_GIVEREF(__pyx_v_library);
+  __Pyx_GOTREF(__pyx_v_self->library);
+  __Pyx_DECREF(__pyx_v_self->library);
+  __pyx_v_self->library = __pyx_v_library;
+
+  /* "bunnybackend/types.pyx":408
+ *     def __init__(self, library, stream, browser, iter, console, error, exception, screenshot):
+ *         self.library = library
+ *         self.stream = stream             # <<<<<<<<<<<<<<
+ *         self.browser = browser
+ *         self.iter = iter
+ */
+  __Pyx_INCREF(__pyx_v_stream);
+  __Pyx_GIVEREF(__pyx_v_stream);
+  __Pyx_GOTREF(__pyx_v_self->stream);
+  __Pyx_DECREF(__pyx_v_self->stream);
+  __pyx_v_self->stream = __pyx_v_stream;
+
+  /* "bunnybackend/types.pyx":409
+ *         self.library = library
+ *         self.stream = stream
+ *         self.browser = browser             # <<<<<<<<<<<<<<
+ *         self.iter = iter
+ *         self.console = console
+ */
+  __Pyx_INCREF(__pyx_v_browser);
+  __Pyx_GIVEREF(__pyx_v_browser);
+  __Pyx_GOTREF(__pyx_v_self->browser);
+  __Pyx_DECREF(__pyx_v_self->browser);
+  __pyx_v_self->browser = __pyx_v_browser;
+
+  /* "bunnybackend/types.pyx":410
+ *         self.stream = stream
+ *         self.browser = browser
+ *         self.iter = iter             # <<<<<<<<<<<<<<
+ *         self.console = console
+ *         self.error = error
+ */
+  __Pyx_INCREF(__pyx_v_iter);
+  __Pyx_GIVEREF(__pyx_v_iter);
+  __Pyx_GOTREF(__pyx_v_self->iter);
+  __Pyx_DECREF(__pyx_v_self->iter);
+  __pyx_v_self->iter = __pyx_v_iter;
+
+  /* "bunnybackend/types.pyx":411
+ *         self.browser = browser
+ *         self.iter = iter
+ *         self.console = console             # <<<<<<<<<<<<<<
+ *         self.error = error
+ *         self.exception = exception
+ */
+  __Pyx_INCREF(__pyx_v_console);
+  __Pyx_GIVEREF(__pyx_v_console);
+  __Pyx_GOTREF(__pyx_v_self->console);
+  __Pyx_DECREF(__pyx_v_self->console);
+  __pyx_v_self->console = __pyx_v_console;
+
+  /* "bunnybackend/types.pyx":412
+ *         self.iter = iter
+ *         self.console = console
+ *         self.error = error             # <<<<<<<<<<<<<<
+ *         self.exception = exception
+ *         self.screenshot = screenshot
+ */
+  __Pyx_INCREF(__pyx_v_error);
+  __Pyx_GIVEREF(__pyx_v_error);
+  __Pyx_GOTREF(__pyx_v_self->error);
+  __Pyx_DECREF(__pyx_v_self->error);
+  __pyx_v_self->error = __pyx_v_error;
+
+  /* "bunnybackend/types.pyx":413
+ *         self.console = console
+ *         self.error = error
+ *         self.exception = exception             # <<<<<<<<<<<<<<
+ *         self.screenshot = screenshot
+ * 
+ */
+  __Pyx_INCREF(__pyx_v_exception);
+  __Pyx_GIVEREF(__pyx_v_exception);
+  __Pyx_GOTREF(__pyx_v_self->exception);
+  __Pyx_DECREF(__pyx_v_self->exception);
+  __pyx_v_self->exception = __pyx_v_exception;
+
+  /* "bunnybackend/types.pyx":414
+ *         self.error = error
+ *         self.exception = exception
+ *         self.screenshot = screenshot             # <<<<<<<<<<<<<<
+ * 
+ *     @staticmethod
+ */
+  __Pyx_INCREF(__pyx_v_screenshot);
+  __Pyx_GIVEREF(__pyx_v_screenshot);
+  __Pyx_GOTREF(__pyx_v_self->screenshot);
+  __Pyx_DECREF(__pyx_v_self->screenshot);
+  __pyx_v_self->screenshot = __pyx_v_screenshot;
+
+  /* "bunnybackend/types.pyx":406
+ *     cdef readonly object screenshot
+ * 
+ *     def __init__(self, library, stream, browser, iter, console, error, exception, screenshot):             # <<<<<<<<<<<<<<
+ *         self.library = library
+ *         self.stream = stream
+ */
+
+  /* function exit code */
+  __pyx_r = 0;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":416
+ *         self.screenshot = screenshot
+ * 
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def from_dict(data: dict) -> PlayerModel:
+ *         return PlayerModel(
+ */
+
+/* Python wrapper */
+static struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_pw_12bunnybackend_5types_10StreamPlay_3from_dict(CYTHON_UNUSED PyObject *__pyx_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyMethodDef __pyx_mdef_12bunnybackend_5types_10StreamPlay_3from_dict = {"from_dict", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_12bunnybackend_5types_10StreamPlay_3from_dict, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_pw_12bunnybackend_5types_10StreamPlay_3from_dict(CYTHON_UNUSED PyObject *__pyx_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  PyObject *__pyx_v_data = 0;
+  #if !CYTHON_METH_FASTCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject* values[1] = {0};
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("from_dict (wrapper)", 0);
+  #if !CYTHON_METH_FASTCALL
+  #if CYTHON_ASSUME_SAFE_MACROS
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  {
+    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_data,0};
+    if (__pyx_kwds) {
+      Py_ssize_t kw_args;
+      switch (__pyx_nargs) {
+        case  1: values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = __Pyx_NumKwargs_FASTCALL(__pyx_kwds);
+      switch (__pyx_nargs) {
+        case  0:
+        if (likely((values[0] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_data)) != 0)) {
+          (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 416, __pyx_L3_error)
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        const Py_ssize_t kwd_pos_args = __pyx_nargs;
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "from_dict") < 0)) __PYX_ERR(0, 416, __pyx_L3_error)
+      }
+    } else if (unlikely(__pyx_nargs != 1)) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+    }
+    __pyx_v_data = ((PyObject*)values[0]);
+  }
+  goto __pyx_L6_skip;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("from_dict", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 416, __pyx_L3_error)
+  __pyx_L6_skip:;
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_AddTraceback("bunnybackend.types.StreamPlay.from_dict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_data), (&PyDict_Type), 0, "data", 1))) __PYX_ERR(0, 417, __pyx_L1_error)
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_2from_dict(__pyx_v_data);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  __pyx_L0:;
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_pf_12bunnybackend_5types_10StreamPlay_2from_dict(PyObject *__pyx_v_data) {
+  struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  PyObject *__pyx_t_7 = NULL;
+  PyObject *__pyx_t_8 = NULL;
+  PyObject *__pyx_t_9 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("from_dict", 1);
+
+  /* "bunnybackend/types.pyx":418
+ *     @staticmethod
+ *     def from_dict(data: dict) -> PlayerModel:
+ *         return PlayerModel(             # <<<<<<<<<<<<<<
+ *             data['library'],
+ *             data['stream'],
+ */
+  __Pyx_XDECREF((PyObject *)__pyx_r);
+
+  /* "bunnybackend/types.pyx":419
+ *     def from_dict(data: dict) -> PlayerModel:
+ *         return PlayerModel(
+ *             data['library'],             # <<<<<<<<<<<<<<
+ *             data['stream'],
+ *             data['browser'],
+ */
+  __pyx_t_1 = __Pyx_PyDict_GetItem(__pyx_v_data, __pyx_n_u_library); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 419, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+
+  /* "bunnybackend/types.pyx":420
+ *         return PlayerModel(
+ *             data['library'],
+ *             data['stream'],             # <<<<<<<<<<<<<<
+ *             data['browser'],
+ *             data['iter'],
+ */
+  __pyx_t_2 = __Pyx_PyDict_GetItem(__pyx_v_data, __pyx_n_u_stream); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 420, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+
+  /* "bunnybackend/types.pyx":421
+ *             data['library'],
+ *             data['stream'],
+ *             data['browser'],             # <<<<<<<<<<<<<<
+ *             data['iter'],
+ * 
+ */
+  __pyx_t_3 = __Pyx_PyDict_GetItem(__pyx_v_data, __pyx_n_u_browser); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 421, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+
+  /* "bunnybackend/types.pyx":422
+ *             data['stream'],
+ *             data['browser'],
+ *             data['iter'],             # <<<<<<<<<<<<<<
+ * 
+ *             data['console'],
+ */
+  __pyx_t_4 = __Pyx_PyDict_GetItem(__pyx_v_data, __pyx_n_u_iter); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 422, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+
+  /* "bunnybackend/types.pyx":424
+ *             data['iter'],
+ * 
+ *             data['console'],             # <<<<<<<<<<<<<<
+ *             data['error'],
+ *             data['exception'],
+ */
+  __pyx_t_5 = __Pyx_PyDict_GetItem(__pyx_v_data, __pyx_n_u_console); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 424, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_5);
+
+  /* "bunnybackend/types.pyx":425
+ * 
+ *             data['console'],
+ *             data['error'],             # <<<<<<<<<<<<<<
+ *             data['exception'],
+ *             data['screenshot']
+ */
+  __pyx_t_6 = __Pyx_PyDict_GetItem(__pyx_v_data, __pyx_n_u_error); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 425, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+
+  /* "bunnybackend/types.pyx":426
+ *             data['console'],
+ *             data['error'],
+ *             data['exception'],             # <<<<<<<<<<<<<<
+ *             data['screenshot']
+ * 
+ */
+  __pyx_t_7 = __Pyx_PyDict_GetItem(__pyx_v_data, __pyx_n_u_exception); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 426, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+
+  /* "bunnybackend/types.pyx":427
+ *             data['error'],
+ *             data['exception'],
+ *             data['screenshot']             # <<<<<<<<<<<<<<
+ * 
+ *         )
+ */
+  __pyx_t_8 = __Pyx_PyDict_GetItem(__pyx_v_data, __pyx_n_u_screenshot); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 427, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+
+  /* "bunnybackend/types.pyx":418
+ *     @staticmethod
+ *     def from_dict(data: dict) -> PlayerModel:
+ *         return PlayerModel(             # <<<<<<<<<<<<<<
+ *             data['library'],
+ *             data['stream'],
+ */
+  __pyx_t_9 = PyTuple_New(8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 418, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_9);
+  __Pyx_GIVEREF(__pyx_t_1);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_1)) __PYX_ERR(0, 418, __pyx_L1_error);
+  __Pyx_GIVEREF(__pyx_t_2);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 1, __pyx_t_2)) __PYX_ERR(0, 418, __pyx_L1_error);
+  __Pyx_GIVEREF(__pyx_t_3);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 2, __pyx_t_3)) __PYX_ERR(0, 418, __pyx_L1_error);
+  __Pyx_GIVEREF(__pyx_t_4);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 3, __pyx_t_4)) __PYX_ERR(0, 418, __pyx_L1_error);
+  __Pyx_GIVEREF(__pyx_t_5);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 4, __pyx_t_5)) __PYX_ERR(0, 418, __pyx_L1_error);
+  __Pyx_GIVEREF(__pyx_t_6);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 5, __pyx_t_6)) __PYX_ERR(0, 418, __pyx_L1_error);
+  __Pyx_GIVEREF(__pyx_t_7);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 6, __pyx_t_7)) __PYX_ERR(0, 418, __pyx_L1_error);
+  __Pyx_GIVEREF(__pyx_t_8);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_9, 7, __pyx_t_8)) __PYX_ERR(0, 418, __pyx_L1_error);
+  __pyx_t_1 = 0;
+  __pyx_t_2 = 0;
+  __pyx_t_3 = 0;
+  __pyx_t_4 = 0;
+  __pyx_t_5 = 0;
+  __pyx_t_6 = 0;
+  __pyx_t_7 = 0;
+  __pyx_t_8 = 0;
+  __pyx_t_8 = __Pyx_PyObject_Call(((PyObject *)__pyx_ptype_12bunnybackend_5types_PlayerModel), __pyx_t_9, NULL); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 418, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_8);
+  __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
+  __pyx_r = ((struct __pyx_obj_12bunnybackend_5types_PlayerModel *)__pyx_t_8);
+  __pyx_t_8 = 0;
+  goto __pyx_L0;
+
+  /* "bunnybackend/types.pyx":416
+ *         self.screenshot = screenshot
+ * 
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def from_dict(data: dict) -> PlayerModel:
+ *         return PlayerModel(
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_XDECREF(__pyx_t_8);
+  __Pyx_XDECREF(__pyx_t_9);
+  __Pyx_AddTraceback("bunnybackend.types.StreamPlay.from_dict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF((PyObject *)__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":431
+ *         )
+ * 
+ *     cpdef dict to_dict(self, numeric_type=None, none_to=False):             # <<<<<<<<<<<<<<
+ *         if numeric_type is None:
+ *             data = {'library': self.library, 'stream': self.stream, 'browser': self.browser, 'iter': self.iter, 'console': self.console, 'error': self.error, 'exception': self.exception, 'screenshot': self.screenshot }
+ */
+
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_5to_dict(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyObject *__pyx_f_12bunnybackend_5types_10StreamPlay_to_dict(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self, int __pyx_skip_dispatch, struct __pyx_opt_args_12bunnybackend_5types_10StreamPlay_to_dict *__pyx_optional_args) {
+  PyObject *__pyx_v_numeric_type = ((PyObject *)Py_None);
+  PyObject *__pyx_v_none_to = ((PyObject *)Py_False);
+  PyObject *__pyx_v_data = NULL;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  unsigned int __pyx_t_5;
+  int __pyx_t_6;
+  int __pyx_t_7;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("to_dict", 1);
+  if (__pyx_optional_args) {
+    if (__pyx_optional_args->__pyx_n > 0) {
+      __pyx_v_numeric_type = __pyx_optional_args->numeric_type;
+      if (__pyx_optional_args->__pyx_n > 1) {
+        __pyx_v_none_to = __pyx_optional_args->none_to;
+      }
+    }
+  }
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (unlikely((Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0) || __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_to_dict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 431, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void*) __pyx_pw_12bunnybackend_5types_10StreamPlay_5to_dict)) {
+        __Pyx_XDECREF(__pyx_r);
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_3 = __pyx_t_1; __pyx_t_4 = NULL;
+        __pyx_t_5 = 0;
+        #if CYTHON_UNPACK_METHODS
+        if (unlikely(PyMethod_Check(__pyx_t_3))) {
+          __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+          if (likely(__pyx_t_4)) {
+            PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+            __Pyx_INCREF(__pyx_t_4);
+            __Pyx_INCREF(function);
+            __Pyx_DECREF_SET(__pyx_t_3, function);
+            __pyx_t_5 = 1;
+          }
+        }
+        #endif
+        {
+          PyObject *__pyx_callargs[3] = {__pyx_t_4, __pyx_v_numeric_type, __pyx_v_none_to};
+          __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 2+__pyx_t_5);
+          __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 431, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        }
+        if (!(likely(PyDict_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("dict", __pyx_t_2))) __PYX_ERR(0, 431, __pyx_L1_error)
+        __pyx_r = ((PyObject*)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_typedict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "bunnybackend/types.pyx":432
+ * 
+ *     cpdef dict to_dict(self, numeric_type=None, none_to=False):
+ *         if numeric_type is None:             # <<<<<<<<<<<<<<
+ *             data = {'library': self.library, 'stream': self.stream, 'browser': self.browser, 'iter': self.iter, 'console': self.console, 'error': self.error, 'exception': self.exception, 'screenshot': self.screenshot }
+ *         else:
+ */
+  __pyx_t_6 = (__pyx_v_numeric_type == Py_None);
+  if (__pyx_t_6) {
+
+    /* "bunnybackend/types.pyx":433
+ *     cpdef dict to_dict(self, numeric_type=None, none_to=False):
+ *         if numeric_type is None:
+ *             data = {'library': self.library, 'stream': self.stream, 'browser': self.browser, 'iter': self.iter, 'console': self.console, 'error': self.error, 'exception': self.exception, 'screenshot': self.screenshot }             # <<<<<<<<<<<<<<
+ *         else:
+ *             data = {'library': self.library, 'stream': self.stream, 'browser': self.browser, 'iter': self.iter, 'console': self.console, 'error': self.error, 'exception': self.exception, 'screenshot': self.screenshot  }
+ */
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 433, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_library, __pyx_v_self->library) < 0) __PYX_ERR(0, 433, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_stream, __pyx_v_self->stream) < 0) __PYX_ERR(0, 433, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_browser, __pyx_v_self->browser) < 0) __PYX_ERR(0, 433, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_iter, __pyx_v_self->iter) < 0) __PYX_ERR(0, 433, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_console, __pyx_v_self->console) < 0) __PYX_ERR(0, 433, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_error, __pyx_v_self->error) < 0) __PYX_ERR(0, 433, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_exception, __pyx_v_self->exception) < 0) __PYX_ERR(0, 433, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_screenshot, __pyx_v_self->screenshot) < 0) __PYX_ERR(0, 433, __pyx_L1_error)
+    __pyx_v_data = ((PyObject*)__pyx_t_1);
+    __pyx_t_1 = 0;
+
+    /* "bunnybackend/types.pyx":432
+ * 
+ *     cpdef dict to_dict(self, numeric_type=None, none_to=False):
+ *         if numeric_type is None:             # <<<<<<<<<<<<<<
+ *             data = {'library': self.library, 'stream': self.stream, 'browser': self.browser, 'iter': self.iter, 'console': self.console, 'error': self.error, 'exception': self.exception, 'screenshot': self.screenshot }
+ *         else:
+ */
+    goto __pyx_L3;
+  }
+
+  /* "bunnybackend/types.pyx":435
+ *             data = {'library': self.library, 'stream': self.stream, 'browser': self.browser, 'iter': self.iter, 'console': self.console, 'error': self.error, 'exception': self.exception, 'screenshot': self.screenshot }
+ *         else:
+ *             data = {'library': self.library, 'stream': self.stream, 'browser': self.browser, 'iter': self.iter, 'console': self.console, 'error': self.error, 'exception': self.exception, 'screenshot': self.screenshot  }             # <<<<<<<<<<<<<<
+ * 
+ *         return data if not none_to else convert_none_values(data, none_to)
+ */
+  /*else*/ {
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 435, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_library, __pyx_v_self->library) < 0) __PYX_ERR(0, 435, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_stream, __pyx_v_self->stream) < 0) __PYX_ERR(0, 435, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_browser, __pyx_v_self->browser) < 0) __PYX_ERR(0, 435, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_iter, __pyx_v_self->iter) < 0) __PYX_ERR(0, 435, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_console, __pyx_v_self->console) < 0) __PYX_ERR(0, 435, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_error, __pyx_v_self->error) < 0) __PYX_ERR(0, 435, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_exception, __pyx_v_self->exception) < 0) __PYX_ERR(0, 435, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_u_screenshot, __pyx_v_self->screenshot) < 0) __PYX_ERR(0, 435, __pyx_L1_error)
+    __pyx_v_data = ((PyObject*)__pyx_t_1);
+    __pyx_t_1 = 0;
+  }
+  __pyx_L3:;
+
+  /* "bunnybackend/types.pyx":437
+ *             data = {'library': self.library, 'stream': self.stream, 'browser': self.browser, 'iter': self.iter, 'console': self.console, 'error': self.error, 'exception': self.exception, 'screenshot': self.screenshot  }
+ * 
+ *         return data if not none_to else convert_none_values(data, none_to)             # <<<<<<<<<<<<<<
+ * 
+ *     def __repr__(self):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_6 = __Pyx_PyObject_IsTrue(__pyx_v_none_to); if (unlikely((__pyx_t_6 < 0))) __PYX_ERR(0, 437, __pyx_L1_error)
+  __pyx_t_7 = (!__pyx_t_6);
+  if (__pyx_t_7) {
+    __Pyx_INCREF(__pyx_v_data);
+    __pyx_t_1 = __pyx_v_data;
+  } else {
+    if (!(likely(PyUnicode_CheckExact(__pyx_v_none_to))||((__pyx_v_none_to) == Py_None) || __Pyx_RaiseUnexpectedTypeError("unicode", __pyx_v_none_to))) __PYX_ERR(0, 437, __pyx_L1_error)
+    __pyx_t_2 = __pyx_f_12bunnybackend_5types_convert_none_values(__pyx_v_data, ((PyObject*)__pyx_v_none_to)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 437, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_1 = __pyx_t_2;
+    __pyx_t_2 = 0;
+  }
+  __pyx_r = ((PyObject*)__pyx_t_1);
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "bunnybackend/types.pyx":431
+ *         )
+ * 
+ *     cpdef dict to_dict(self, numeric_type=None, none_to=False):             # <<<<<<<<<<<<<<
+ *         if numeric_type is None:
+ *             data = {'library': self.library, 'stream': self.stream, 'browser': self.browser, 'iter': self.iter, 'console': self.console, 'error': self.error, 'exception': self.exception, 'screenshot': self.screenshot }
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("bunnybackend.types.StreamPlay.to_dict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_data);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_5to_dict(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyMethodDef __pyx_mdef_12bunnybackend_5types_10StreamPlay_5to_dict = {"to_dict", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_12bunnybackend_5types_10StreamPlay_5to_dict, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_5to_dict(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  PyObject *__pyx_v_numeric_type = 0;
+  PyObject *__pyx_v_none_to = 0;
+  #if !CYTHON_METH_FASTCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject* values[2] = {0,0};
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("to_dict (wrapper)", 0);
+  #if !CYTHON_METH_FASTCALL
+  #if CYTHON_ASSUME_SAFE_MACROS
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  {
+    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_numeric_type,&__pyx_n_s_none_to,0};
+    values[0] = __Pyx_Arg_NewRef_FASTCALL(((PyObject *)Py_None));
+    values[1] = __Pyx_Arg_NewRef_FASTCALL(((PyObject *)Py_False));
+    if (__pyx_kwds) {
+      Py_ssize_t kw_args;
+      switch (__pyx_nargs) {
+        case  2: values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = __Pyx_NumKwargs_FASTCALL(__pyx_kwds);
+      switch (__pyx_nargs) {
+        case  0:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_numeric_type);
+          if (value) { values[0] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 431, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (kw_args > 0) {
+          PyObject* value = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_none_to);
+          if (value) { values[1] = __Pyx_Arg_NewRef_FASTCALL(value); kw_args--; }
+          else if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 431, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        const Py_ssize_t kwd_pos_args = __pyx_nargs;
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "to_dict") < 0)) __PYX_ERR(0, 431, __pyx_L3_error)
+      }
+    } else {
+      switch (__pyx_nargs) {
+        case  2: values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+    }
+    __pyx_v_numeric_type = values[0];
+    __pyx_v_none_to = values[1];
+  }
+  goto __pyx_L6_skip;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("to_dict", 0, 0, 2, __pyx_nargs); __PYX_ERR(0, 431, __pyx_L3_error)
+  __pyx_L6_skip:;
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_AddTraceback("bunnybackend.types.StreamPlay.to_dict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_4to_dict(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self), __pyx_v_numeric_type, __pyx_v_none_to);
+
+  /* function exit code */
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_4to_dict(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self, PyObject *__pyx_v_numeric_type, PyObject *__pyx_v_none_to) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  struct __pyx_opt_args_12bunnybackend_5types_10StreamPlay_to_dict __pyx_t_2;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("to_dict", 1);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_2.__pyx_n = 2;
+  __pyx_t_2.numeric_type = __pyx_v_numeric_type;
+  __pyx_t_2.none_to = __pyx_v_none_to;
+  __pyx_t_1 = __pyx_vtabptr_12bunnybackend_5types_StreamPlay->to_dict(__pyx_v_self, 1, &__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("bunnybackend.types.StreamPlay.to_dict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":439
+ *         return data if not none_to else convert_none_values(data, none_to)
+ * 
+ *     def __repr__(self):             # <<<<<<<<<<<<<<
+ *         return f"library {self.library} stream: {self.stream} browser: {self.browser} iter {self.iter} console {self.console} error {self.error} exception {self.exception} screenshot {self.screenshot}"
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_7__repr__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_7__repr__(PyObject *__pyx_v_self) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__repr__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_6__repr__(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_6__repr__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  Py_ssize_t __pyx_t_2;
+  Py_UCS4 __pyx_t_3;
+  PyObject *__pyx_t_4 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__repr__", 1);
+
+  /* "bunnybackend/types.pyx":440
+ * 
+ *     def __repr__(self):
+ *         return f"library {self.library} stream: {self.stream} browser: {self.browser} iter {self.iter} console {self.console} error {self.error} exception {self.exception} screenshot {self.screenshot}"             # <<<<<<<<<<<<<<
+ * 
+ *     def __eq__(self, cmp):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = PyTuple_New(16); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 440, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = 0;
+  __pyx_t_3 = 127;
+  __Pyx_INCREF(__pyx_kp_u_library_2);
+  __pyx_t_2 += 8;
+  __Pyx_GIVEREF(__pyx_kp_u_library_2);
+  PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_kp_u_library_2);
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_self->library, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 440, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
+  __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_4);
+  __pyx_t_4 = 0;
+  __Pyx_INCREF(__pyx_kp_u_stream_3);
+  __pyx_t_2 += 9;
+  __Pyx_GIVEREF(__pyx_kp_u_stream_3);
+  PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_kp_u_stream_3);
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_self->stream, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 440, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
+  __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_t_4);
+  __pyx_t_4 = 0;
+  __Pyx_INCREF(__pyx_kp_u_browser_2);
+  __pyx_t_2 += 10;
+  __Pyx_GIVEREF(__pyx_kp_u_browser_2);
+  PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_kp_u_browser_2);
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_self->browser, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 440, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
+  __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_1, 5, __pyx_t_4);
+  __pyx_t_4 = 0;
+  __Pyx_INCREF(__pyx_kp_u_iter_2);
+  __pyx_t_2 += 6;
+  __Pyx_GIVEREF(__pyx_kp_u_iter_2);
+  PyTuple_SET_ITEM(__pyx_t_1, 6, __pyx_kp_u_iter_2);
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_self->iter, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 440, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
+  __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_1, 7, __pyx_t_4);
+  __pyx_t_4 = 0;
+  __Pyx_INCREF(__pyx_kp_u_console_2);
+  __pyx_t_2 += 9;
+  __Pyx_GIVEREF(__pyx_kp_u_console_2);
+  PyTuple_SET_ITEM(__pyx_t_1, 8, __pyx_kp_u_console_2);
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_self->console, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 440, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
+  __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_1, 9, __pyx_t_4);
+  __pyx_t_4 = 0;
+  __Pyx_INCREF(__pyx_kp_u_error_2);
+  __pyx_t_2 += 7;
+  __Pyx_GIVEREF(__pyx_kp_u_error_2);
+  PyTuple_SET_ITEM(__pyx_t_1, 10, __pyx_kp_u_error_2);
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_self->error, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 440, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
+  __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_1, 11, __pyx_t_4);
+  __pyx_t_4 = 0;
+  __Pyx_INCREF(__pyx_kp_u_exception_2);
+  __pyx_t_2 += 11;
+  __Pyx_GIVEREF(__pyx_kp_u_exception_2);
+  PyTuple_SET_ITEM(__pyx_t_1, 12, __pyx_kp_u_exception_2);
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_self->exception, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 440, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
+  __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_1, 13, __pyx_t_4);
+  __pyx_t_4 = 0;
+  __Pyx_INCREF(__pyx_kp_u_screenshot_2);
+  __pyx_t_2 += 12;
+  __Pyx_GIVEREF(__pyx_kp_u_screenshot_2);
+  PyTuple_SET_ITEM(__pyx_t_1, 14, __pyx_kp_u_screenshot_2);
+  __pyx_t_4 = __Pyx_PyObject_FormatSimple(__pyx_v_self->screenshot, __pyx_empty_unicode); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 440, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __pyx_t_3 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) > __pyx_t_3) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_4) : __pyx_t_3;
+  __pyx_t_2 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_4);
+  __Pyx_GIVEREF(__pyx_t_4);
+  PyTuple_SET_ITEM(__pyx_t_1, 15, __pyx_t_4);
+  __pyx_t_4 = 0;
+  __pyx_t_4 = __Pyx_PyUnicode_Join(__pyx_t_1, 16, __pyx_t_2, __pyx_t_3); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 440, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_4);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_r = __pyx_t_4;
+  __pyx_t_4 = 0;
+  goto __pyx_L0;
+
+  /* "bunnybackend/types.pyx":439
+ *         return data if not none_to else convert_none_values(data, none_to)
+ * 
+ *     def __repr__(self):             # <<<<<<<<<<<<<<
+ *         return f"library {self.library} stream: {self.stream} browser: {self.browser} iter {self.iter} console {self.console} error {self.error} exception {self.exception} screenshot {self.screenshot}"
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("bunnybackend.types.StreamPlay.__repr__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":442
+ *         return f"library {self.library} stream: {self.stream} browser: {self.browser} iter {self.iter} console {self.console} error {self.error} exception {self.exception} screenshot {self.screenshot}"
+ * 
+ *     def __eq__(self, cmp):             # <<<<<<<<<<<<<<
+ *         return self.library == cmp.library and self.stream == cmp.stream and self.browser == cmp.browser and self.iter == cmp.iter and self.console == cmp.console and self.error == cmp.error and self.exception == cmp.exception and self.screenshot == cmp.screenshot
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_9__eq__(PyObject *__pyx_v_self, PyObject *__pyx_v_cmp); /*proto*/
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_9__eq__(PyObject *__pyx_v_self, PyObject *__pyx_v_cmp) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__eq__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_8__eq__(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self), ((PyObject *)__pyx_v_cmp));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_8__eq__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self, PyObject *__pyx_v_cmp) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  int __pyx_t_4;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__eq__", 1);
+
+  /* "bunnybackend/types.pyx":443
+ * 
+ *     def __eq__(self, cmp):
+ *         return self.library == cmp.library and self.stream == cmp.stream and self.browser == cmp.browser and self.iter == cmp.iter and self.console == cmp.console and self.error == cmp.error and self.exception == cmp.exception and self.screenshot == cmp.screenshot             # <<<<<<<<<<<<<<
+ * 
+ *     def __hash__(self):
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cmp, __pyx_n_s_library); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyObject_RichCompare(__pyx_v_self->library, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 443, __pyx_L1_error)
+  if (__pyx_t_4) {
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  } else {
+    __Pyx_INCREF(__pyx_t_3);
+    __pyx_t_1 = __pyx_t_3;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cmp, __pyx_n_s_stream); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_self->stream, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 443, __pyx_L1_error)
+  if (__pyx_t_4) {
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  } else {
+    __Pyx_INCREF(__pyx_t_2);
+    __pyx_t_1 = __pyx_t_2;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cmp, __pyx_n_s_browser); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyObject_RichCompare(__pyx_v_self->browser, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 443, __pyx_L1_error)
+  if (__pyx_t_4) {
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  } else {
+    __Pyx_INCREF(__pyx_t_3);
+    __pyx_t_1 = __pyx_t_3;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cmp, __pyx_n_s_iter); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_self->iter, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 443, __pyx_L1_error)
+  if (__pyx_t_4) {
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  } else {
+    __Pyx_INCREF(__pyx_t_2);
+    __pyx_t_1 = __pyx_t_2;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cmp, __pyx_n_s_console); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyObject_RichCompare(__pyx_v_self->console, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 443, __pyx_L1_error)
+  if (__pyx_t_4) {
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  } else {
+    __Pyx_INCREF(__pyx_t_3);
+    __pyx_t_1 = __pyx_t_3;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cmp, __pyx_n_s_error); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_self->error, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 443, __pyx_L1_error)
+  if (__pyx_t_4) {
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  } else {
+    __Pyx_INCREF(__pyx_t_2);
+    __pyx_t_1 = __pyx_t_2;
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_cmp, __pyx_n_s_exception); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyObject_RichCompare(__pyx_v_self->exception, __pyx_t_2, Py_EQ); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely((__pyx_t_4 < 0))) __PYX_ERR(0, 443, __pyx_L1_error)
+  if (__pyx_t_4) {
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  } else {
+    __Pyx_INCREF(__pyx_t_3);
+    __pyx_t_1 = __pyx_t_3;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    goto __pyx_L3_bool_binop_done;
+  }
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_cmp, __pyx_n_s_screenshot); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_2 = PyObject_RichCompare(__pyx_v_self->screenshot, __pyx_t_3, Py_EQ); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __Pyx_INCREF(__pyx_t_2);
+  __pyx_t_1 = __pyx_t_2;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_L3_bool_binop_done:;
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "bunnybackend/types.pyx":442
+ *         return f"library {self.library} stream: {self.stream} browser: {self.browser} iter {self.iter} console {self.console} error {self.error} exception {self.exception} screenshot {self.screenshot}"
+ * 
+ *     def __eq__(self, cmp):             # <<<<<<<<<<<<<<
+ *         return self.library == cmp.library and self.stream == cmp.stream and self.browser == cmp.browser and self.iter == cmp.iter and self.console == cmp.console and self.error == cmp.error and self.exception == cmp.exception and self.screenshot == cmp.screenshot
+ * 
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_AddTraceback("bunnybackend.types.StreamPlay.__eq__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":445
+ *         return self.library == cmp.library and self.stream == cmp.stream and self.browser == cmp.browser and self.iter == cmp.iter and self.console == cmp.console and self.error == cmp.error and self.exception == cmp.exception and self.screenshot == cmp.screenshot
+ * 
+ *     def __hash__(self):             # <<<<<<<<<<<<<<
+ *         return hash(self.__repr__())
+ */
+
+/* Python wrapper */
+static Py_hash_t __pyx_pw_12bunnybackend_5types_10StreamPlay_11__hash__(PyObject *__pyx_v_self); /*proto*/
+static Py_hash_t __pyx_pw_12bunnybackend_5types_10StreamPlay_11__hash__(PyObject *__pyx_v_self) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  Py_hash_t __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__hash__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_10__hash__(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static Py_hash_t __pyx_pf_12bunnybackend_5types_10StreamPlay_10__hash__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self) {
+  Py_hash_t __pyx_r;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  unsigned int __pyx_t_4;
+  Py_hash_t __pyx_t_5;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__hash__", 1);
+
+  /* "bunnybackend/types.pyx":446
+ * 
+ *     def __hash__(self):
+ *         return hash(self.__repr__())             # <<<<<<<<<<<<<<
+ */
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_n_s_repr); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 446, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = NULL;
+  __pyx_t_4 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_2))) {
+    __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_2);
+    if (likely(__pyx_t_3)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_2);
+      __Pyx_INCREF(__pyx_t_3);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_2, function);
+      __pyx_t_4 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_2, __pyx_callargs+1-__pyx_t_4, 0+__pyx_t_4);
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 446, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  }
+  __pyx_t_5 = PyObject_Hash(__pyx_t_1); if (unlikely(__pyx_t_5 == ((Py_hash_t)-1))) __PYX_ERR(0, 446, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_r = __pyx_t_5;
+  goto __pyx_L0;
+
+  /* "bunnybackend/types.pyx":445
+ *         return self.library == cmp.library and self.stream == cmp.stream and self.browser == cmp.browser and self.iter == cmp.iter and self.console == cmp.console and self.error == cmp.error and self.exception == cmp.exception and self.screenshot == cmp.screenshot
+ * 
+ *     def __hash__(self):             # <<<<<<<<<<<<<<
+ *         return hash(self.__repr__())
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_AddTraceback("bunnybackend.types.StreamPlay.__hash__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = -1;
+  __pyx_L0:;
+  if (unlikely(__pyx_r == -1) && !PyErr_Occurred()) __pyx_r = -2;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":397
+ * cdef class StreamPlay:
+ *     # common
+ *     cdef readonly object library             # <<<<<<<<<<<<<<
+ *     cdef readonly object stream
+ *     cdef readonly object browser
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_7library_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_7library_1__get__(PyObject *__pyx_v_self) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_7library___get__(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_7library___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__", 1);
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_self->library);
+  __pyx_r = __pyx_v_self->library;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":398
+ *     # common
+ *     cdef readonly object library
+ *     cdef readonly object stream             # <<<<<<<<<<<<<<
+ *     cdef readonly object browser
+ *     cdef readonly object iter
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_6stream_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_6stream_1__get__(PyObject *__pyx_v_self) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_6stream___get__(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_6stream___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__", 1);
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_self->stream);
+  __pyx_r = __pyx_v_self->stream;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":399
+ *     cdef readonly object library
+ *     cdef readonly object stream
+ *     cdef readonly object browser             # <<<<<<<<<<<<<<
+ *     cdef readonly object iter
+ *     cdef readonly object console
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_7browser_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_7browser_1__get__(PyObject *__pyx_v_self) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_7browser___get__(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_7browser___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__", 1);
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_self->browser);
+  __pyx_r = __pyx_v_self->browser;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":400
+ *     cdef readonly object stream
+ *     cdef readonly object browser
+ *     cdef readonly object iter             # <<<<<<<<<<<<<<
+ *     cdef readonly object console
+ *     cdef readonly object error
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_4iter_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_4iter_1__get__(PyObject *__pyx_v_self) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_4iter___get__(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_4iter___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__", 1);
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_self->iter);
+  __pyx_r = __pyx_v_self->iter;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":401
+ *     cdef readonly object browser
+ *     cdef readonly object iter
+ *     cdef readonly object console             # <<<<<<<<<<<<<<
+ *     cdef readonly object error
+ *     cdef readonly object exception
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_7console_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_7console_1__get__(PyObject *__pyx_v_self) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_7console___get__(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_7console___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__", 1);
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_self->console);
+  __pyx_r = __pyx_v_self->console;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":402
+ *     cdef readonly object iter
+ *     cdef readonly object console
+ *     cdef readonly object error             # <<<<<<<<<<<<<<
+ *     cdef readonly object exception
+ *     cdef readonly object screenshot
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_5error_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_5error_1__get__(PyObject *__pyx_v_self) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_5error___get__(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_5error___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__", 1);
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_self->error);
+  __pyx_r = __pyx_v_self->error;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":403
+ *     cdef readonly object console
+ *     cdef readonly object error
+ *     cdef readonly object exception             # <<<<<<<<<<<<<<
+ *     cdef readonly object screenshot
+ * 
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_9exception_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_9exception_1__get__(PyObject *__pyx_v_self) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_9exception___get__(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_9exception___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__", 1);
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_self->exception);
+  __pyx_r = __pyx_v_self->exception;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "bunnybackend/types.pyx":404
+ *     cdef readonly object error
+ *     cdef readonly object exception
+ *     cdef readonly object screenshot             # <<<<<<<<<<<<<<
+ * 
+ *     def __init__(self, library, stream, browser, iter, console, error, exception, screenshot):
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_10screenshot_1__get__(PyObject *__pyx_v_self); /*proto*/
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_10screenshot_1__get__(PyObject *__pyx_v_self) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_10screenshot___get__(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_10screenshot___get__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__get__", 1);
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v_self->screenshot);
+  __pyx_r = __pyx_v_self->screenshot;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "(tree fragment)":1
+ * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
+ *     cdef tuple state
+ *     cdef object _dict
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_13__reduce_cython__(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyMethodDef __pyx_mdef_12bunnybackend_5types_10StreamPlay_13__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_12bunnybackend_5types_10StreamPlay_13__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_13__reduce_cython__(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  #if !CYTHON_METH_FASTCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
+  #if !CYTHON_METH_FASTCALL
+  #if CYTHON_ASSUME_SAFE_MACROS
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  if (unlikely(__pyx_nargs > 0)) {
+    __Pyx_RaiseArgtupleInvalid("__reduce_cython__", 1, 0, 0, __pyx_nargs); return NULL;}
+  if (unlikely(__pyx_kwds) && __Pyx_NumKwargs_FASTCALL(__pyx_kwds) && unlikely(!__Pyx_CheckKeywordStrings(__pyx_kwds, "__reduce_cython__", 0))) return NULL;
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_12__reduce_cython__(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_12__reduce_cython__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self) {
+  PyObject *__pyx_v_state = 0;
+  PyObject *__pyx_v__dict = 0;
+  int __pyx_v_use_setstate;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  int __pyx_t_4;
+  PyObject *__pyx_t_5 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__reduce_cython__", 1);
+
+  /* "(tree fragment)":5
+ *     cdef object _dict
+ *     cdef bint use_setstate
+ *     state = (self.browser, self.console, self.error, self.exception, self.iter, self.library, self.screenshot, self.stream)             # <<<<<<<<<<<<<<
+ *     _dict = getattr(self, '__dict__', None)
+ *     if _dict is not None:
+ */
+  __pyx_t_1 = PyTuple_New(8); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 5, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_INCREF(__pyx_v_self->browser);
+  __Pyx_GIVEREF(__pyx_v_self->browser);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v_self->browser)) __PYX_ERR(1, 5, __pyx_L1_error);
+  __Pyx_INCREF(__pyx_v_self->console);
+  __Pyx_GIVEREF(__pyx_v_self->console);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_v_self->console)) __PYX_ERR(1, 5, __pyx_L1_error);
+  __Pyx_INCREF(__pyx_v_self->error);
+  __Pyx_GIVEREF(__pyx_v_self->error);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_v_self->error)) __PYX_ERR(1, 5, __pyx_L1_error);
+  __Pyx_INCREF(__pyx_v_self->exception);
+  __Pyx_GIVEREF(__pyx_v_self->exception);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_v_self->exception)) __PYX_ERR(1, 5, __pyx_L1_error);
+  __Pyx_INCREF(__pyx_v_self->iter);
+  __Pyx_GIVEREF(__pyx_v_self->iter);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 4, __pyx_v_self->iter)) __PYX_ERR(1, 5, __pyx_L1_error);
+  __Pyx_INCREF(__pyx_v_self->library);
+  __Pyx_GIVEREF(__pyx_v_self->library);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 5, __pyx_v_self->library)) __PYX_ERR(1, 5, __pyx_L1_error);
+  __Pyx_INCREF(__pyx_v_self->screenshot);
+  __Pyx_GIVEREF(__pyx_v_self->screenshot);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 6, __pyx_v_self->screenshot)) __PYX_ERR(1, 5, __pyx_L1_error);
+  __Pyx_INCREF(__pyx_v_self->stream);
+  __Pyx_GIVEREF(__pyx_v_self->stream);
+  if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 7, __pyx_v_self->stream)) __PYX_ERR(1, 5, __pyx_L1_error);
+  __pyx_v_state = ((PyObject*)__pyx_t_1);
+  __pyx_t_1 = 0;
+
+  /* "(tree fragment)":6
+ *     cdef bint use_setstate
+ *     state = (self.browser, self.console, self.error, self.exception, self.iter, self.library, self.screenshot, self.stream)
+ *     _dict = getattr(self, '__dict__', None)             # <<<<<<<<<<<<<<
+ *     if _dict is not None:
+ *         state += (_dict,)
+ */
+  __pyx_t_1 = __Pyx_GetAttr3(((PyObject *)__pyx_v_self), __pyx_n_s_dict, Py_None); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 6, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_v__dict = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "(tree fragment)":7
+ *     state = (self.browser, self.console, self.error, self.exception, self.iter, self.library, self.screenshot, self.stream)
+ *     _dict = getattr(self, '__dict__', None)
+ *     if _dict is not None:             # <<<<<<<<<<<<<<
+ *         state += (_dict,)
+ *         use_setstate = True
+ */
+  __pyx_t_2 = (__pyx_v__dict != Py_None);
+  if (__pyx_t_2) {
+
+    /* "(tree fragment)":8
+ *     _dict = getattr(self, '__dict__', None)
+ *     if _dict is not None:
+ *         state += (_dict,)             # <<<<<<<<<<<<<<
+ *         use_setstate = True
+ *     else:
+ */
+    __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 8, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(__pyx_v__dict);
+    __Pyx_GIVEREF(__pyx_v__dict);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_v__dict)) __PYX_ERR(1, 8, __pyx_L1_error);
+    __pyx_t_3 = PyNumber_InPlaceAdd(__pyx_v_state, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 8, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF_SET(__pyx_v_state, ((PyObject*)__pyx_t_3));
+    __pyx_t_3 = 0;
+
+    /* "(tree fragment)":9
+ *     if _dict is not None:
+ *         state += (_dict,)
+ *         use_setstate = True             # <<<<<<<<<<<<<<
+ *     else:
+ *         use_setstate = self.browser is not None or self.console is not None or self.error is not None or self.exception is not None or self.iter is not None or self.library is not None or self.screenshot is not None or self.stream is not None
+ */
+    __pyx_v_use_setstate = 1;
+
+    /* "(tree fragment)":7
+ *     state = (self.browser, self.console, self.error, self.exception, self.iter, self.library, self.screenshot, self.stream)
+ *     _dict = getattr(self, '__dict__', None)
+ *     if _dict is not None:             # <<<<<<<<<<<<<<
+ *         state += (_dict,)
+ *         use_setstate = True
+ */
+    goto __pyx_L3;
+  }
+
+  /* "(tree fragment)":11
+ *         use_setstate = True
+ *     else:
+ *         use_setstate = self.browser is not None or self.console is not None or self.error is not None or self.exception is not None or self.iter is not None or self.library is not None or self.screenshot is not None or self.stream is not None             # <<<<<<<<<<<<<<
+ *     if use_setstate:
+ *         return __pyx_unpickle_StreamPlay, (type(self), 0xbb6197d, None), state
+ */
+  /*else*/ {
+    __pyx_t_4 = (__pyx_v_self->browser != Py_None);
+    if (!__pyx_t_4) {
+    } else {
+      __pyx_t_2 = __pyx_t_4;
+      goto __pyx_L4_bool_binop_done;
+    }
+    __pyx_t_4 = (__pyx_v_self->console != Py_None);
+    if (!__pyx_t_4) {
+    } else {
+      __pyx_t_2 = __pyx_t_4;
+      goto __pyx_L4_bool_binop_done;
+    }
+    __pyx_t_4 = (__pyx_v_self->error != Py_None);
+    if (!__pyx_t_4) {
+    } else {
+      __pyx_t_2 = __pyx_t_4;
+      goto __pyx_L4_bool_binop_done;
+    }
+    __pyx_t_4 = (__pyx_v_self->exception != Py_None);
+    if (!__pyx_t_4) {
+    } else {
+      __pyx_t_2 = __pyx_t_4;
+      goto __pyx_L4_bool_binop_done;
+    }
+    __pyx_t_4 = (__pyx_v_self->iter != Py_None);
+    if (!__pyx_t_4) {
+    } else {
+      __pyx_t_2 = __pyx_t_4;
+      goto __pyx_L4_bool_binop_done;
+    }
+    __pyx_t_4 = (__pyx_v_self->library != Py_None);
+    if (!__pyx_t_4) {
+    } else {
+      __pyx_t_2 = __pyx_t_4;
+      goto __pyx_L4_bool_binop_done;
+    }
+    __pyx_t_4 = (__pyx_v_self->screenshot != Py_None);
+    if (!__pyx_t_4) {
+    } else {
+      __pyx_t_2 = __pyx_t_4;
+      goto __pyx_L4_bool_binop_done;
+    }
+    __pyx_t_4 = (__pyx_v_self->stream != Py_None);
+    __pyx_t_2 = __pyx_t_4;
+    __pyx_L4_bool_binop_done:;
+    __pyx_v_use_setstate = __pyx_t_2;
+  }
+  __pyx_L3:;
+
+  /* "(tree fragment)":12
+ *     else:
+ *         use_setstate = self.browser is not None or self.console is not None or self.error is not None or self.exception is not None or self.iter is not None or self.library is not None or self.screenshot is not None or self.stream is not None
+ *     if use_setstate:             # <<<<<<<<<<<<<<
+ *         return __pyx_unpickle_StreamPlay, (type(self), 0xbb6197d, None), state
+ *     else:
+ */
+  if (__pyx_v_use_setstate) {
+
+    /* "(tree fragment)":13
+ *         use_setstate = self.browser is not None or self.console is not None or self.error is not None or self.exception is not None or self.iter is not None or self.library is not None or self.screenshot is not None or self.stream is not None
+ *     if use_setstate:
+ *         return __pyx_unpickle_StreamPlay, (type(self), 0xbb6197d, None), state             # <<<<<<<<<<<<<<
+ *     else:
+ *         return __pyx_unpickle_StreamPlay, (type(self), 0xbb6197d, state)
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_pyx_unpickle_StreamPlay); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
+    __Pyx_GIVEREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, ((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))))) __PYX_ERR(1, 13, __pyx_L1_error);
+    __Pyx_INCREF(__pyx_int_196483453);
+    __Pyx_GIVEREF(__pyx_int_196483453);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_int_196483453)) __PYX_ERR(1, 13, __pyx_L1_error);
+    __Pyx_INCREF(Py_None);
+    __Pyx_GIVEREF(Py_None);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, Py_None)) __PYX_ERR(1, 13, __pyx_L1_error);
+    __pyx_t_5 = PyTuple_New(3); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 13, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __Pyx_GIVEREF(__pyx_t_3);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_3)) __PYX_ERR(1, 13, __pyx_L1_error);
+    __Pyx_GIVEREF(__pyx_t_1);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_t_1)) __PYX_ERR(1, 13, __pyx_L1_error);
+    __Pyx_INCREF(__pyx_v_state);
+    __Pyx_GIVEREF(__pyx_v_state);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_5, 2, __pyx_v_state)) __PYX_ERR(1, 13, __pyx_L1_error);
+    __pyx_t_3 = 0;
+    __pyx_t_1 = 0;
+    __pyx_r = __pyx_t_5;
+    __pyx_t_5 = 0;
+    goto __pyx_L0;
+
+    /* "(tree fragment)":12
+ *     else:
+ *         use_setstate = self.browser is not None or self.console is not None or self.error is not None or self.exception is not None or self.iter is not None or self.library is not None or self.screenshot is not None or self.stream is not None
+ *     if use_setstate:             # <<<<<<<<<<<<<<
+ *         return __pyx_unpickle_StreamPlay, (type(self), 0xbb6197d, None), state
+ *     else:
+ */
+  }
+
+  /* "(tree fragment)":15
+ *         return __pyx_unpickle_StreamPlay, (type(self), 0xbb6197d, None), state
+ *     else:
+ *         return __pyx_unpickle_StreamPlay, (type(self), 0xbb6197d, state)             # <<<<<<<<<<<<<<
+ * def __setstate_cython__(self, __pyx_state):
+ *     __pyx_unpickle_StreamPlay__set_state(self, __pyx_state)
+ */
+  /*else*/ {
+    __Pyx_XDECREF(__pyx_r);
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_pyx_unpickle_StreamPlay); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 15, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_1 = PyTuple_New(3); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 15, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
+    __Pyx_GIVEREF(((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))));
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 0, ((PyObject *)Py_TYPE(((PyObject *)__pyx_v_self))))) __PYX_ERR(1, 15, __pyx_L1_error);
+    __Pyx_INCREF(__pyx_int_196483453);
+    __Pyx_GIVEREF(__pyx_int_196483453);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_int_196483453)) __PYX_ERR(1, 15, __pyx_L1_error);
+    __Pyx_INCREF(__pyx_v_state);
+    __Pyx_GIVEREF(__pyx_v_state);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_1, 2, __pyx_v_state)) __PYX_ERR(1, 15, __pyx_L1_error);
+    __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 15, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_GIVEREF(__pyx_t_5);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_5)) __PYX_ERR(1, 15, __pyx_L1_error);
+    __Pyx_GIVEREF(__pyx_t_1);
+    if (__Pyx_PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_1)) __PYX_ERR(1, 15, __pyx_L1_error);
+    __pyx_t_5 = 0;
+    __pyx_t_1 = 0;
+    __pyx_r = __pyx_t_3;
+    __pyx_t_3 = 0;
+    goto __pyx_L0;
+  }
+
+  /* "(tree fragment)":1
+ * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
+ *     cdef tuple state
+ *     cdef object _dict
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_AddTraceback("bunnybackend.types.StreamPlay.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_state);
+  __Pyx_XDECREF(__pyx_v__dict);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "(tree fragment)":16
+ *     else:
+ *         return __pyx_unpickle_StreamPlay, (type(self), 0xbb6197d, state)
+ * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
+ *     __pyx_unpickle_StreamPlay__set_state(self, __pyx_state)
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_15__setstate_cython__(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyMethodDef __pyx_mdef_12bunnybackend_5types_10StreamPlay_15__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_12bunnybackend_5types_10StreamPlay_15__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_12bunnybackend_5types_10StreamPlay_15__setstate_cython__(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  PyObject *__pyx_v___pyx_state = 0;
+  #if !CYTHON_METH_FASTCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject* values[1] = {0};
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
+  #if !CYTHON_METH_FASTCALL
+  #if CYTHON_ASSUME_SAFE_MACROS
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  {
+    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_pyx_state,0};
+    if (__pyx_kwds) {
+      Py_ssize_t kw_args;
+      switch (__pyx_nargs) {
+        case  1: values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = __Pyx_NumKwargs_FASTCALL(__pyx_kwds);
+      switch (__pyx_nargs) {
+        case  0:
+        if (likely((values[0] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_pyx_state)) != 0)) {
+          (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 16, __pyx_L3_error)
+        else goto __pyx_L5_argtuple_error;
+      }
+      if (unlikely(kw_args > 0)) {
+        const Py_ssize_t kwd_pos_args = __pyx_nargs;
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__setstate_cython__") < 0)) __PYX_ERR(1, 16, __pyx_L3_error)
+      }
+    } else if (unlikely(__pyx_nargs != 1)) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+    }
+    __pyx_v___pyx_state = values[0];
+  }
+  goto __pyx_L6_skip;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__setstate_cython__", 1, 1, 1, __pyx_nargs); __PYX_ERR(1, 16, __pyx_L3_error)
+  __pyx_L6_skip:;
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_AddTraceback("bunnybackend.types.StreamPlay.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_12bunnybackend_5types_10StreamPlay_14__setstate_cython__(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v_self), __pyx_v___pyx_state);
+
+  /* function exit code */
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_10StreamPlay_14__setstate_cython__(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v_self, PyObject *__pyx_v___pyx_state) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__setstate_cython__", 1);
+
+  /* "(tree fragment)":17
+ *         return __pyx_unpickle_StreamPlay, (type(self), 0xbb6197d, state)
+ * def __setstate_cython__(self, __pyx_state):
+ *     __pyx_unpickle_StreamPlay__set_state(self, __pyx_state)             # <<<<<<<<<<<<<<
+ */
+  if (!(likely(PyTuple_CheckExact(__pyx_v___pyx_state))||((__pyx_v___pyx_state) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_v___pyx_state))) __PYX_ERR(1, 17, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_12bunnybackend_5types___pyx_unpickle_StreamPlay__set_state(__pyx_v_self, ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 17, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "(tree fragment)":16
+ *     else:
+ *         return __pyx_unpickle_StreamPlay, (type(self), 0xbb6197d, state)
+ * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
+ *     __pyx_unpickle_StreamPlay__set_state(self, __pyx_state)
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("bunnybackend.types.StreamPlay.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -20764,9 +23267,9 @@ static PyObject *__pyx_pf_12bunnybackend_5types_12__pyx_unpickle_PlayerModel(CYT
   /* "(tree fragment)":4
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
- *     if __pyx_checksum not in (0xe22de57, 0x2069f42, 0x4d141ec):             # <<<<<<<<<<<<<<
+ *     if __pyx_checksum not in (0x9009a3b, 0xace74fa, 0x7770076):             # <<<<<<<<<<<<<<
  *         from pickle import PickleError as __pyx_PickleError
- *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xe22de57, 0x2069f42, 0x4d141ec) = (browser, stream))" % __pyx_checksum
+ *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0x9009a3b, 0xace74fa, 0x7770076) = (browser, iter, stream))" % __pyx_checksum
  */
   __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -20776,9 +23279,9 @@ static PyObject *__pyx_pf_12bunnybackend_5types_12__pyx_unpickle_PlayerModel(CYT
 
     /* "(tree fragment)":5
  *     cdef object __pyx_result
- *     if __pyx_checksum not in (0xe22de57, 0x2069f42, 0x4d141ec):
+ *     if __pyx_checksum not in (0x9009a3b, 0xace74fa, 0x7770076):
  *         from pickle import PickleError as __pyx_PickleError             # <<<<<<<<<<<<<<
- *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xe22de57, 0x2069f42, 0x4d141ec) = (browser, stream))" % __pyx_checksum
+ *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0x9009a3b, 0xace74fa, 0x7770076) = (browser, iter, stream))" % __pyx_checksum
  *     __pyx_result = PlayerModel.__new__(__pyx_type)
  */
     __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 5, __pyx_L1_error)
@@ -20797,9 +23300,9 @@ static PyObject *__pyx_pf_12bunnybackend_5types_12__pyx_unpickle_PlayerModel(CYT
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "(tree fragment)":6
- *     if __pyx_checksum not in (0xe22de57, 0x2069f42, 0x4d141ec):
+ *     if __pyx_checksum not in (0x9009a3b, 0xace74fa, 0x7770076):
  *         from pickle import PickleError as __pyx_PickleError
- *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xe22de57, 0x2069f42, 0x4d141ec) = (browser, stream))" % __pyx_checksum             # <<<<<<<<<<<<<<
+ *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0x9009a3b, 0xace74fa, 0x7770076) = (browser, iter, stream))" % __pyx_checksum             # <<<<<<<<<<<<<<
  *     __pyx_result = PlayerModel.__new__(__pyx_type)
  *     if __pyx_state is not None:
  */
@@ -20815,15 +23318,15 @@ static PyObject *__pyx_pf_12bunnybackend_5types_12__pyx_unpickle_PlayerModel(CYT
     /* "(tree fragment)":4
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
- *     if __pyx_checksum not in (0xe22de57, 0x2069f42, 0x4d141ec):             # <<<<<<<<<<<<<<
+ *     if __pyx_checksum not in (0x9009a3b, 0xace74fa, 0x7770076):             # <<<<<<<<<<<<<<
  *         from pickle import PickleError as __pyx_PickleError
- *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xe22de57, 0x2069f42, 0x4d141ec) = (browser, stream))" % __pyx_checksum
+ *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0x9009a3b, 0xace74fa, 0x7770076) = (browser, iter, stream))" % __pyx_checksum
  */
   }
 
   /* "(tree fragment)":7
  *         from pickle import PickleError as __pyx_PickleError
- *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xe22de57, 0x2069f42, 0x4d141ec) = (browser, stream))" % __pyx_checksum
+ *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0x9009a3b, 0xace74fa, 0x7770076) = (browser, iter, stream))" % __pyx_checksum
  *     __pyx_result = PlayerModel.__new__(__pyx_type)             # <<<<<<<<<<<<<<
  *     if __pyx_state is not None:
  *         __pyx_unpickle_PlayerModel__set_state(<PlayerModel> __pyx_result, __pyx_state)
@@ -20856,7 +23359,7 @@ static PyObject *__pyx_pf_12bunnybackend_5types_12__pyx_unpickle_PlayerModel(CYT
   __pyx_t_1 = 0;
 
   /* "(tree fragment)":8
- *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xe22de57, 0x2069f42, 0x4d141ec) = (browser, stream))" % __pyx_checksum
+ *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0x9009a3b, 0xace74fa, 0x7770076) = (browser, iter, stream))" % __pyx_checksum
  *     __pyx_result = PlayerModel.__new__(__pyx_type)
  *     if __pyx_state is not None:             # <<<<<<<<<<<<<<
  *         __pyx_unpickle_PlayerModel__set_state(<PlayerModel> __pyx_result, __pyx_state)
@@ -20878,7 +23381,7 @@ static PyObject *__pyx_pf_12bunnybackend_5types_12__pyx_unpickle_PlayerModel(CYT
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "(tree fragment)":8
- *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xe22de57, 0x2069f42, 0x4d141ec) = (browser, stream))" % __pyx_checksum
+ *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0x9009a3b, 0xace74fa, 0x7770076) = (browser, iter, stream))" % __pyx_checksum
  *     __pyx_result = PlayerModel.__new__(__pyx_type)
  *     if __pyx_state is not None:             # <<<<<<<<<<<<<<
  *         __pyx_unpickle_PlayerModel__set_state(<PlayerModel> __pyx_result, __pyx_state)
@@ -20891,7 +23394,7 @@ static PyObject *__pyx_pf_12bunnybackend_5types_12__pyx_unpickle_PlayerModel(CYT
  *         __pyx_unpickle_PlayerModel__set_state(<PlayerModel> __pyx_result, __pyx_state)
  *     return __pyx_result             # <<<<<<<<<<<<<<
  * cdef __pyx_unpickle_PlayerModel__set_state(PlayerModel __pyx_result, tuple __pyx_state):
- *     __pyx_result.browser = __pyx_state[0]; __pyx_result.stream = __pyx_state[1]
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.iter = __pyx_state[1]; __pyx_result.stream = __pyx_state[2]
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v___pyx_result);
@@ -20923,8 +23426,8 @@ static PyObject *__pyx_pf_12bunnybackend_5types_12__pyx_unpickle_PlayerModel(CYT
  *         __pyx_unpickle_PlayerModel__set_state(<PlayerModel> __pyx_result, __pyx_state)
  *     return __pyx_result
  * cdef __pyx_unpickle_PlayerModel__set_state(PlayerModel __pyx_result, tuple __pyx_state):             # <<<<<<<<<<<<<<
- *     __pyx_result.browser = __pyx_state[0]; __pyx_result.stream = __pyx_state[1]
- *     if len(__pyx_state) > 2 and hasattr(__pyx_result, '__dict__'):
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.iter = __pyx_state[1]; __pyx_result.stream = __pyx_state[2]
+ *     if len(__pyx_state) > 3 and hasattr(__pyx_result, '__dict__'):
  */
 
 static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_PlayerModel__set_state(struct __pyx_obj_12bunnybackend_5types_PlayerModel *__pyx_v___pyx_result, PyObject *__pyx_v___pyx_state) {
@@ -20946,9 +23449,9 @@ static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_PlayerModel__set_s
   /* "(tree fragment)":12
  *     return __pyx_result
  * cdef __pyx_unpickle_PlayerModel__set_state(PlayerModel __pyx_result, tuple __pyx_state):
- *     __pyx_result.browser = __pyx_state[0]; __pyx_result.stream = __pyx_state[1]             # <<<<<<<<<<<<<<
- *     if len(__pyx_state) > 2 and hasattr(__pyx_result, '__dict__'):
- *         __pyx_result.__dict__.update(__pyx_state[2])
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.iter = __pyx_state[1]; __pyx_result.stream = __pyx_state[2]             # <<<<<<<<<<<<<<
+ *     if len(__pyx_state) > 3 and hasattr(__pyx_result, '__dict__'):
+ *         __pyx_result.__dict__.update(__pyx_state[3])
  */
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
@@ -20968,6 +23471,17 @@ static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_PlayerModel__set_s
   __pyx_t_1 = __Pyx_GetItemInt_Tuple(__pyx_v___pyx_state, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 12, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_1);
+  __Pyx_GOTREF(__pyx_v___pyx_result->iter);
+  __Pyx_DECREF(__pyx_v___pyx_result->iter);
+  __pyx_v___pyx_result->iter = __pyx_t_1;
+  __pyx_t_1 = 0;
+  if (unlikely(__pyx_v___pyx_state == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(1, 12, __pyx_L1_error)
+  }
+  __pyx_t_1 = __Pyx_GetItemInt_Tuple(__pyx_v___pyx_state, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
   __Pyx_GOTREF(__pyx_v___pyx_result->stream);
   __Pyx_DECREF(__pyx_v___pyx_result->stream);
   __pyx_v___pyx_result->stream = __pyx_t_1;
@@ -20975,16 +23489,16 @@ static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_PlayerModel__set_s
 
   /* "(tree fragment)":13
  * cdef __pyx_unpickle_PlayerModel__set_state(PlayerModel __pyx_result, tuple __pyx_state):
- *     __pyx_result.browser = __pyx_state[0]; __pyx_result.stream = __pyx_state[1]
- *     if len(__pyx_state) > 2 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
- *         __pyx_result.__dict__.update(__pyx_state[2])
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.iter = __pyx_state[1]; __pyx_result.stream = __pyx_state[2]
+ *     if len(__pyx_state) > 3 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
+ *         __pyx_result.__dict__.update(__pyx_state[3])
  */
   if (unlikely(__pyx_v___pyx_state == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
     __PYX_ERR(1, 13, __pyx_L1_error)
   }
   __pyx_t_3 = __Pyx_PyTuple_GET_SIZE(__pyx_v___pyx_state); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(1, 13, __pyx_L1_error)
-  __pyx_t_4 = (__pyx_t_3 > 2);
+  __pyx_t_4 = (__pyx_t_3 > 3);
   if (__pyx_t_4) {
   } else {
     __pyx_t_2 = __pyx_t_4;
@@ -20996,9 +23510,9 @@ static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_PlayerModel__set_s
   if (__pyx_t_2) {
 
     /* "(tree fragment)":14
- *     __pyx_result.browser = __pyx_state[0]; __pyx_result.stream = __pyx_state[1]
- *     if len(__pyx_state) > 2 and hasattr(__pyx_result, '__dict__'):
- *         __pyx_result.__dict__.update(__pyx_state[2])             # <<<<<<<<<<<<<<
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.iter = __pyx_state[1]; __pyx_result.stream = __pyx_state[2]
+ *     if len(__pyx_state) > 3 and hasattr(__pyx_result, '__dict__'):
+ *         __pyx_result.__dict__.update(__pyx_state[3])             # <<<<<<<<<<<<<<
  */
     __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v___pyx_result), __pyx_n_s_dict); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 14, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
@@ -21009,7 +23523,7 @@ static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_PlayerModel__set_s
       PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
       __PYX_ERR(1, 14, __pyx_L1_error)
     }
-    __pyx_t_5 = __Pyx_GetItemInt_Tuple(__pyx_v___pyx_state, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 14, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_GetItemInt_Tuple(__pyx_v___pyx_state, 3, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 14, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_7 = NULL;
     __pyx_t_8 = 0;
@@ -21038,9 +23552,9 @@ static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_PlayerModel__set_s
 
     /* "(tree fragment)":13
  * cdef __pyx_unpickle_PlayerModel__set_state(PlayerModel __pyx_result, tuple __pyx_state):
- *     __pyx_result.browser = __pyx_state[0]; __pyx_result.stream = __pyx_state[1]
- *     if len(__pyx_state) > 2 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
- *         __pyx_result.__dict__.update(__pyx_state[2])
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.iter = __pyx_state[1]; __pyx_result.stream = __pyx_state[2]
+ *     if len(__pyx_state) > 3 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
+ *         __pyx_result.__dict__.update(__pyx_state[3])
  */
   }
 
@@ -21048,8 +23562,8 @@ static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_PlayerModel__set_s
  *         __pyx_unpickle_PlayerModel__set_state(<PlayerModel> __pyx_result, __pyx_state)
  *     return __pyx_result
  * cdef __pyx_unpickle_PlayerModel__set_state(PlayerModel __pyx_result, tuple __pyx_state):             # <<<<<<<<<<<<<<
- *     __pyx_result.browser = __pyx_state[0]; __pyx_result.stream = __pyx_state[1]
- *     if len(__pyx_state) > 2 and hasattr(__pyx_result, '__dict__'):
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.iter = __pyx_state[1]; __pyx_result.stream = __pyx_state[2]
+ *     if len(__pyx_state) > 3 and hasattr(__pyx_result, '__dict__'):
  */
 
   /* function exit code */
@@ -21061,6 +23575,526 @@ static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_PlayerModel__set_s
   __Pyx_XDECREF(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_7);
   __Pyx_AddTraceback("bunnybackend.types.__pyx_unpickle_PlayerModel__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "(tree fragment)":1
+ * def __pyx_unpickle_StreamPlay(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
+ *     cdef object __pyx_PickleError
+ *     cdef object __pyx_result
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_12bunnybackend_5types_15__pyx_unpickle_StreamPlay(PyObject *__pyx_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyMethodDef __pyx_mdef_12bunnybackend_5types_15__pyx_unpickle_StreamPlay = {"__pyx_unpickle_StreamPlay", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_12bunnybackend_5types_15__pyx_unpickle_StreamPlay, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_12bunnybackend_5types_15__pyx_unpickle_StreamPlay(PyObject *__pyx_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  PyObject *__pyx_v___pyx_type = 0;
+  long __pyx_v___pyx_checksum;
+  PyObject *__pyx_v___pyx_state = 0;
+  #if !CYTHON_METH_FASTCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject* values[3] = {0,0,0};
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__pyx_unpickle_StreamPlay (wrapper)", 0);
+  #if !CYTHON_METH_FASTCALL
+  #if CYTHON_ASSUME_SAFE_MACROS
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  {
+    PyObject **__pyx_pyargnames[] = {&__pyx_n_s_pyx_type,&__pyx_n_s_pyx_checksum,&__pyx_n_s_pyx_state,0};
+    if (__pyx_kwds) {
+      Py_ssize_t kw_args;
+      switch (__pyx_nargs) {
+        case  3: values[2] = __Pyx_Arg_FASTCALL(__pyx_args, 2);
+        CYTHON_FALLTHROUGH;
+        case  2: values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
+        CYTHON_FALLTHROUGH;
+        case  1: values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      kw_args = __Pyx_NumKwargs_FASTCALL(__pyx_kwds);
+      switch (__pyx_nargs) {
+        case  0:
+        if (likely((values[0] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_pyx_type)) != 0)) {
+          (void)__Pyx_Arg_NewRef_FASTCALL(values[0]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 1, __pyx_L3_error)
+        else goto __pyx_L5_argtuple_error;
+        CYTHON_FALLTHROUGH;
+        case  1:
+        if (likely((values[1] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_pyx_checksum)) != 0)) {
+          (void)__Pyx_Arg_NewRef_FASTCALL(values[1]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 1, __pyx_L3_error)
+        else {
+          __Pyx_RaiseArgtupleInvalid("__pyx_unpickle_StreamPlay", 1, 3, 3, 1); __PYX_ERR(1, 1, __pyx_L3_error)
+        }
+        CYTHON_FALLTHROUGH;
+        case  2:
+        if (likely((values[2] = __Pyx_GetKwValue_FASTCALL(__pyx_kwds, __pyx_kwvalues, __pyx_n_s_pyx_state)) != 0)) {
+          (void)__Pyx_Arg_NewRef_FASTCALL(values[2]);
+          kw_args--;
+        }
+        else if (unlikely(PyErr_Occurred())) __PYX_ERR(1, 1, __pyx_L3_error)
+        else {
+          __Pyx_RaiseArgtupleInvalid("__pyx_unpickle_StreamPlay", 1, 3, 3, 2); __PYX_ERR(1, 1, __pyx_L3_error)
+        }
+      }
+      if (unlikely(kw_args > 0)) {
+        const Py_ssize_t kwd_pos_args = __pyx_nargs;
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values + 0, kwd_pos_args, "__pyx_unpickle_StreamPlay") < 0)) __PYX_ERR(1, 1, __pyx_L3_error)
+      }
+    } else if (unlikely(__pyx_nargs != 3)) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = __Pyx_Arg_FASTCALL(__pyx_args, 0);
+      values[1] = __Pyx_Arg_FASTCALL(__pyx_args, 1);
+      values[2] = __Pyx_Arg_FASTCALL(__pyx_args, 2);
+    }
+    __pyx_v___pyx_type = values[0];
+    __pyx_v___pyx_checksum = __Pyx_PyInt_As_long(values[1]); if (unlikely((__pyx_v___pyx_checksum == (long)-1) && PyErr_Occurred())) __PYX_ERR(1, 1, __pyx_L3_error)
+    __pyx_v___pyx_state = values[2];
+  }
+  goto __pyx_L6_skip;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__pyx_unpickle_StreamPlay", 1, 3, 3, __pyx_nargs); __PYX_ERR(1, 1, __pyx_L3_error)
+  __pyx_L6_skip:;
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_AddTraceback("bunnybackend.types.__pyx_unpickle_StreamPlay", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_12bunnybackend_5types_14__pyx_unpickle_StreamPlay(__pyx_self, __pyx_v___pyx_type, __pyx_v___pyx_checksum, __pyx_v___pyx_state);
+
+  /* function exit code */
+  {
+    Py_ssize_t __pyx_temp;
+    for (__pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+      __Pyx_Arg_XDECREF_FASTCALL(values[__pyx_temp]);
+    }
+  }
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_12bunnybackend_5types_14__pyx_unpickle_StreamPlay(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v___pyx_type, long __pyx_v___pyx_checksum, PyObject *__pyx_v___pyx_state) {
+  PyObject *__pyx_v___pyx_PickleError = 0;
+  PyObject *__pyx_v___pyx_result = 0;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_t_2;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  unsigned int __pyx_t_5;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__pyx_unpickle_StreamPlay", 1);
+
+  /* "(tree fragment)":4
+ *     cdef object __pyx_PickleError
+ *     cdef object __pyx_result
+ *     if __pyx_checksum not in (0xbb6197d, 0x5209fa0, 0x9c7f3db):             # <<<<<<<<<<<<<<
+ *         from pickle import PickleError as __pyx_PickleError
+ *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xbb6197d, 0x5209fa0, 0x9c7f3db) = (browser, console, error, exception, iter, library, screenshot, stream))" % __pyx_checksum
+ */
+  __pyx_t_1 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_t_2 = (__Pyx_PySequence_ContainsTF(__pyx_t_1, __pyx_tuple__10, Py_NE)); if (unlikely((__pyx_t_2 < 0))) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (__pyx_t_2) {
+
+    /* "(tree fragment)":5
+ *     cdef object __pyx_result
+ *     if __pyx_checksum not in (0xbb6197d, 0x5209fa0, 0x9c7f3db):
+ *         from pickle import PickleError as __pyx_PickleError             # <<<<<<<<<<<<<<
+ *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xbb6197d, 0x5209fa0, 0x9c7f3db) = (browser, console, error, exception, iter, library, screenshot, stream))" % __pyx_checksum
+ *     __pyx_result = StreamPlay.__new__(__pyx_type)
+ */
+    __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 5, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(__pyx_n_s_PickleError);
+    __Pyx_GIVEREF(__pyx_n_s_PickleError);
+    if (__Pyx_PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_PickleError)) __PYX_ERR(1, 5, __pyx_L1_error);
+    __pyx_t_3 = __Pyx_Import(__pyx_n_s_pickle, __pyx_t_1, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 5, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_3, __pyx_n_s_PickleError); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 5, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_INCREF(__pyx_t_1);
+    __pyx_v___pyx_PickleError = __pyx_t_1;
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+    /* "(tree fragment)":6
+ *     if __pyx_checksum not in (0xbb6197d, 0x5209fa0, 0x9c7f3db):
+ *         from pickle import PickleError as __pyx_PickleError
+ *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xbb6197d, 0x5209fa0, 0x9c7f3db) = (browser, console, error, exception, iter, library, screenshot, stream))" % __pyx_checksum             # <<<<<<<<<<<<<<
+ *     __pyx_result = StreamPlay.__new__(__pyx_type)
+ *     if __pyx_state is not None:
+ */
+    __pyx_t_3 = __Pyx_PyInt_From_long(__pyx_v___pyx_checksum); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 6, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_1 = __Pyx_PyString_Format(__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_8, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 6, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __Pyx_Raise(__pyx_v___pyx_PickleError, __pyx_t_1, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(1, 6, __pyx_L1_error)
+
+    /* "(tree fragment)":4
+ *     cdef object __pyx_PickleError
+ *     cdef object __pyx_result
+ *     if __pyx_checksum not in (0xbb6197d, 0x5209fa0, 0x9c7f3db):             # <<<<<<<<<<<<<<
+ *         from pickle import PickleError as __pyx_PickleError
+ *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xbb6197d, 0x5209fa0, 0x9c7f3db) = (browser, console, error, exception, iter, library, screenshot, stream))" % __pyx_checksum
+ */
+  }
+
+  /* "(tree fragment)":7
+ *         from pickle import PickleError as __pyx_PickleError
+ *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xbb6197d, 0x5209fa0, 0x9c7f3db) = (browser, console, error, exception, iter, library, screenshot, stream))" % __pyx_checksum
+ *     __pyx_result = StreamPlay.__new__(__pyx_type)             # <<<<<<<<<<<<<<
+ *     if __pyx_state is not None:
+ *         __pyx_unpickle_StreamPlay__set_state(<StreamPlay> __pyx_result, __pyx_state)
+ */
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_ptype_12bunnybackend_5types_StreamPlay), __pyx_n_s_new); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 7, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __pyx_t_4 = NULL;
+  __pyx_t_5 = 0;
+  #if CYTHON_UNPACK_METHODS
+  if (likely(PyMethod_Check(__pyx_t_3))) {
+    __pyx_t_4 = PyMethod_GET_SELF(__pyx_t_3);
+    if (likely(__pyx_t_4)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_3);
+      __Pyx_INCREF(__pyx_t_4);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_3, function);
+      __pyx_t_5 = 1;
+    }
+  }
+  #endif
+  {
+    PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_v___pyx_type};
+    __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+1-__pyx_t_5, 1+__pyx_t_5);
+    __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 7, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  }
+  __pyx_v___pyx_result = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "(tree fragment)":8
+ *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xbb6197d, 0x5209fa0, 0x9c7f3db) = (browser, console, error, exception, iter, library, screenshot, stream))" % __pyx_checksum
+ *     __pyx_result = StreamPlay.__new__(__pyx_type)
+ *     if __pyx_state is not None:             # <<<<<<<<<<<<<<
+ *         __pyx_unpickle_StreamPlay__set_state(<StreamPlay> __pyx_result, __pyx_state)
+ *     return __pyx_result
+ */
+  __pyx_t_2 = (__pyx_v___pyx_state != Py_None);
+  if (__pyx_t_2) {
+
+    /* "(tree fragment)":9
+ *     __pyx_result = StreamPlay.__new__(__pyx_type)
+ *     if __pyx_state is not None:
+ *         __pyx_unpickle_StreamPlay__set_state(<StreamPlay> __pyx_result, __pyx_state)             # <<<<<<<<<<<<<<
+ *     return __pyx_result
+ * cdef __pyx_unpickle_StreamPlay__set_state(StreamPlay __pyx_result, tuple __pyx_state):
+ */
+    if (!(likely(PyTuple_CheckExact(__pyx_v___pyx_state))||((__pyx_v___pyx_state) == Py_None) || __Pyx_RaiseUnexpectedTypeError("tuple", __pyx_v___pyx_state))) __PYX_ERR(1, 9, __pyx_L1_error)
+    __pyx_t_1 = __pyx_f_12bunnybackend_5types___pyx_unpickle_StreamPlay__set_state(((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)__pyx_v___pyx_result), ((PyObject*)__pyx_v___pyx_state)); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 9, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "(tree fragment)":8
+ *         raise __pyx_PickleError, "Incompatible checksums (0x%x vs (0xbb6197d, 0x5209fa0, 0x9c7f3db) = (browser, console, error, exception, iter, library, screenshot, stream))" % __pyx_checksum
+ *     __pyx_result = StreamPlay.__new__(__pyx_type)
+ *     if __pyx_state is not None:             # <<<<<<<<<<<<<<
+ *         __pyx_unpickle_StreamPlay__set_state(<StreamPlay> __pyx_result, __pyx_state)
+ *     return __pyx_result
+ */
+  }
+
+  /* "(tree fragment)":10
+ *     if __pyx_state is not None:
+ *         __pyx_unpickle_StreamPlay__set_state(<StreamPlay> __pyx_result, __pyx_state)
+ *     return __pyx_result             # <<<<<<<<<<<<<<
+ * cdef __pyx_unpickle_StreamPlay__set_state(StreamPlay __pyx_result, tuple __pyx_state):
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.console = __pyx_state[1]; __pyx_result.error = __pyx_state[2]; __pyx_result.exception = __pyx_state[3]; __pyx_result.iter = __pyx_state[4]; __pyx_result.library = __pyx_state[5]; __pyx_result.screenshot = __pyx_state[6]; __pyx_result.stream = __pyx_state[7]
+ */
+  __Pyx_XDECREF(__pyx_r);
+  __Pyx_INCREF(__pyx_v___pyx_result);
+  __pyx_r = __pyx_v___pyx_result;
+  goto __pyx_L0;
+
+  /* "(tree fragment)":1
+ * def __pyx_unpickle_StreamPlay(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
+ *     cdef object __pyx_PickleError
+ *     cdef object __pyx_result
+ */
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("bunnybackend.types.__pyx_unpickle_StreamPlay", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v___pyx_PickleError);
+  __Pyx_XDECREF(__pyx_v___pyx_result);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "(tree fragment)":11
+ *         __pyx_unpickle_StreamPlay__set_state(<StreamPlay> __pyx_result, __pyx_state)
+ *     return __pyx_result
+ * cdef __pyx_unpickle_StreamPlay__set_state(StreamPlay __pyx_result, tuple __pyx_state):             # <<<<<<<<<<<<<<
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.console = __pyx_state[1]; __pyx_result.error = __pyx_state[2]; __pyx_result.exception = __pyx_state[3]; __pyx_result.iter = __pyx_state[4]; __pyx_result.library = __pyx_state[5]; __pyx_result.screenshot = __pyx_state[6]; __pyx_result.stream = __pyx_state[7]
+ *     if len(__pyx_state) > 8 and hasattr(__pyx_result, '__dict__'):
+ */
+
+static PyObject *__pyx_f_12bunnybackend_5types___pyx_unpickle_StreamPlay__set_state(struct __pyx_obj_12bunnybackend_5types_StreamPlay *__pyx_v___pyx_result, PyObject *__pyx_v___pyx_state) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_t_2;
+  Py_ssize_t __pyx_t_3;
+  int __pyx_t_4;
+  PyObject *__pyx_t_5 = NULL;
+  PyObject *__pyx_t_6 = NULL;
+  PyObject *__pyx_t_7 = NULL;
+  unsigned int __pyx_t_8;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__pyx_unpickle_StreamPlay__set_state", 1);
+
+  /* "(tree fragment)":12
+ *     return __pyx_result
+ * cdef __pyx_unpickle_StreamPlay__set_state(StreamPlay __pyx_result, tuple __pyx_state):
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.console = __pyx_state[1]; __pyx_result.error = __pyx_state[2]; __pyx_result.exception = __pyx_state[3]; __pyx_result.iter = __pyx_state[4]; __pyx_result.library = __pyx_state[5]; __pyx_result.screenshot = __pyx_state[6]; __pyx_result.stream = __pyx_state[7]             # <<<<<<<<<<<<<<
+ *     if len(__pyx_state) > 8 and hasattr(__pyx_result, '__dict__'):
+ *         __pyx_result.__dict__.update(__pyx_state[8])
+ */
+  if (unlikely(__pyx_v___pyx_state == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(1, 12, __pyx_L1_error)
+  }
+  __pyx_t_1 = __Pyx_GetItemInt_Tuple(__pyx_v___pyx_state, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  __Pyx_GOTREF(__pyx_v___pyx_result->browser);
+  __Pyx_DECREF(__pyx_v___pyx_result->browser);
+  __pyx_v___pyx_result->browser = __pyx_t_1;
+  __pyx_t_1 = 0;
+  if (unlikely(__pyx_v___pyx_state == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(1, 12, __pyx_L1_error)
+  }
+  __pyx_t_1 = __Pyx_GetItemInt_Tuple(__pyx_v___pyx_state, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  __Pyx_GOTREF(__pyx_v___pyx_result->console);
+  __Pyx_DECREF(__pyx_v___pyx_result->console);
+  __pyx_v___pyx_result->console = __pyx_t_1;
+  __pyx_t_1 = 0;
+  if (unlikely(__pyx_v___pyx_state == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(1, 12, __pyx_L1_error)
+  }
+  __pyx_t_1 = __Pyx_GetItemInt_Tuple(__pyx_v___pyx_state, 2, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  __Pyx_GOTREF(__pyx_v___pyx_result->error);
+  __Pyx_DECREF(__pyx_v___pyx_result->error);
+  __pyx_v___pyx_result->error = __pyx_t_1;
+  __pyx_t_1 = 0;
+  if (unlikely(__pyx_v___pyx_state == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(1, 12, __pyx_L1_error)
+  }
+  __pyx_t_1 = __Pyx_GetItemInt_Tuple(__pyx_v___pyx_state, 3, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  __Pyx_GOTREF(__pyx_v___pyx_result->exception);
+  __Pyx_DECREF(__pyx_v___pyx_result->exception);
+  __pyx_v___pyx_result->exception = __pyx_t_1;
+  __pyx_t_1 = 0;
+  if (unlikely(__pyx_v___pyx_state == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(1, 12, __pyx_L1_error)
+  }
+  __pyx_t_1 = __Pyx_GetItemInt_Tuple(__pyx_v___pyx_state, 4, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  __Pyx_GOTREF(__pyx_v___pyx_result->iter);
+  __Pyx_DECREF(__pyx_v___pyx_result->iter);
+  __pyx_v___pyx_result->iter = __pyx_t_1;
+  __pyx_t_1 = 0;
+  if (unlikely(__pyx_v___pyx_state == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(1, 12, __pyx_L1_error)
+  }
+  __pyx_t_1 = __Pyx_GetItemInt_Tuple(__pyx_v___pyx_state, 5, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  __Pyx_GOTREF(__pyx_v___pyx_result->library);
+  __Pyx_DECREF(__pyx_v___pyx_result->library);
+  __pyx_v___pyx_result->library = __pyx_t_1;
+  __pyx_t_1 = 0;
+  if (unlikely(__pyx_v___pyx_state == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(1, 12, __pyx_L1_error)
+  }
+  __pyx_t_1 = __Pyx_GetItemInt_Tuple(__pyx_v___pyx_state, 6, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  __Pyx_GOTREF(__pyx_v___pyx_result->screenshot);
+  __Pyx_DECREF(__pyx_v___pyx_result->screenshot);
+  __pyx_v___pyx_result->screenshot = __pyx_t_1;
+  __pyx_t_1 = 0;
+  if (unlikely(__pyx_v___pyx_state == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(1, 12, __pyx_L1_error)
+  }
+  __pyx_t_1 = __Pyx_GetItemInt_Tuple(__pyx_v___pyx_state, 7, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 12, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GIVEREF(__pyx_t_1);
+  __Pyx_GOTREF(__pyx_v___pyx_result->stream);
+  __Pyx_DECREF(__pyx_v___pyx_result->stream);
+  __pyx_v___pyx_result->stream = __pyx_t_1;
+  __pyx_t_1 = 0;
+
+  /* "(tree fragment)":13
+ * cdef __pyx_unpickle_StreamPlay__set_state(StreamPlay __pyx_result, tuple __pyx_state):
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.console = __pyx_state[1]; __pyx_result.error = __pyx_state[2]; __pyx_result.exception = __pyx_state[3]; __pyx_result.iter = __pyx_state[4]; __pyx_result.library = __pyx_state[5]; __pyx_result.screenshot = __pyx_state[6]; __pyx_result.stream = __pyx_state[7]
+ *     if len(__pyx_state) > 8 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
+ *         __pyx_result.__dict__.update(__pyx_state[8])
+ */
+  if (unlikely(__pyx_v___pyx_state == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
+    __PYX_ERR(1, 13, __pyx_L1_error)
+  }
+  __pyx_t_3 = __Pyx_PyTuple_GET_SIZE(__pyx_v___pyx_state); if (unlikely(__pyx_t_3 == ((Py_ssize_t)-1))) __PYX_ERR(1, 13, __pyx_L1_error)
+  __pyx_t_4 = (__pyx_t_3 > 8);
+  if (__pyx_t_4) {
+  } else {
+    __pyx_t_2 = __pyx_t_4;
+    goto __pyx_L4_bool_binop_done;
+  }
+  __pyx_t_4 = __Pyx_HasAttr(((PyObject *)__pyx_v___pyx_result), __pyx_n_s_dict); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(1, 13, __pyx_L1_error)
+  __pyx_t_2 = __pyx_t_4;
+  __pyx_L4_bool_binop_done:;
+  if (__pyx_t_2) {
+
+    /* "(tree fragment)":14
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.console = __pyx_state[1]; __pyx_result.error = __pyx_state[2]; __pyx_result.exception = __pyx_state[3]; __pyx_result.iter = __pyx_state[4]; __pyx_result.library = __pyx_state[5]; __pyx_result.screenshot = __pyx_state[6]; __pyx_result.stream = __pyx_state[7]
+ *     if len(__pyx_state) > 8 and hasattr(__pyx_result, '__dict__'):
+ *         __pyx_result.__dict__.update(__pyx_state[8])             # <<<<<<<<<<<<<<
+ */
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v___pyx_result), __pyx_n_s_dict); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 14, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_update); if (unlikely(!__pyx_t_6)) __PYX_ERR(1, 14, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+    if (unlikely(__pyx_v___pyx_state == Py_None)) {
+      PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+      __PYX_ERR(1, 14, __pyx_L1_error)
+    }
+    __pyx_t_5 = __Pyx_GetItemInt_Tuple(__pyx_v___pyx_state, 8, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_5)) __PYX_ERR(1, 14, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_5);
+    __pyx_t_7 = NULL;
+    __pyx_t_8 = 0;
+    #if CYTHON_UNPACK_METHODS
+    if (likely(PyMethod_Check(__pyx_t_6))) {
+      __pyx_t_7 = PyMethod_GET_SELF(__pyx_t_6);
+      if (likely(__pyx_t_7)) {
+        PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+        __Pyx_INCREF(__pyx_t_7);
+        __Pyx_INCREF(function);
+        __Pyx_DECREF_SET(__pyx_t_6, function);
+        __pyx_t_8 = 1;
+      }
+    }
+    #endif
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_7, __pyx_t_5};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_6, __pyx_callargs+1-__pyx_t_8, 1+__pyx_t_8);
+      __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(1, 14, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    }
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+    /* "(tree fragment)":13
+ * cdef __pyx_unpickle_StreamPlay__set_state(StreamPlay __pyx_result, tuple __pyx_state):
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.console = __pyx_state[1]; __pyx_result.error = __pyx_state[2]; __pyx_result.exception = __pyx_state[3]; __pyx_result.iter = __pyx_state[4]; __pyx_result.library = __pyx_state[5]; __pyx_result.screenshot = __pyx_state[6]; __pyx_result.stream = __pyx_state[7]
+ *     if len(__pyx_state) > 8 and hasattr(__pyx_result, '__dict__'):             # <<<<<<<<<<<<<<
+ *         __pyx_result.__dict__.update(__pyx_state[8])
+ */
+  }
+
+  /* "(tree fragment)":11
+ *         __pyx_unpickle_StreamPlay__set_state(<StreamPlay> __pyx_result, __pyx_state)
+ *     return __pyx_result
+ * cdef __pyx_unpickle_StreamPlay__set_state(StreamPlay __pyx_result, tuple __pyx_state):             # <<<<<<<<<<<<<<
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.console = __pyx_state[1]; __pyx_result.error = __pyx_state[2]; __pyx_result.exception = __pyx_state[3]; __pyx_result.iter = __pyx_state[4]; __pyx_result.library = __pyx_state[5]; __pyx_result.screenshot = __pyx_state[6]; __pyx_result.stream = __pyx_state[7]
+ *     if len(__pyx_state) > 8 and hasattr(__pyx_result, '__dict__'):
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_5);
+  __Pyx_XDECREF(__pyx_t_6);
+  __Pyx_XDECREF(__pyx_t_7);
+  __Pyx_AddTraceback("bunnybackend.types.__pyx_unpickle_StreamPlay__set_state", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = 0;
   __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
@@ -22808,6 +25842,7 @@ static PyObject *__pyx_tp_new_12bunnybackend_5types_PlayerModel(PyTypeObject *t,
   p->__pyx_vtab = __pyx_vtabptr_12bunnybackend_5types_PlayerModel;
   p->stream = Py_None; Py_INCREF(Py_None);
   p->browser = Py_None; Py_INCREF(Py_None);
+  p->iter = Py_None; Py_INCREF(Py_None);
   return o;
 }
 
@@ -22823,6 +25858,7 @@ static void __pyx_tp_dealloc_12bunnybackend_5types_PlayerModel(PyObject *o) {
   PyObject_GC_UnTrack(o);
   Py_CLEAR(p->stream);
   Py_CLEAR(p->browser);
+  Py_CLEAR(p->iter);
   #if CYTHON_USE_TYPE_SLOTS || CYTHON_COMPILING_IN_PYPY
   (*Py_TYPE(o)->tp_free)(o);
   #else
@@ -22842,6 +25878,9 @@ static int __pyx_tp_traverse_12bunnybackend_5types_PlayerModel(PyObject *o, visi
   if (p->browser) {
     e = (*v)(p->browser, a); if (e) return e;
   }
+  if (p->iter) {
+    e = (*v)(p->iter, a); if (e) return e;
+  }
   return 0;
 }
 
@@ -22853,6 +25892,9 @@ static int __pyx_tp_clear_12bunnybackend_5types_PlayerModel(PyObject *o) {
   Py_XDECREF(tmp);
   tmp = ((PyObject*)p->browser);
   p->browser = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->iter);
+  p->iter = Py_None; Py_INCREF(Py_None);
   Py_XDECREF(tmp);
   return 0;
 }
@@ -22888,6 +25930,10 @@ static PyObject *__pyx_getprop_12bunnybackend_5types_11PlayerModel_browser(PyObj
   return __pyx_pw_12bunnybackend_5types_11PlayerModel_7browser_1__get__(o);
 }
 
+static PyObject *__pyx_getprop_12bunnybackend_5types_11PlayerModel_iter(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_12bunnybackend_5types_11PlayerModel_4iter_1__get__(o);
+}
+
 static PyObject *__pyx_specialmethod___pyx_pw_12bunnybackend_5types_11PlayerModel_7__repr__(PyObject *self, CYTHON_UNUSED PyObject *arg) {
   return __pyx_pw_12bunnybackend_5types_11PlayerModel_7__repr__(self);
 }
@@ -22903,6 +25949,7 @@ static PyMethodDef __pyx_methods_12bunnybackend_5types_PlayerModel[] = {
 static struct PyGetSetDef __pyx_getsets_12bunnybackend_5types_PlayerModel[] = {
   {(char *)"stream", __pyx_getprop_12bunnybackend_5types_11PlayerModel_stream, 0, (char *)0, 0},
   {(char *)"browser", __pyx_getprop_12bunnybackend_5types_11PlayerModel_browser, 0, (char *)0, 0},
+  {(char *)"iter", __pyx_getprop_12bunnybackend_5types_11PlayerModel_iter, 0, (char *)0, 0},
   {0, 0, 0, 0, 0}
 };
 #if CYTHON_USE_TYPE_SPECS
@@ -23012,6 +26059,308 @@ static PyTypeObject __pyx_type_12bunnybackend_5types_PlayerModel = {
   #endif
 };
 #endif
+static struct __pyx_vtabstruct_12bunnybackend_5types_StreamPlay __pyx_vtable_12bunnybackend_5types_StreamPlay;
+
+static PyObject *__pyx_tp_new_12bunnybackend_5types_StreamPlay(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  struct __pyx_obj_12bunnybackend_5types_StreamPlay *p;
+  PyObject *o;
+  #if CYTHON_COMPILING_IN_LIMITED_API
+  allocfunc alloc_func = (allocfunc)PyType_GetSlot(t, Py_tp_alloc);
+  o = alloc_func(t, 0);
+  #else
+  if (likely(!__Pyx_PyType_HasFeature(t, Py_TPFLAGS_IS_ABSTRACT))) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  #endif
+  p = ((struct __pyx_obj_12bunnybackend_5types_StreamPlay *)o);
+  p->__pyx_vtab = __pyx_vtabptr_12bunnybackend_5types_StreamPlay;
+  p->library = Py_None; Py_INCREF(Py_None);
+  p->stream = Py_None; Py_INCREF(Py_None);
+  p->browser = Py_None; Py_INCREF(Py_None);
+  p->iter = Py_None; Py_INCREF(Py_None);
+  p->console = Py_None; Py_INCREF(Py_None);
+  p->error = Py_None; Py_INCREF(Py_None);
+  p->exception = Py_None; Py_INCREF(Py_None);
+  p->screenshot = Py_None; Py_INCREF(Py_None);
+  return o;
+}
+
+static void __pyx_tp_dealloc_12bunnybackend_5types_StreamPlay(PyObject *o) {
+  struct __pyx_obj_12bunnybackend_5types_StreamPlay *p = (struct __pyx_obj_12bunnybackend_5types_StreamPlay *)o;
+  #if CYTHON_USE_TP_FINALIZE
+  if (unlikely((PY_VERSION_HEX >= 0x03080000 || __Pyx_PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE)) && __Pyx_PyObject_GetSlot(o, tp_finalize, destructor)) && !__Pyx_PyObject_GC_IsFinalized(o)) {
+    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_12bunnybackend_5types_StreamPlay) {
+      if (PyObject_CallFinalizerFromDealloc(o)) return;
+    }
+  }
+  #endif
+  PyObject_GC_UnTrack(o);
+  Py_CLEAR(p->library);
+  Py_CLEAR(p->stream);
+  Py_CLEAR(p->browser);
+  Py_CLEAR(p->iter);
+  Py_CLEAR(p->console);
+  Py_CLEAR(p->error);
+  Py_CLEAR(p->exception);
+  Py_CLEAR(p->screenshot);
+  #if CYTHON_USE_TYPE_SLOTS || CYTHON_COMPILING_IN_PYPY
+  (*Py_TYPE(o)->tp_free)(o);
+  #else
+  {
+    freefunc tp_free = (freefunc)PyType_GetSlot(Py_TYPE(o), Py_tp_free);
+    if (tp_free) tp_free(o);
+  }
+  #endif
+}
+
+static int __pyx_tp_traverse_12bunnybackend_5types_StreamPlay(PyObject *o, visitproc v, void *a) {
+  int e;
+  struct __pyx_obj_12bunnybackend_5types_StreamPlay *p = (struct __pyx_obj_12bunnybackend_5types_StreamPlay *)o;
+  if (p->library) {
+    e = (*v)(p->library, a); if (e) return e;
+  }
+  if (p->stream) {
+    e = (*v)(p->stream, a); if (e) return e;
+  }
+  if (p->browser) {
+    e = (*v)(p->browser, a); if (e) return e;
+  }
+  if (p->iter) {
+    e = (*v)(p->iter, a); if (e) return e;
+  }
+  if (p->console) {
+    e = (*v)(p->console, a); if (e) return e;
+  }
+  if (p->error) {
+    e = (*v)(p->error, a); if (e) return e;
+  }
+  if (p->exception) {
+    e = (*v)(p->exception, a); if (e) return e;
+  }
+  if (p->screenshot) {
+    e = (*v)(p->screenshot, a); if (e) return e;
+  }
+  return 0;
+}
+
+static int __pyx_tp_clear_12bunnybackend_5types_StreamPlay(PyObject *o) {
+  PyObject* tmp;
+  struct __pyx_obj_12bunnybackend_5types_StreamPlay *p = (struct __pyx_obj_12bunnybackend_5types_StreamPlay *)o;
+  tmp = ((PyObject*)p->library);
+  p->library = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->stream);
+  p->stream = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->browser);
+  p->browser = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->iter);
+  p->iter = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->console);
+  p->console = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->error);
+  p->error = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->exception);
+  p->exception = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  tmp = ((PyObject*)p->screenshot);
+  p->screenshot = Py_None; Py_INCREF(Py_None);
+  Py_XDECREF(tmp);
+  return 0;
+}
+
+static PyObject *__pyx_tp_richcompare_12bunnybackend_5types_StreamPlay(PyObject *o1, PyObject *o2, int op) {
+  switch (op) {
+    case Py_EQ: {
+      return __pyx_pw_12bunnybackend_5types_10StreamPlay_9__eq__(o1, o2);
+    }
+    case Py_NE: {
+      PyObject *ret;
+      ret = __pyx_pw_12bunnybackend_5types_10StreamPlay_9__eq__(o1, o2);
+      if (likely(ret && ret != Py_NotImplemented)) {
+        int b = __Pyx_PyObject_IsTrue(ret);
+        Py_DECREF(ret);
+        if (unlikely(b < 0)) return NULL;
+        ret = (b) ? Py_False : Py_True;
+        Py_INCREF(ret);
+      }
+      return ret;
+    }
+    default: {
+      return __Pyx_NewRef(Py_NotImplemented);
+    }
+  }
+}
+
+static PyObject *__pyx_getprop_12bunnybackend_5types_10StreamPlay_library(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_12bunnybackend_5types_10StreamPlay_7library_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_12bunnybackend_5types_10StreamPlay_stream(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_12bunnybackend_5types_10StreamPlay_6stream_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_12bunnybackend_5types_10StreamPlay_browser(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_12bunnybackend_5types_10StreamPlay_7browser_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_12bunnybackend_5types_10StreamPlay_iter(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_12bunnybackend_5types_10StreamPlay_4iter_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_12bunnybackend_5types_10StreamPlay_console(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_12bunnybackend_5types_10StreamPlay_7console_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_12bunnybackend_5types_10StreamPlay_error(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_12bunnybackend_5types_10StreamPlay_5error_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_12bunnybackend_5types_10StreamPlay_exception(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_12bunnybackend_5types_10StreamPlay_9exception_1__get__(o);
+}
+
+static PyObject *__pyx_getprop_12bunnybackend_5types_10StreamPlay_screenshot(PyObject *o, CYTHON_UNUSED void *x) {
+  return __pyx_pw_12bunnybackend_5types_10StreamPlay_10screenshot_1__get__(o);
+}
+
+static PyObject *__pyx_specialmethod___pyx_pw_12bunnybackend_5types_10StreamPlay_7__repr__(PyObject *self, CYTHON_UNUSED PyObject *arg) {
+  return __pyx_pw_12bunnybackend_5types_10StreamPlay_7__repr__(self);
+}
+
+static PyMethodDef __pyx_methods_12bunnybackend_5types_StreamPlay[] = {
+  {"from_dict", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_12bunnybackend_5types_10StreamPlay_3from_dict, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+  {"__repr__", (PyCFunction)__pyx_specialmethod___pyx_pw_12bunnybackend_5types_10StreamPlay_7__repr__, METH_NOARGS|METH_COEXIST, 0},
+  {"__reduce_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_12bunnybackend_5types_10StreamPlay_13__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+  {"__setstate_cython__", (PyCFunction)(void*)(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_12bunnybackend_5types_10StreamPlay_15__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+  {0, 0, 0, 0}
+};
+
+static struct PyGetSetDef __pyx_getsets_12bunnybackend_5types_StreamPlay[] = {
+  {(char *)"library", __pyx_getprop_12bunnybackend_5types_10StreamPlay_library, 0, (char *)0, 0},
+  {(char *)"stream", __pyx_getprop_12bunnybackend_5types_10StreamPlay_stream, 0, (char *)0, 0},
+  {(char *)"browser", __pyx_getprop_12bunnybackend_5types_10StreamPlay_browser, 0, (char *)0, 0},
+  {(char *)"iter", __pyx_getprop_12bunnybackend_5types_10StreamPlay_iter, 0, (char *)0, 0},
+  {(char *)"console", __pyx_getprop_12bunnybackend_5types_10StreamPlay_console, 0, (char *)0, 0},
+  {(char *)"error", __pyx_getprop_12bunnybackend_5types_10StreamPlay_error, 0, (char *)0, 0},
+  {(char *)"exception", __pyx_getprop_12bunnybackend_5types_10StreamPlay_exception, 0, (char *)0, 0},
+  {(char *)"screenshot", __pyx_getprop_12bunnybackend_5types_10StreamPlay_screenshot, 0, (char *)0, 0},
+  {0, 0, 0, 0, 0}
+};
+#if CYTHON_USE_TYPE_SPECS
+static PyType_Slot __pyx_type_12bunnybackend_5types_StreamPlay_slots[] = {
+  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_12bunnybackend_5types_StreamPlay},
+  {Py_tp_repr, (void *)__pyx_pw_12bunnybackend_5types_10StreamPlay_7__repr__},
+  {Py_tp_hash, (void *)__pyx_pw_12bunnybackend_5types_10StreamPlay_11__hash__},
+  {Py_tp_traverse, (void *)__pyx_tp_traverse_12bunnybackend_5types_StreamPlay},
+  {Py_tp_clear, (void *)__pyx_tp_clear_12bunnybackend_5types_StreamPlay},
+  {Py_tp_richcompare, (void *)__pyx_tp_richcompare_12bunnybackend_5types_StreamPlay},
+  {Py_tp_methods, (void *)__pyx_methods_12bunnybackend_5types_StreamPlay},
+  {Py_tp_getset, (void *)__pyx_getsets_12bunnybackend_5types_StreamPlay},
+  {Py_tp_init, (void *)__pyx_pw_12bunnybackend_5types_10StreamPlay_1__init__},
+  {Py_tp_new, (void *)__pyx_tp_new_12bunnybackend_5types_StreamPlay},
+  {0, 0},
+};
+static PyType_Spec __pyx_type_12bunnybackend_5types_StreamPlay_spec = {
+  "bunnybackend.types.StreamPlay",
+  sizeof(struct __pyx_obj_12bunnybackend_5types_StreamPlay),
+  0,
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC,
+  __pyx_type_12bunnybackend_5types_StreamPlay_slots,
+};
+#else
+
+static PyTypeObject __pyx_type_12bunnybackend_5types_StreamPlay = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "bunnybackend.types.""StreamPlay", /*tp_name*/
+  sizeof(struct __pyx_obj_12bunnybackend_5types_StreamPlay), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_12bunnybackend_5types_StreamPlay, /*tp_dealloc*/
+  #if PY_VERSION_HEX < 0x030800b4
+  0, /*tp_print*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b4
+  0, /*tp_vectorcall_offset*/
+  #endif
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  #if PY_MAJOR_VERSION < 3
+  0, /*tp_compare*/
+  #endif
+  #if PY_MAJOR_VERSION >= 3
+  0, /*tp_as_async*/
+  #endif
+  __pyx_pw_12bunnybackend_5types_10StreamPlay_7__repr__, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  __pyx_pw_12bunnybackend_5types_10StreamPlay_11__hash__, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE|Py_TPFLAGS_HAVE_GC, /*tp_flags*/
+  0, /*tp_doc*/
+  __pyx_tp_traverse_12bunnybackend_5types_StreamPlay, /*tp_traverse*/
+  __pyx_tp_clear_12bunnybackend_5types_StreamPlay, /*tp_clear*/
+  __pyx_tp_richcompare_12bunnybackend_5types_StreamPlay, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_12bunnybackend_5types_StreamPlay, /*tp_methods*/
+  0, /*tp_members*/
+  __pyx_getsets_12bunnybackend_5types_StreamPlay, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  #if !CYTHON_USE_TYPE_SPECS
+  0, /*tp_dictoffset*/
+  #endif
+  __pyx_pw_12bunnybackend_5types_10StreamPlay_1__init__, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_12bunnybackend_5types_StreamPlay, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if PY_VERSION_HEX >= 0x030400a1
+  #if CYTHON_USE_TP_FINALIZE
+  0, /*tp_finalize*/
+  #else
+  NULL, /*tp_finalize*/
+  #endif
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b1 && (!CYTHON_COMPILING_IN_PYPY || PYPY_VERSION_NUM >= 0x07030800)
+  0, /*tp_vectorcall*/
+  #endif
+  #if __PYX_NEED_TP_PRINT_SLOT == 1
+  0, /*tp_print*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030C0000
+  0, /*tp_watched*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030d00A4
+  0, /*tp_versions_used*/
+  #endif
+  #if CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX >= 0x03090000 && PY_VERSION_HEX < 0x030a0000
+  0, /*tp_pypy_flags*/
+  #endif
+};
+#endif
 
 static PyMethodDef __pyx_methods[] = {
   {0, 0, 0, 0}
@@ -23044,6 +26393,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_5, __pyx_k_Incompatible_checksums_0x_x_vs_0_5, sizeof(__pyx_k_Incompatible_checksums_0x_x_vs_0_5), 0, 0, 1, 0},
     {&__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_6, __pyx_k_Incompatible_checksums_0x_x_vs_0_6, sizeof(__pyx_k_Incompatible_checksums_0x_x_vs_0_6), 0, 0, 1, 0},
     {&__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_7, __pyx_k_Incompatible_checksums_0x_x_vs_0_7, sizeof(__pyx_k_Incompatible_checksums_0x_x_vs_0_7), 0, 0, 1, 0},
+    {&__pyx_kp_s_Incompatible_checksums_0x_x_vs_0_8, __pyx_k_Incompatible_checksums_0x_x_vs_0_8, sizeof(__pyx_k_Incompatible_checksums_0x_x_vs_0_8), 0, 0, 1, 0},
     {&__pyx_n_s_PickleError, __pyx_k_PickleError, sizeof(__pyx_k_PickleError), 0, 0, 1, 1},
     {&__pyx_n_s_PlayerModel, __pyx_k_PlayerModel, sizeof(__pyx_k_PlayerModel), 0, 0, 1, 1},
     {&__pyx_n_s_PlayerModel___reduce_cython, __pyx_k_PlayerModel___reduce_cython, sizeof(__pyx_k_PlayerModel___reduce_cython), 0, 0, 1, 1},
@@ -23055,6 +26405,11 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_RefreshVideoLibrary___setstate_c, __pyx_k_RefreshVideoLibrary___setstate_c, sizeof(__pyx_k_RefreshVideoLibrary___setstate_c), 0, 0, 1, 1},
     {&__pyx_n_s_RefreshVideoLibrary_from_dict, __pyx_k_RefreshVideoLibrary_from_dict, sizeof(__pyx_k_RefreshVideoLibrary_from_dict), 0, 0, 1, 1},
     {&__pyx_n_s_RefreshVideoLibrary_to_dict, __pyx_k_RefreshVideoLibrary_to_dict, sizeof(__pyx_k_RefreshVideoLibrary_to_dict), 0, 0, 1, 1},
+    {&__pyx_n_s_StreamPlay, __pyx_k_StreamPlay, sizeof(__pyx_k_StreamPlay), 0, 0, 1, 1},
+    {&__pyx_n_s_StreamPlay___reduce_cython, __pyx_k_StreamPlay___reduce_cython, sizeof(__pyx_k_StreamPlay___reduce_cython), 0, 0, 1, 1},
+    {&__pyx_n_s_StreamPlay___setstate_cython, __pyx_k_StreamPlay___setstate_cython, sizeof(__pyx_k_StreamPlay___setstate_cython), 0, 0, 1, 1},
+    {&__pyx_n_s_StreamPlay_from_dict, __pyx_k_StreamPlay_from_dict, sizeof(__pyx_k_StreamPlay_from_dict), 0, 0, 1, 1},
+    {&__pyx_n_s_StreamPlay_to_dict, __pyx_k_StreamPlay_to_dict, sizeof(__pyx_k_StreamPlay_to_dict), 0, 0, 1, 1},
     {&__pyx_n_s_Video, __pyx_k_Video, sizeof(__pyx_k_Video), 0, 0, 1, 1},
     {&__pyx_n_s_VideoAPI, __pyx_k_VideoAPI, sizeof(__pyx_k_VideoAPI), 0, 0, 1, 1},
     {&__pyx_n_s_VideoAPI___reduce_cython, __pyx_k_VideoAPI___reduce_cython, sizeof(__pyx_k_VideoAPI___reduce_cython), 0, 0, 1, 1},
@@ -23076,7 +26431,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_Video_from_dict, __pyx_k_Video_from_dict, sizeof(__pyx_k_Video_from_dict), 0, 0, 1, 1},
     {&__pyx_n_s_Video_to_dict, __pyx_k_Video_to_dict, sizeof(__pyx_k_Video_to_dict), 0, 0, 1, 1},
     {&__pyx_kp_u__3, __pyx_k__3, sizeof(__pyx_k__3), 0, 1, 0, 0},
-    {&__pyx_n_s__57, __pyx_k__57, sizeof(__pyx_k__57), 0, 0, 1, 1},
+    {&__pyx_n_s__64, __pyx_k__64, sizeof(__pyx_k__64), 0, 0, 1, 1},
     {&__pyx_n_s_api_key, __pyx_k_api_key, sizeof(__pyx_k_api_key), 0, 0, 1, 1},
     {&__pyx_n_u_api_key, __pyx_k_api_key, sizeof(__pyx_k_api_key), 0, 1, 0, 1},
     {&__pyx_kp_u_api_key_2, __pyx_k_api_key_2, sizeof(__pyx_k_api_key_2), 0, 1, 0, 0},
@@ -23090,6 +26445,9 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_u_captions_path, __pyx_k_captions_path, sizeof(__pyx_k_captions_path), 0, 1, 0, 1},
     {&__pyx_kp_u_captions_path_2, __pyx_k_captions_path_2, sizeof(__pyx_k_captions_path_2), 0, 1, 0, 0},
     {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
+    {&__pyx_n_s_console, __pyx_k_console, sizeof(__pyx_k_console), 0, 0, 1, 1},
+    {&__pyx_n_u_console, __pyx_k_console, sizeof(__pyx_k_console), 0, 1, 0, 1},
+    {&__pyx_kp_u_console_2, __pyx_k_console_2, sizeof(__pyx_k_console_2), 0, 1, 0, 0},
     {&__pyx_n_s_data, __pyx_k_data, sizeof(__pyx_k_data), 0, 0, 1, 1},
     {&__pyx_n_s_date_created, __pyx_k_date_created, sizeof(__pyx_k_date_created), 0, 0, 1, 1},
     {&__pyx_n_u_date_created, __pyx_k_date_created, sizeof(__pyx_k_date_created), 0, 1, 0, 1},
@@ -23106,6 +26464,12 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_encode_process, __pyx_k_encode_process, sizeof(__pyx_k_encode_process), 0, 0, 1, 1},
     {&__pyx_n_u_encode_process, __pyx_k_encode_process, sizeof(__pyx_k_encode_process), 0, 1, 0, 1},
     {&__pyx_kp_u_encode_process_2, __pyx_k_encode_process_2, sizeof(__pyx_k_encode_process_2), 0, 1, 0, 0},
+    {&__pyx_n_s_error, __pyx_k_error, sizeof(__pyx_k_error), 0, 0, 1, 1},
+    {&__pyx_n_u_error, __pyx_k_error, sizeof(__pyx_k_error), 0, 1, 0, 1},
+    {&__pyx_kp_u_error_2, __pyx_k_error_2, sizeof(__pyx_k_error_2), 0, 1, 0, 0},
+    {&__pyx_n_s_exception, __pyx_k_exception, sizeof(__pyx_k_exception), 0, 0, 1, 1},
+    {&__pyx_n_u_exception, __pyx_k_exception, sizeof(__pyx_k_exception), 0, 1, 0, 1},
+    {&__pyx_kp_u_exception_2, __pyx_k_exception_2, sizeof(__pyx_k_exception_2), 0, 1, 0, 0},
     {&__pyx_n_s_fallback_url, __pyx_k_fallback_url, sizeof(__pyx_k_fallback_url), 0, 0, 1, 1},
     {&__pyx_n_u_fallback_url, __pyx_k_fallback_url, sizeof(__pyx_k_fallback_url), 0, 1, 0, 1},
     {&__pyx_kp_u_fallback_url_2, __pyx_k_fallback_url_2, sizeof(__pyx_k_fallback_url_2), 0, 1, 0, 0},
@@ -23125,6 +26489,12 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_is_coroutine, __pyx_k_is_coroutine, sizeof(__pyx_k_is_coroutine), 0, 0, 1, 1},
     {&__pyx_kp_u_isenabled, __pyx_k_isenabled, sizeof(__pyx_k_isenabled), 0, 1, 0, 0},
     {&__pyx_n_s_items, __pyx_k_items, sizeof(__pyx_k_items), 0, 0, 1, 1},
+    {&__pyx_n_s_iter, __pyx_k_iter, sizeof(__pyx_k_iter), 0, 0, 1, 1},
+    {&__pyx_n_u_iter, __pyx_k_iter, sizeof(__pyx_k_iter), 0, 1, 0, 1},
+    {&__pyx_kp_u_iter_2, __pyx_k_iter_2, sizeof(__pyx_k_iter_2), 0, 1, 0, 0},
+    {&__pyx_n_s_library, __pyx_k_library, sizeof(__pyx_k_library), 0, 0, 1, 1},
+    {&__pyx_n_u_library, __pyx_k_library, sizeof(__pyx_k_library), 0, 1, 0, 1},
+    {&__pyx_kp_u_library_2, __pyx_k_library_2, sizeof(__pyx_k_library_2), 0, 1, 0, 0},
     {&__pyx_n_s_main, __pyx_k_main, sizeof(__pyx_k_main), 0, 0, 1, 1},
     {&__pyx_n_s_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 0, 1, 1},
     {&__pyx_n_u_name, __pyx_k_name, sizeof(__pyx_k_name), 0, 1, 0, 1},
@@ -23145,6 +26515,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_pyx_unpickle_Flow, __pyx_k_pyx_unpickle_Flow, sizeof(__pyx_k_pyx_unpickle_Flow), 0, 0, 1, 1},
     {&__pyx_n_s_pyx_unpickle_PlayerModel, __pyx_k_pyx_unpickle_PlayerModel, sizeof(__pyx_k_pyx_unpickle_PlayerModel), 0, 0, 1, 1},
     {&__pyx_n_s_pyx_unpickle_RefreshVideoLibra, __pyx_k_pyx_unpickle_RefreshVideoLibra, sizeof(__pyx_k_pyx_unpickle_RefreshVideoLibra), 0, 0, 1, 1},
+    {&__pyx_n_s_pyx_unpickle_StreamPlay, __pyx_k_pyx_unpickle_StreamPlay, sizeof(__pyx_k_pyx_unpickle_StreamPlay), 0, 0, 1, 1},
     {&__pyx_n_s_pyx_unpickle_Video, __pyx_k_pyx_unpickle_Video, sizeof(__pyx_k_pyx_unpickle_Video), 0, 0, 1, 1},
     {&__pyx_n_s_pyx_unpickle_VideoAPI, __pyx_k_pyx_unpickle_VideoAPI, sizeof(__pyx_k_pyx_unpickle_VideoAPI), 0, 0, 1, 1},
     {&__pyx_n_s_pyx_unpickle_VideoLibraryAPI, __pyx_k_pyx_unpickle_VideoLibraryAPI, sizeof(__pyx_k_pyx_unpickle_VideoLibraryAPI), 0, 0, 1, 1},
@@ -23159,6 +26530,9 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_reduce_ex, __pyx_k_reduce_ex, sizeof(__pyx_k_reduce_ex), 0, 0, 1, 1},
     {&__pyx_n_s_repr, __pyx_k_repr, sizeof(__pyx_k_repr), 0, 0, 1, 1},
     {&__pyx_n_s_return, __pyx_k_return, sizeof(__pyx_k_return), 0, 0, 1, 1},
+    {&__pyx_n_s_screenshot, __pyx_k_screenshot, sizeof(__pyx_k_screenshot), 0, 0, 1, 1},
+    {&__pyx_n_u_screenshot, __pyx_k_screenshot, sizeof(__pyx_k_screenshot), 0, 1, 0, 1},
+    {&__pyx_kp_u_screenshot_2, __pyx_k_screenshot_2, sizeof(__pyx_k_screenshot_2), 0, 1, 0, 0},
     {&__pyx_n_s_seek_path, __pyx_k_seek_path, sizeof(__pyx_k_seek_path), 0, 0, 1, 1},
     {&__pyx_n_u_seek_path, __pyx_k_seek_path, sizeof(__pyx_k_seek_path), 0, 1, 0, 1},
     {&__pyx_kp_u_seek_path_2, __pyx_k_seek_path_2, sizeof(__pyx_k_seek_path_2), 0, 1, 0, 0},
@@ -23180,6 +26554,7 @@ static int __Pyx_CreateStringTabAndInitStrings(void) {
     {&__pyx_n_s_stream, __pyx_k_stream, sizeof(__pyx_k_stream), 0, 0, 1, 1},
     {&__pyx_n_u_stream, __pyx_k_stream, sizeof(__pyx_k_stream), 0, 1, 0, 1},
     {&__pyx_kp_u_stream_2, __pyx_k_stream_2, sizeof(__pyx_k_stream_2), 0, 1, 0, 0},
+    {&__pyx_kp_u_stream_3, __pyx_k_stream_3, sizeof(__pyx_k_stream_3), 0, 1, 0, 0},
     {&__pyx_kp_s_stringsource, __pyx_k_stringsource, sizeof(__pyx_k_stringsource), 0, 0, 1, 0},
     {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
     {&__pyx_n_s_thumbnail_path, __pyx_k_thumbnail_path, sizeof(__pyx_k_thumbnail_path), 0, 0, 1, 1},
@@ -23248,9 +26623,12 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __pyx_tuple__8 = PyTuple_Pack(3, __pyx_int_206561686, __pyx_int_129110818, __pyx_int_189722331); if (unlikely(!__pyx_tuple__8)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__8);
   __Pyx_GIVEREF(__pyx_tuple__8);
-  __pyx_tuple__9 = PyTuple_Pack(3, __pyx_int_237166167, __pyx_int_33988418, __pyx_int_80822764); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __pyx_tuple__9 = PyTuple_Pack(3, __pyx_int_151034427, __pyx_int_181302522, __pyx_int_125239414); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(1, 4, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
+  __pyx_tuple__10 = PyTuple_Pack(3, __pyx_int_196483453, __pyx_int_86024096, __pyx_int_164099035); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(1, 4, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__10);
+  __Pyx_GIVEREF(__pyx_tuple__10);
 
   /* "bunnybackend/types.pyx":64
  *         self.raw = raw
@@ -23259,10 +26637,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     def from_dict(data: dict) -> RefreshVideoLibrary:
  *         return RefreshVideoLibrary(
  */
-  __pyx_tuple__10 = PyTuple_Pack(1, __pyx_n_s_data); if (unlikely(!__pyx_tuple__10)) __PYX_ERR(0, 64, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__10);
-  __Pyx_GIVEREF(__pyx_tuple__10);
-  __pyx_codeobj__11 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 64, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__11)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __pyx_tuple__11 = PyTuple_Pack(1, __pyx_n_s_data); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__11);
+  __Pyx_GIVEREF(__pyx_tuple__11);
+  __pyx_codeobj__12 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 64, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__12)) __PYX_ERR(0, 64, __pyx_L1_error)
 
   /* "bunnybackend/types.pyx":81
  *         )
@@ -23271,23 +26649,23 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if numeric_type is None:
  *             data = {'id': self.id, 'flow_id': self.flow_id, 'name': self.name, 'video_count': self.video_count, 'traffic_usage': self.traffic_usage, 'storage_usage': self.storage_usage, 'date_created': self.date_created, 'api_key': self.api_key, 'read_only_api_key': self.read_only_api_key, 'timestamp': self.timestamp}
  */
-  __pyx_tuple__12 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_numeric_type, __pyx_n_s_none_to); if (unlikely(!__pyx_tuple__12)) __PYX_ERR(0, 81, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__12);
-  __Pyx_GIVEREF(__pyx_tuple__12);
-  __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 81, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 81, __pyx_L1_error)
-  __pyx_tuple__14 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 81, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__14);
-  __Pyx_GIVEREF(__pyx_tuple__14);
+  __pyx_tuple__13 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_numeric_type, __pyx_n_s_none_to); if (unlikely(!__pyx_tuple__13)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__13);
+  __Pyx_GIVEREF(__pyx_tuple__13);
+  __pyx_codeobj__14 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 81, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__14)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_tuple__15 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__15);
+  __Pyx_GIVEREF(__pyx_tuple__15);
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_tuple__15 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_state, __pyx_n_s_dict_3, __pyx_n_s_use_setstate); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__15);
-  __Pyx_GIVEREF(__pyx_tuple__15);
-  __pyx_codeobj__16 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__16)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__16 = PyTuple_Pack(4, __pyx_n_s_self, __pyx_n_s_state, __pyx_n_s_dict_3, __pyx_n_s_use_setstate); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__16);
+  __Pyx_GIVEREF(__pyx_tuple__16);
+  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "(tree fragment)":16
  *     else:
@@ -23295,10 +26673,10 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_RefreshVideoLibrary__set_state(self, __pyx_state)
  */
-  __pyx_tuple__17 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_pyx_state); if (unlikely(!__pyx_tuple__17)) __PYX_ERR(1, 16, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__17);
-  __Pyx_GIVEREF(__pyx_tuple__17);
-  __pyx_codeobj__18 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__18)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_tuple__18 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_pyx_state); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__18);
+  __Pyx_GIVEREF(__pyx_tuple__18);
+  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(1, 16, __pyx_L1_error)
 
   /* "bunnybackend/types.pyx":114
  * 
@@ -23307,7 +26685,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     def from_dict(data: dict) -> VideoLibraryAPI:
  *         return VideoLibraryAPI(
  */
-  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 114, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 114, __pyx_L1_error)
+  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 114, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 114, __pyx_L1_error)
 
   /* "bunnybackend/types.pyx":124
  *         )
@@ -23316,17 +26694,17 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if numeric_type is None:
  *             data = {'id': self.id, 'api_key': self.api_key, 'read_only_api_key': self.read_only_api_key }
  */
-  __pyx_codeobj__20 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 124, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__20)) __PYX_ERR(0, 124, __pyx_L1_error)
-  __pyx_tuple__21 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 124, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__21);
-  __Pyx_GIVEREF(__pyx_tuple__21);
+  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 124, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_tuple__22 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__22)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__22);
+  __Pyx_GIVEREF(__pyx_tuple__22);
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "(tree fragment)":16
  *     else:
@@ -23334,7 +26712,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_VideoLibraryAPI__set_state(self, __pyx_state)
  */
-  __pyx_codeobj__23 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__23)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_codeobj__24 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__24)) __PYX_ERR(1, 16, __pyx_L1_error)
 
   /* "bunnybackend/types.pyx":159
  * 
@@ -23343,7 +26721,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     def from_dict(data: dict) -> Flow:
  *         return Flow(
  */
-  __pyx_codeobj__24 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 159, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__24)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 159, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 159, __pyx_L1_error)
 
   /* "bunnybackend/types.pyx":168
  *         )
@@ -23352,17 +26730,17 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if numeric_type is None:
  *             data = {'flow_name': self.flow_name, 'flow_id': self.flow_id, 'status': self.status, 'timestamp': self.timestamp }
  */
-  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 168, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 168, __pyx_L1_error)
-  __pyx_tuple__26 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(0, 168, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__26);
-  __Pyx_GIVEREF(__pyx_tuple__26);
+  __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 168, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(0, 168, __pyx_L1_error)
+  __pyx_tuple__27 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__27)) __PYX_ERR(0, 168, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__27);
+  __Pyx_GIVEREF(__pyx_tuple__27);
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_codeobj__27 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__27)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__28 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__28)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "(tree fragment)":16
  *     else:
@@ -23370,7 +26748,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_Flow__set_state(self, __pyx_state)
  */
-  __pyx_codeobj__28 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__28)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(1, 16, __pyx_L1_error)
 
   /* "bunnybackend/types.pyx":217
  * 
@@ -23379,7 +26757,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     def from_dict(data: dict) -> Video:
  *         return Video(
  */
-  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 217, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 217, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 217, __pyx_L1_error)
 
   /* "bunnybackend/types.pyx":231
  *         )
@@ -23388,17 +26766,17 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if numeric_type is None:
  *             data = {'id': self.id, 'video_library_id': self.video_library_id, 'flow_id': self.flow_id, 'name': self.name, 'date_upload': self.date_upload, 'views': self.views, 'encode_process': self.encode_process, 'storage_size': self.storage_size, 'timestamp': self.timestamp}
  */
-  __pyx_codeobj__30 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 231, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__30)) __PYX_ERR(0, 231, __pyx_L1_error)
-  __pyx_tuple__31 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 231, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__31);
-  __Pyx_GIVEREF(__pyx_tuple__31);
+  __pyx_codeobj__31 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 231, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__31)) __PYX_ERR(0, 231, __pyx_L1_error)
+  __pyx_tuple__32 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(0, 231, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__32);
+  __Pyx_GIVEREF(__pyx_tuple__32);
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__33 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__33)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "(tree fragment)":16
  *     else:
@@ -23406,7 +26784,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_Video__set_state(self, __pyx_state)
  */
-  __pyx_codeobj__33 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__33)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_codeobj__34 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__34)) __PYX_ERR(1, 16, __pyx_L1_error)
 
   /* "bunnybackend/types.pyx":262
  * 
@@ -23415,7 +26793,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     def from_dict(data: dict) -> VideoAPI:
  *         return VideoAPI(
  */
-  __pyx_codeobj__34 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 262, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__34)) __PYX_ERR(0, 262, __pyx_L1_error)
+  __pyx_codeobj__35 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 262, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__35)) __PYX_ERR(0, 262, __pyx_L1_error)
 
   /* "bunnybackend/types.pyx":269
  *         )
@@ -23424,17 +26802,17 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if numeric_type is None:
  *             data = {'id': self.id, 'video_library_id': self.video_library_id }
  */
-  __pyx_codeobj__35 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 269, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__35)) __PYX_ERR(0, 269, __pyx_L1_error)
-  __pyx_tuple__36 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__36)) __PYX_ERR(0, 269, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__36);
-  __Pyx_GIVEREF(__pyx_tuple__36);
+  __pyx_codeobj__36 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 269, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__36)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __pyx_tuple__37 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__37)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__37);
+  __Pyx_GIVEREF(__pyx_tuple__37);
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_codeobj__37 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__37)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__38 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__38)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "(tree fragment)":16
  *     else:
@@ -23442,7 +26820,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_VideoAPI__set_state(self, __pyx_state)
  */
-  __pyx_codeobj__38 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__38)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_codeobj__39 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__39)) __PYX_ERR(1, 16, __pyx_L1_error)
 
   /* "bunnybackend/types.pyx":320
  *         self.raw = raw
@@ -23451,7 +26829,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     def from_dict(data: dict) -> VideoStream:
  *         return VideoStream(
  */
-  __pyx_codeobj__39 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 320, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__39)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_codeobj__40 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 320, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__40)) __PYX_ERR(0, 320, __pyx_L1_error)
 
   /* "bunnybackend/types.pyx":335
  *         )
@@ -23460,17 +26838,17 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *         if numeric_type is None:
  *             data = {'id': self.id, 'video_library_id': self.video_library_id, 'flow_id': self.flow_id, 'captions_path': self.captions_path, 'seek_path': self.seek_path, 'thumbnail_path': self.thumbnail_path, 'fallback_url': self.fallback_url, 'video_playlist_url': self.video_playlist_url, 'preview_url': self.preview_url, 'timestamp': self.timestamp}
  */
-  __pyx_codeobj__40 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 335, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__40)) __PYX_ERR(0, 335, __pyx_L1_error)
-  __pyx_tuple__41 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__41)) __PYX_ERR(0, 335, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__41);
-  __Pyx_GIVEREF(__pyx_tuple__41);
+  __pyx_codeobj__41 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 335, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__41)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_tuple__42 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__42)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__42);
+  __Pyx_GIVEREF(__pyx_tuple__42);
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_codeobj__42 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__42)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__43 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__43)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "(tree fragment)":16
  *     else:
@@ -23478,59 +26856,96 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_VideoStream__set_state(self, __pyx_state)
  */
-  __pyx_codeobj__43 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__43)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_codeobj__44 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__44)) __PYX_ERR(1, 16, __pyx_L1_error)
 
-  /* "bunnybackend/types.pyx":365
- *         self.browser = browser
+  /* "bunnybackend/types.pyx":367
+ *         self.iter = iter
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def from_dict(data: dict) -> PlayerModel:
  *         return PlayerModel(
  */
-  __pyx_codeobj__44 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__10, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 365, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__44)) __PYX_ERR(0, 365, __pyx_L1_error)
+  __pyx_codeobj__45 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 367, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__45)) __PYX_ERR(0, 367, __pyx_L1_error)
 
-  /* "bunnybackend/types.pyx":372
+  /* "bunnybackend/types.pyx":375
  *         )
  * 
  *     cpdef dict to_dict(self, numeric_type=None, none_to=False):             # <<<<<<<<<<<<<<
  *         if numeric_type is None:
- *             data = {'stream': self.stream, 'browser': self.browser }
+ *             data = {'stream': self.stream, 'browser': self.browser, 'iter': self.iter }
  */
-  __pyx_codeobj__45 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 372, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__45)) __PYX_ERR(0, 372, __pyx_L1_error)
-  __pyx_tuple__46 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__46)) __PYX_ERR(0, 372, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__46);
-  __Pyx_GIVEREF(__pyx_tuple__46);
+  __pyx_codeobj__46 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 375, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__46)) __PYX_ERR(0, 375, __pyx_L1_error)
+  __pyx_tuple__47 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__47)) __PYX_ERR(0, 375, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__47);
+  __Pyx_GIVEREF(__pyx_tuple__47);
 
   /* "(tree fragment)":1
  * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_codeobj__47 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__15, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__47)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__48 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__48)) __PYX_ERR(1, 1, __pyx_L1_error)
 
   /* "(tree fragment)":16
  *     else:
- *         return __pyx_unpickle_PlayerModel, (type(self), 0xe22de57, state)
+ *         return __pyx_unpickle_PlayerModel, (type(self), 0x9009a3b, state)
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_PlayerModel__set_state(self, __pyx_state)
  */
-  __pyx_codeobj__48 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__17, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__48)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_codeobj__49 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__49)) __PYX_ERR(1, 16, __pyx_L1_error)
+
+  /* "bunnybackend/types.pyx":416
+ *         self.screenshot = screenshot
+ * 
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def from_dict(data: dict) -> PlayerModel:
+ *         return PlayerModel(
+ */
+  __pyx_codeobj__50 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__11, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_from_dict, 416, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__50)) __PYX_ERR(0, 416, __pyx_L1_error)
+
+  /* "bunnybackend/types.pyx":431
+ *         )
+ * 
+ *     cpdef dict to_dict(self, numeric_type=None, none_to=False):             # <<<<<<<<<<<<<<
+ *         if numeric_type is None:
+ *             data = {'library': self.library, 'stream': self.stream, 'browser': self.browser, 'iter': self.iter, 'console': self.console, 'error': self.error, 'exception': self.exception, 'screenshot': self.screenshot }
+ */
+  __pyx_codeobj__51 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__13, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_bunnybackend_types_pyx, __pyx_n_s_to_dict, 431, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__51)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __pyx_tuple__52 = PyTuple_Pack(2, Py_None, Py_False); if (unlikely(!__pyx_tuple__52)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__52);
+  __Pyx_GIVEREF(__pyx_tuple__52);
+
+  /* "(tree fragment)":1
+ * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
+ *     cdef tuple state
+ *     cdef object _dict
+ */
+  __pyx_codeobj__53 = (PyObject*)__Pyx_PyCode_New(1, 0, 0, 4, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_reduce_cython, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__53)) __PYX_ERR(1, 1, __pyx_L1_error)
+
+  /* "(tree fragment)":16
+ *     else:
+ *         return __pyx_unpickle_StreamPlay, (type(self), 0xbb6197d, state)
+ * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
+ *     __pyx_unpickle_StreamPlay__set_state(self, __pyx_state)
+ */
+  __pyx_codeobj__54 = (PyObject*)__Pyx_PyCode_New(2, 0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_setstate_cython, 16, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__54)) __PYX_ERR(1, 16, __pyx_L1_error)
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_RefreshVideoLibrary(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_tuple__49 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__49)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_tuple__49);
-  __Pyx_GIVEREF(__pyx_tuple__49);
-  __pyx_codeobj__50 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_RefreshVideoLibra, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__50)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_codeobj__51 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_VideoLibraryAPI, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__51)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_codeobj__52 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Flow, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__52)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_codeobj__53 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Video, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__53)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_codeobj__54 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_VideoAPI, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__54)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_codeobj__55 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_VideoStream, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__55)) __PYX_ERR(1, 1, __pyx_L1_error)
-  __pyx_codeobj__56 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__49, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_PlayerModel, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__56)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_tuple__55 = PyTuple_Pack(5, __pyx_n_s_pyx_type, __pyx_n_s_pyx_checksum, __pyx_n_s_pyx_state, __pyx_n_s_pyx_PickleError, __pyx_n_s_pyx_result); if (unlikely(!__pyx_tuple__55)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_tuple__55);
+  __Pyx_GIVEREF(__pyx_tuple__55);
+  __pyx_codeobj__56 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__55, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_RefreshVideoLibra, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__56)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__57 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__55, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_VideoLibraryAPI, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__57)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__58 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__55, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Flow, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__58)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__59 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__55, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_Video, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__59)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__60 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__55, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_VideoAPI, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__60)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__61 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__55, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_VideoStream, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__61)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__62 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__55, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_PlayerModel, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__62)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_codeobj__63 = (PyObject*)__Pyx_PyCode_New(3, 0, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__55, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_stringsource, __pyx_n_s_pyx_unpickle_StreamPlay, 1, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__63)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -23543,23 +26958,26 @@ static CYTHON_SMALL_CODE int __Pyx_InitConstants(void) {
   if (__Pyx_CreateStringTabAndInitStrings() < 0) __PYX_ERR(0, 1, __pyx_L1_error);
   __pyx_int_17670018 = PyInt_FromLong(17670018L); if (unlikely(!__pyx_int_17670018)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_19903718 = PyInt_FromLong(19903718L); if (unlikely(!__pyx_int_19903718)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_int_33988418 = PyInt_FromLong(33988418L); if (unlikely(!__pyx_int_33988418)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_int_80822764 = PyInt_FromLong(80822764L); if (unlikely(!__pyx_int_80822764)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_81172964 = PyInt_FromLong(81172964L); if (unlikely(!__pyx_int_81172964)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_86024096 = PyInt_FromLong(86024096L); if (unlikely(!__pyx_int_86024096)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_102019370 = PyInt_FromLong(102019370L); if (unlikely(!__pyx_int_102019370)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_110783672 = PyInt_FromLong(110783672L); if (unlikely(!__pyx_int_110783672)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_125239414 = PyInt_FromLong(125239414L); if (unlikely(!__pyx_int_125239414)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_129110818 = PyInt_FromLong(129110818L); if (unlikely(!__pyx_int_129110818)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_149218237 = PyInt_FromLong(149218237L); if (unlikely(!__pyx_int_149218237)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_151034427 = PyInt_FromLong(151034427L); if (unlikely(!__pyx_int_151034427)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_164099035 = PyInt_FromLong(164099035L); if (unlikely(!__pyx_int_164099035)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_165026440 = PyInt_FromLong(165026440L); if (unlikely(!__pyx_int_165026440)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_171932554 = PyInt_FromLong(171932554L); if (unlikely(!__pyx_int_171932554)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_176929229 = PyInt_FromLong(176929229L); if (unlikely(!__pyx_int_176929229)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_181302522 = PyInt_FromLong(181302522L); if (unlikely(!__pyx_int_181302522)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_189722331 = PyInt_FromLong(189722331L); if (unlikely(!__pyx_int_189722331)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_196358553 = PyInt_FromLong(196358553L); if (unlikely(!__pyx_int_196358553)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __pyx_int_196483453 = PyInt_FromLong(196483453L); if (unlikely(!__pyx_int_196483453)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_206561686 = PyInt_FromLong(206561686L); if (unlikely(!__pyx_int_206561686)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_210659880 = PyInt_FromLong(210659880L); if (unlikely(!__pyx_int_210659880)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_211517880 = PyInt_FromLong(211517880L); if (unlikely(!__pyx_int_211517880)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_235285953 = PyInt_FromLong(235285953L); if (unlikely(!__pyx_int_235285953)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __pyx_int_237166167 = PyInt_FromLong(237166167L); if (unlikely(!__pyx_int_237166167)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_244845213 = PyInt_FromLong(244845213L); if (unlikely(!__pyx_int_244845213)) __PYX_ERR(0, 1, __pyx_L1_error)
   __pyx_int_258107949 = PyInt_FromLong(258107949L); if (unlikely(!__pyx_int_258107949)) __PYX_ERR(0, 1, __pyx_L1_error)
   return 0;
@@ -23814,6 +27232,35 @@ static int __Pyx_modinit_type_init_code(void) {
   if (PyObject_SetAttr(__pyx_m, __pyx_n_s_PlayerModel, (PyObject *) __pyx_ptype_12bunnybackend_5types_PlayerModel) < 0) __PYX_ERR(0, 356, __pyx_L1_error)
   #if !CYTHON_COMPILING_IN_LIMITED_API
   if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_12bunnybackend_5types_PlayerModel) < 0) __PYX_ERR(0, 356, __pyx_L1_error)
+  #endif
+  __pyx_vtabptr_12bunnybackend_5types_StreamPlay = &__pyx_vtable_12bunnybackend_5types_StreamPlay;
+  __pyx_vtable_12bunnybackend_5types_StreamPlay.to_dict = (PyObject *(*)(struct __pyx_obj_12bunnybackend_5types_StreamPlay *, int __pyx_skip_dispatch, struct __pyx_opt_args_12bunnybackend_5types_10StreamPlay_to_dict *__pyx_optional_args))__pyx_f_12bunnybackend_5types_10StreamPlay_to_dict;
+  #if CYTHON_USE_TYPE_SPECS
+  __pyx_ptype_12bunnybackend_5types_StreamPlay = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_12bunnybackend_5types_StreamPlay_spec, NULL); if (unlikely(!__pyx_ptype_12bunnybackend_5types_StreamPlay)) __PYX_ERR(0, 395, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_12bunnybackend_5types_StreamPlay_spec, __pyx_ptype_12bunnybackend_5types_StreamPlay) < 0) __PYX_ERR(0, 395, __pyx_L1_error)
+  #else
+  __pyx_ptype_12bunnybackend_5types_StreamPlay = &__pyx_type_12bunnybackend_5types_StreamPlay;
+  #endif
+  #if !CYTHON_COMPILING_IN_LIMITED_API
+  #endif
+  #if !CYTHON_USE_TYPE_SPECS
+  if (__Pyx_PyType_Ready(__pyx_ptype_12bunnybackend_5types_StreamPlay) < 0) __PYX_ERR(0, 395, __pyx_L1_error)
+  #endif
+  #if PY_MAJOR_VERSION < 3
+  __pyx_ptype_12bunnybackend_5types_StreamPlay->tp_print = 0;
+  #endif
+  #if !CYTHON_COMPILING_IN_LIMITED_API
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_ptype_12bunnybackend_5types_StreamPlay->tp_dictoffset && __pyx_ptype_12bunnybackend_5types_StreamPlay->tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_ptype_12bunnybackend_5types_StreamPlay->tp_getattro = __Pyx_PyObject_GenericGetAttr;
+  }
+  #endif
+  if (__Pyx_SetVtable(__pyx_ptype_12bunnybackend_5types_StreamPlay, __pyx_vtabptr_12bunnybackend_5types_StreamPlay) < 0) __PYX_ERR(0, 395, __pyx_L1_error)
+  #if !CYTHON_COMPILING_IN_LIMITED_API
+  if (__Pyx_MergeVtables(__pyx_ptype_12bunnybackend_5types_StreamPlay) < 0) __PYX_ERR(0, 395, __pyx_L1_error)
+  #endif
+  if (PyObject_SetAttr(__pyx_m, __pyx_n_s_StreamPlay, (PyObject *) __pyx_ptype_12bunnybackend_5types_StreamPlay) < 0) __PYX_ERR(0, 395, __pyx_L1_error)
+  #if !CYTHON_COMPILING_IN_LIMITED_API
+  if (__Pyx_setup_reduce((PyObject *) __pyx_ptype_12bunnybackend_5types_StreamPlay) < 0) __PYX_ERR(0, 395, __pyx_L1_error)
   #endif
   __Pyx_RefNannyFinishContext();
   return 0;
@@ -24169,7 +27616,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_data, __pyx_n_s_dict_2) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_RefreshVideoLibrary) < 0) __PYX_ERR(0, 64, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_19RefreshVideoLibrary_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_RefreshVideoLibrary_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__11)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_19RefreshVideoLibrary_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_RefreshVideoLibrary_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__12)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 64, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24192,9 +27639,9 @@ if (!__Pyx_RefNanny) {
  *         if numeric_type is None:
  *             data = {'id': self.id, 'flow_id': self.flow_id, 'name': self.name, 'video_count': self.video_count, 'traffic_usage': self.traffic_usage, 'storage_usage': self.storage_usage, 'date_created': self.date_created, 'api_key': self.api_key, 'read_only_api_key': self.read_only_api_key, 'timestamp': self.timestamp}
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_19RefreshVideoLibrary_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_RefreshVideoLibrary_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__13)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 81, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_19RefreshVideoLibrary_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_RefreshVideoLibrary_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__14)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 81, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__14);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__15);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_RefreshVideoLibrary, __pyx_n_s_to_dict, __pyx_t_3) < 0) __PYX_ERR(0, 81, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12bunnybackend_5types_RefreshVideoLibrary);
@@ -24204,7 +27651,7 @@ if (!__Pyx_RefNanny) {
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_19RefreshVideoLibrary_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_RefreshVideoLibrary___reduce_cyt, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__16)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_19RefreshVideoLibrary_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_RefreshVideoLibrary___reduce_cyt, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_RefreshVideoLibrary, __pyx_n_s_reduce_cython, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24216,7 +27663,7 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_RefreshVideoLibrary__set_state(self, __pyx_state)
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_19RefreshVideoLibrary_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_RefreshVideoLibrary___setstate_c, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__18)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_19RefreshVideoLibrary_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_RefreshVideoLibrary___setstate_c, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_RefreshVideoLibrary, __pyx_n_s_setstate_cython, __pyx_t_3) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24233,7 +27680,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_data, __pyx_n_s_dict_2) < 0) __PYX_ERR(0, 114, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_VideoLibraryAPI) < 0) __PYX_ERR(0, 114, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_15VideoLibraryAPI_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoLibraryAPI_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 114, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_15VideoLibraryAPI_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoLibraryAPI_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 114, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24256,9 +27703,9 @@ if (!__Pyx_RefNanny) {
  *         if numeric_type is None:
  *             data = {'id': self.id, 'api_key': self.api_key, 'read_only_api_key': self.read_only_api_key }
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_15VideoLibraryAPI_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoLibraryAPI_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__20)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_15VideoLibraryAPI_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoLibraryAPI_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__21)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__21);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__22);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_VideoLibraryAPI, __pyx_n_s_to_dict, __pyx_t_3) < 0) __PYX_ERR(0, 124, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12bunnybackend_5types_VideoLibraryAPI);
@@ -24268,7 +27715,7 @@ if (!__Pyx_RefNanny) {
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_15VideoLibraryAPI_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoLibraryAPI___reduce_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_15VideoLibraryAPI_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoLibraryAPI___reduce_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_VideoLibraryAPI, __pyx_n_s_reduce_cython, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24280,7 +27727,7 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_VideoLibraryAPI__set_state(self, __pyx_state)
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_15VideoLibraryAPI_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoLibraryAPI___setstate_cytho, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__23)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_15VideoLibraryAPI_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoLibraryAPI___setstate_cytho, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__24)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_VideoLibraryAPI, __pyx_n_s_setstate_cython, __pyx_t_3) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24297,7 +27744,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_data, __pyx_n_s_dict_2) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_Flow) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_4Flow_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Flow_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__24)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_4Flow_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Flow_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 159, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24320,9 +27767,9 @@ if (!__Pyx_RefNanny) {
  *         if numeric_type is None:
  *             data = {'flow_name': self.flow_name, 'flow_id': self.flow_id, 'status': self.status, 'timestamp': self.timestamp }
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_4Flow_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Flow_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 168, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_4Flow_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Flow_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__26)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__26);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__27);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_Flow, __pyx_n_s_to_dict, __pyx_t_3) < 0) __PYX_ERR(0, 168, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12bunnybackend_5types_Flow);
@@ -24332,7 +27779,7 @@ if (!__Pyx_RefNanny) {
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_4Flow_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Flow___reduce_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__27)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_4Flow_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Flow___reduce_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__28)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_Flow, __pyx_n_s_reduce_cython, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24344,7 +27791,7 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_Flow__set_state(self, __pyx_state)
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_4Flow_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Flow___setstate_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__28)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_4Flow_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Flow___setstate_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__29)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_Flow, __pyx_n_s_setstate_cython, __pyx_t_3) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24361,7 +27808,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_data, __pyx_n_s_dict_2) < 0) __PYX_ERR(0, 217, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_Video) < 0) __PYX_ERR(0, 217, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_5Video_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Video_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__29)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 217, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_5Video_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Video_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__30)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24384,9 +27831,9 @@ if (!__Pyx_RefNanny) {
  *         if numeric_type is None:
  *             data = {'id': self.id, 'video_library_id': self.video_library_id, 'flow_id': self.flow_id, 'name': self.name, 'date_upload': self.date_upload, 'views': self.views, 'encode_process': self.encode_process, 'storage_size': self.storage_size, 'timestamp': self.timestamp}
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_5Video_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Video_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__30)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 231, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_5Video_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Video_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__31)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__31);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__32);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_Video, __pyx_n_s_to_dict, __pyx_t_3) < 0) __PYX_ERR(0, 231, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12bunnybackend_5types_Video);
@@ -24396,7 +27843,7 @@ if (!__Pyx_RefNanny) {
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_5Video_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Video___reduce_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__32)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_5Video_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Video___reduce_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__33)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_Video, __pyx_n_s_reduce_cython, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24408,7 +27855,7 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_Video__set_state(self, __pyx_state)
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_5Video_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Video___setstate_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__33)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_5Video_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_Video___setstate_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__34)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_Video, __pyx_n_s_setstate_cython, __pyx_t_3) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24425,7 +27872,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_data, __pyx_n_s_dict_2) < 0) __PYX_ERR(0, 262, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_VideoAPI) < 0) __PYX_ERR(0, 262, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_8VideoAPI_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoAPI_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__34)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 262, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_8VideoAPI_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoAPI_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 262, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24448,9 +27895,9 @@ if (!__Pyx_RefNanny) {
  *         if numeric_type is None:
  *             data = {'id': self.id, 'video_library_id': self.video_library_id }
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_8VideoAPI_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoAPI_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 269, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_8VideoAPI_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoAPI_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__36);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__37);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_VideoAPI, __pyx_n_s_to_dict, __pyx_t_3) < 0) __PYX_ERR(0, 269, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12bunnybackend_5types_VideoAPI);
@@ -24460,7 +27907,7 @@ if (!__Pyx_RefNanny) {
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_8VideoAPI_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoAPI___reduce_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__37)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_8VideoAPI_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoAPI___reduce_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__38)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_VideoAPI, __pyx_n_s_reduce_cython, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24472,7 +27919,7 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_VideoAPI__set_state(self, __pyx_state)
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_8VideoAPI_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoAPI___setstate_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__38)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_8VideoAPI_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoAPI___setstate_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__39)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_VideoAPI, __pyx_n_s_setstate_cython, __pyx_t_3) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24489,7 +27936,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_data, __pyx_n_s_dict_2) < 0) __PYX_ERR(0, 320, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_VideoStream) < 0) __PYX_ERR(0, 320, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11VideoStream_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoStream_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__39)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 320, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11VideoStream_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoStream_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__40)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 320, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24512,9 +27959,9 @@ if (!__Pyx_RefNanny) {
  *         if numeric_type is None:
  *             data = {'id': self.id, 'video_library_id': self.video_library_id, 'flow_id': self.flow_id, 'captions_path': self.captions_path, 'seek_path': self.seek_path, 'thumbnail_path': self.thumbnail_path, 'fallback_url': self.fallback_url, 'video_playlist_url': self.video_playlist_url, 'preview_url': self.preview_url, 'timestamp': self.timestamp}
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11VideoStream_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoStream_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__40)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11VideoStream_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoStream_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__41)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 335, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__41);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__42);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_VideoStream, __pyx_n_s_to_dict, __pyx_t_3) < 0) __PYX_ERR(0, 335, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12bunnybackend_5types_VideoStream);
@@ -24524,7 +27971,7 @@ if (!__Pyx_RefNanny) {
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11VideoStream_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoStream___reduce_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__42)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11VideoStream_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoStream___reduce_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__43)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_VideoStream, __pyx_n_s_reduce_cython, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24536,50 +27983,50 @@ if (!__Pyx_RefNanny) {
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_VideoStream__set_state(self, __pyx_state)
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11VideoStream_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoStream___setstate_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__43)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11VideoStream_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_VideoStream___setstate_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__44)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_VideoStream, __pyx_n_s_setstate_cython, __pyx_t_3) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12bunnybackend_5types_VideoStream);
 
-  /* "bunnybackend/types.pyx":365
- *         self.browser = browser
+  /* "bunnybackend/types.pyx":367
+ *         self.iter = iter
  * 
  *     @staticmethod             # <<<<<<<<<<<<<<
  *     def from_dict(data: dict) -> PlayerModel:
  *         return PlayerModel(
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 365, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 367, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_data, __pyx_n_s_dict_2) < 0) __PYX_ERR(0, 365, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_PlayerModel) < 0) __PYX_ERR(0, 365, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11PlayerModel_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_PlayerModel_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__44)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 365, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_data, __pyx_n_s_dict_2) < 0) __PYX_ERR(0, 367, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_PlayerModel) < 0) __PYX_ERR(0, 367, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11PlayerModel_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_PlayerModel_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__45)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 367, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_3);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_PlayerModel, __pyx_n_s_from_dict, __pyx_t_2) < 0) __PYX_ERR(0, 365, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_PlayerModel, __pyx_n_s_from_dict, __pyx_t_2) < 0) __PYX_ERR(0, 367, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   PyType_Modified(__pyx_ptype_12bunnybackend_5types_PlayerModel);
-  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_12bunnybackend_5types_PlayerModel, __pyx_n_s_from_dict); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 365, __pyx_L1_error)
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_12bunnybackend_5types_PlayerModel, __pyx_n_s_from_dict); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 367, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 365, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 367, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_PlayerModel, __pyx_n_s_from_dict, __pyx_t_3) < 0) __PYX_ERR(0, 365, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_PlayerModel, __pyx_n_s_from_dict, __pyx_t_3) < 0) __PYX_ERR(0, 367, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12bunnybackend_5types_PlayerModel);
 
-  /* "bunnybackend/types.pyx":372
+  /* "bunnybackend/types.pyx":375
  *         )
  * 
  *     cpdef dict to_dict(self, numeric_type=None, none_to=False):             # <<<<<<<<<<<<<<
  *         if numeric_type is None:
- *             data = {'stream': self.stream, 'browser': self.browser }
+ *             data = {'stream': self.stream, 'browser': self.browser, 'iter': self.iter }
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11PlayerModel_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_PlayerModel_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__45)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 372, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11PlayerModel_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_PlayerModel_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__46)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 375, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__46);
-  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_PlayerModel, __pyx_n_s_to_dict, __pyx_t_3) < 0) __PYX_ERR(0, 372, __pyx_L1_error)
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__47);
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_PlayerModel, __pyx_n_s_to_dict, __pyx_t_3) < 0) __PYX_ERR(0, 375, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12bunnybackend_5types_PlayerModel);
 
@@ -24588,7 +28035,7 @@ if (!__Pyx_RefNanny) {
  *     cdef tuple state
  *     cdef object _dict
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11PlayerModel_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_PlayerModel___reduce_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__47)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11PlayerModel_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_PlayerModel___reduce_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__48)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_PlayerModel, __pyx_n_s_reduce_cython, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24596,22 +28043,86 @@ if (!__Pyx_RefNanny) {
 
   /* "(tree fragment)":16
  *     else:
- *         return __pyx_unpickle_PlayerModel, (type(self), 0xe22de57, state)
+ *         return __pyx_unpickle_PlayerModel, (type(self), 0x9009a3b, state)
  * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
  *     __pyx_unpickle_PlayerModel__set_state(self, __pyx_state)
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11PlayerModel_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_PlayerModel___setstate_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__48)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11PlayerModel_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_PlayerModel___setstate_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__49)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_PlayerModel, __pyx_n_s_setstate_cython, __pyx_t_3) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   PyType_Modified(__pyx_ptype_12bunnybackend_5types_PlayerModel);
+
+  /* "bunnybackend/types.pyx":416
+ *         self.screenshot = screenshot
+ * 
+ *     @staticmethod             # <<<<<<<<<<<<<<
+ *     def from_dict(data: dict) -> PlayerModel:
+ *         return PlayerModel(
+ */
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_data, __pyx_n_s_dict_2) < 0) __PYX_ERR(0, 416, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_return, __pyx_n_s_PlayerModel) < 0) __PYX_ERR(0, 416, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_10StreamPlay_3from_dict, __Pyx_CYFUNCTION_STATICMETHOD | __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_StreamPlay_from_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__50)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_3);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_StreamPlay, __pyx_n_s_from_dict, __pyx_t_2) < 0) __PYX_ERR(0, 416, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  PyType_Modified(__pyx_ptype_12bunnybackend_5types_StreamPlay);
+  __Pyx_GetNameInClass(__pyx_t_2, (PyObject *)__pyx_ptype_12bunnybackend_5types_StreamPlay, __pyx_n_s_from_dict); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_CallOneArg(__pyx_builtin_staticmethod, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 416, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_StreamPlay, __pyx_n_s_from_dict, __pyx_t_3) < 0) __PYX_ERR(0, 416, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  PyType_Modified(__pyx_ptype_12bunnybackend_5types_StreamPlay);
+
+  /* "bunnybackend/types.pyx":431
+ *         )
+ * 
+ *     cpdef dict to_dict(self, numeric_type=None, none_to=False):             # <<<<<<<<<<<<<<
+ *         if numeric_type is None:
+ *             data = {'library': self.library, 'stream': self.stream, 'browser': self.browser, 'iter': self.iter, 'console': self.console, 'error': self.error, 'exception': self.exception, 'screenshot': self.screenshot }
+ */
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_10StreamPlay_5to_dict, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_StreamPlay_to_dict, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__51)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_3, __pyx_tuple__52);
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_StreamPlay, __pyx_n_s_to_dict, __pyx_t_3) < 0) __PYX_ERR(0, 431, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  PyType_Modified(__pyx_ptype_12bunnybackend_5types_StreamPlay);
+
+  /* "(tree fragment)":1
+ * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
+ *     cdef tuple state
+ *     cdef object _dict
+ */
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_10StreamPlay_13__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_StreamPlay___reduce_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__53)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_StreamPlay, __pyx_n_s_reduce_cython, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  PyType_Modified(__pyx_ptype_12bunnybackend_5types_StreamPlay);
+
+  /* "(tree fragment)":16
+ *     else:
+ *         return __pyx_unpickle_StreamPlay, (type(self), 0xbb6197d, state)
+ * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
+ *     __pyx_unpickle_StreamPlay__set_state(self, __pyx_state)
+ */
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_10StreamPlay_15__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_n_s_StreamPlay___setstate_cython, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__54)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 16, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (__Pyx_SetItemOnTypeDict((PyObject *)__pyx_ptype_12bunnybackend_5types_StreamPlay, __pyx_n_s_setstate_cython, __pyx_t_3) < 0) __PYX_ERR(1, 16, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  PyType_Modified(__pyx_ptype_12bunnybackend_5types_StreamPlay);
 
   /* "(tree fragment)":1
  * def __pyx_unpickle_RefreshVideoLibrary(__pyx_type, long __pyx_checksum, __pyx_state):             # <<<<<<<<<<<<<<
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_1__pyx_unpickle_RefreshVideoLibrary, 0, __pyx_n_s_pyx_unpickle_RefreshVideoLibra, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__50)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_1__pyx_unpickle_RefreshVideoLibrary, 0, __pyx_n_s_pyx_unpickle_RefreshVideoLibra, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__56)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_RefreshVideoLibra, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24623,7 +28134,7 @@ if (!__Pyx_RefNanny) {
  *     __pyx_result.api_key = __pyx_state[0]; __pyx_result.date_created = __pyx_state[1]; __pyx_result.flow_id = __pyx_state[2]; __pyx_result.id = __pyx_state[3]; __pyx_result.name = __pyx_state[4]; __pyx_result.raw = __pyx_state[5]; __pyx_result.read_only_api_key = __pyx_state[6]; __pyx_result.storage_usage = __pyx_state[7]; __pyx_result.timestamp = __pyx_state[8]; __pyx_result.traffic_usage = __pyx_state[9]; __pyx_result.video_count = __pyx_state[10]
  *     if len(__pyx_state) > 11 and hasattr(__pyx_result, '__dict__'):
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_3__pyx_unpickle_VideoLibraryAPI, 0, __pyx_n_s_pyx_unpickle_VideoLibraryAPI, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__51)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_3__pyx_unpickle_VideoLibraryAPI, 0, __pyx_n_s_pyx_unpickle_VideoLibraryAPI, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__57)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_VideoLibraryAPI, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24633,7 +28144,7 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_5__pyx_unpickle_Flow, 0, __pyx_n_s_pyx_unpickle_Flow, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__52)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_5__pyx_unpickle_Flow, 0, __pyx_n_s_pyx_unpickle_Flow, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__58)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_Flow, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24645,7 +28156,7 @@ if (!__Pyx_RefNanny) {
  *     __pyx_result.flow_id = __pyx_state[0]; __pyx_result.flow_name = __pyx_state[1]; __pyx_result.status = __pyx_state[2]; __pyx_result.timestamp = __pyx_state[3]
  *     if len(__pyx_state) > 4 and hasattr(__pyx_result, '__dict__'):
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_7__pyx_unpickle_Video, 0, __pyx_n_s_pyx_unpickle_Video, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__53)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_7__pyx_unpickle_Video, 0, __pyx_n_s_pyx_unpickle_Video, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__59)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_Video, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24655,7 +28166,7 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_9__pyx_unpickle_VideoAPI, 0, __pyx_n_s_pyx_unpickle_VideoAPI, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__54)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_9__pyx_unpickle_VideoAPI, 0, __pyx_n_s_pyx_unpickle_VideoAPI, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__60)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_VideoAPI, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24667,7 +28178,7 @@ if (!__Pyx_RefNanny) {
  *     __pyx_result.id = __pyx_state[0]; __pyx_result.video_library_id = __pyx_state[1]
  *     if len(__pyx_state) > 2 and hasattr(__pyx_result, '__dict__'):
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11__pyx_unpickle_VideoStream, 0, __pyx_n_s_pyx_unpickle_VideoStream, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__55)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_11__pyx_unpickle_VideoStream, 0, __pyx_n_s_pyx_unpickle_VideoStream, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__61)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_VideoStream, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -24677,9 +28188,21 @@ if (!__Pyx_RefNanny) {
  *     cdef object __pyx_PickleError
  *     cdef object __pyx_result
  */
-  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_13__pyx_unpickle_PlayerModel, 0, __pyx_n_s_pyx_unpickle_PlayerModel, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__56)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_13__pyx_unpickle_PlayerModel, 0, __pyx_n_s_pyx_unpickle_PlayerModel, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__62)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_PlayerModel, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+  /* "(tree fragment)":11
+ *         __pyx_unpickle_PlayerModel__set_state(<PlayerModel> __pyx_result, __pyx_state)
+ *     return __pyx_result
+ * cdef __pyx_unpickle_PlayerModel__set_state(PlayerModel __pyx_result, tuple __pyx_state):             # <<<<<<<<<<<<<<
+ *     __pyx_result.browser = __pyx_state[0]; __pyx_result.iter = __pyx_state[1]; __pyx_result.stream = __pyx_state[2]
+ *     if len(__pyx_state) > 3 and hasattr(__pyx_result, '__dict__'):
+ */
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_12bunnybackend_5types_15__pyx_unpickle_StreamPlay, 0, __pyx_n_s_pyx_unpickle_StreamPlay, NULL, __pyx_n_s_bunnybackend_types, __pyx_d, ((PyObject *)__pyx_codeobj__63)); if (unlikely(!__pyx_t_3)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_pyx_unpickle_StreamPlay, __pyx_t_3) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "bunnybackend/types.pyx":1
@@ -29021,7 +32544,7 @@ __Pyx_PyType_GetName(PyTypeObject* tp)
     if (unlikely(name == NULL) || unlikely(!PyUnicode_Check(name))) {
         PyErr_Clear();
         Py_XDECREF(name);
-        name = __Pyx_NewRef(__pyx_n_s__57);
+        name = __Pyx_NewRef(__pyx_n_s__64);
     }
     return name;
 }

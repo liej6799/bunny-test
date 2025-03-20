@@ -37,6 +37,8 @@ class Exchange:
         
         self.payload = payload
         
+
+        
         # self.flow_id = if flow is None else flow.flow_id 
         # self.flow_name = flow_name
 

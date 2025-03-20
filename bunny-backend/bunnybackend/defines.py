@@ -62,3 +62,4 @@ BROWSER = 'BROWSER'
 STREAM = 'STREAM'
 
 BUNNY_STREAM = 'https://s3.amazonaws.com/_bc_dml/example-content/sintel_dash/sintel_vod.mpd'
+FOLDER = 'FOLDER'

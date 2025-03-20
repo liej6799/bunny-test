@@ -359,30 +359,88 @@ cdef class PlayerModel:
     cdef readonly object browser
     cdef readonly object iter
 
-    def __init__(self, stream, browser):
+    def __init__(self, stream, browser, iter):
         self.stream = stream
         self.browser = browser
+        self.iter = iter
 
     @staticmethod
     def from_dict(data: dict) -> PlayerModel:
         return PlayerModel(
             data['stream'],
-            data['browser']              
+            data['browser'],
+            data['iter']                            
         )
 
     cpdef dict to_dict(self, numeric_type=None, none_to=False):
         if numeric_type is None:
-            data = {'stream': self.stream, 'browser': self.browser }
+            data = {'stream': self.stream, 'browser': self.browser, 'iter': self.iter }
         else:
-            data = {'stream': self.stream, 'browser': self.browser }
+            data = {'stream': self.stream, 'browser': self.browser, 'iter': self.iter }
 
         return data if not none_to else convert_none_values(data, none_to)
 
     def __repr__(self):
-        return f"stream: {self.stream} browser: {self.browser} "
+        return f"stream: {self.stream} browser: {self.browser} iter {self.iter}"
 
     def __eq__(self, cmp):
-        return self.stream == cmp.stream and self.browser == cmp.browser
+        return self.stream == cmp.stream and self.browser == cmp.browser and self.iter == cmp.iter
+
+    def __hash__(self):
+        return hash(self.__repr__())
+
+
+
+
+cdef class StreamPlay:
+    # common
+    cdef readonly object library
+    cdef readonly object stream
+    cdef readonly object browser
+    cdef readonly object iter
+    cdef readonly object console
+    cdef readonly object error
+    cdef readonly object exception
+    cdef readonly object screenshot
+
+    def __init__(self, library, stream, browser, iter, console, error, exception, screenshot):
+        self.library = library
+        self.stream = stream
+        self.browser = browser
+        self.iter = iter
+        self.console = console
+        self.error = error
+        self.exception = exception
+        self.screenshot = screenshot
+
+    @staticmethod
+    def from_dict(data: dict) -> PlayerModel:
+        return PlayerModel(
+            data['library'],
+            data['stream'],
+            data['browser'],
+            data['iter'],
+
+            data['console'],
+            data['error'],
+            data['exception'],
+            data['screenshot']           
+
+        )
+
+    cpdef dict to_dict(self, numeric_type=None, none_to=False):
+        if numeric_type is None:
+            data = {'library': self.library, 'stream': self.stream, 'browser': self.browser, 'iter': self.iter, 'console': self.console, 'error': self.error, 'exception': self.exception, 'screenshot': self.screenshot }
+        else:
+            data = {'library': self.library, 'stream': self.stream, 'browser': self.browser, 'iter': self.iter, 'console': self.console, 'error': self.error, 'exception': self.exception, 'screenshot': self.screenshot  }
+
+        return data if not none_to else convert_none_values(data, none_to)
+
+    def __repr__(self):
+        return f"library {self.library} stream: {self.stream} browser: {self.browser} iter {self.iter} console {self.console} error {self.error} exception {self.exception} screenshot {self.screenshot}"
+
+    def __eq__(self, cmp):
+        return self.library == cmp.library and self.stream == cmp.stream and self.browser == cmp.browser and self.iter == cmp.iter and self.console == cmp.console and self.error == cmp.error and self.exception == cmp.exception and self.screenshot == cmp.screenshot
 
     def __hash__(self):
         return hash(self.__repr__())

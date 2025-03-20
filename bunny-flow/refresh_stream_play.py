@@ -1,4 +1,5 @@
 
+from bunnybackend.backends.folder import ScreenshotFolder
 from bunnybackend.backends.postgres import RefreshVideoLibraryPostgres, TargetPostgres
 from bunnybackend.backends.stream import DemoStream
 from bunnybackend.common.flow import _load
@@ -13,7 +14,7 @@ from bunnybackend.common.flow import *
 
 @task
 def get_stream():
-    return [(DemoStream(), STREAM_PLAY)]
+    return [(DemoStream(), STREAM_PLAY),(ScreenshotFolder(), REFRESH_STREAM_PLAY)]
 
 @flow(task_runner=ConcurrentTaskRunner())
 def flow(exchanges):
@@ -32,17 +33,14 @@ def flow(exchanges):
     tr_res = [transform([ex.result() for ex in e_res_1 if ex.result()], types)
         for types in [STREAM_PLAY]]
     
-    feeds = get_feeds(exchanges, payloads=tr_res, flow={'flow_id':flow_id, 'flow_name':flow_name}) 
-    
+    feeds = get_feeds(exchanges, payloads=tr_res, flow={'flow_id':flow_id, 'flow_name':flow_name})    
     conns = get_conn(feeds, flow_name)         
     extract = get_extract(conns)
-    for i in extract:
-        if i.result():
-            print(i.result())
+    transform_data = get_transform(extract, flow_name)
 
-    # transform = get_transform(extract, flow_name)
-  
-    # get_load(prepare_load(transform, db_conns))
+    # prep=prepare_load(transform_data, db_conns)
+
+    get_load(prepare_load(transform_data, db_conns))
 
 @task
 def transform(data, type):
@@ -51,7 +49,7 @@ def transform(data, type):
 
 def transform_stream(msg):
 
-    return list(set([PlayerModel(stream=(j['STREAM']), browser=(j['BROWSER'])) for i in msg if i[1] == STREAM_PLAY for j in i[0]]))
+    return list(set([PlayerModel(stream=(j['STREAM']), iter=(k), browser=(j['BROWSER'])) for i in msg if i[1] == STREAM_PLAY for j in i[0] for k in range(0,3)]))
 
 if __name__ == '__main__':
     (flow("VIDEOJS"))
