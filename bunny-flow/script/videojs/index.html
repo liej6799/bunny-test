@@ -2,9 +2,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/5.10.2/video.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/videojs-contrib-hls/3.0.2/videojs-contrib-hls.js"></script>
 
-<h1>video.js demo</h1>
 <input type="hidden" id="url" style="width:100%" value="https://bitdash-a.akamaihd.net/content/sintel/hls/playlist.m3u8"> <input type="button" id="btn" value="play">
-<video height="600" id="video" controls></video>
+
 <br><br>
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
@@ -16,3 +15,5 @@
     });
   });
 </script>
+<video id="video" class="video-js vjs-default-skin" preload="none" crossorigin="true" autoplay controls width="640" height="268" controls>
+</video>

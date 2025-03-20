@@ -27,15 +27,6 @@ class VideoJS(Player):
     def message_handler(self, type, msg, symbol=None):
         return []
 
-        # if type == BUNNY_VIDEO_LIBRARY:
-        #    return self._get_video_library(msg, time())
-   
-        # elif type == BUNNY_VIDEO:
-        #    return self._get_video(msg, time())   
-        
-        # elif type == BUNNY_VIDEO_STREAM:
-        #    return self._get_video_stream(msg, time())   
-               
     def __getitem__(self, key):
         print('getitem', key)
         if key == REFRESH_STREAM_PLAY:

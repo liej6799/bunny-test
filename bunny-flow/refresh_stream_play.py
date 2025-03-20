@@ -32,7 +32,6 @@ def flow(exchanges):
     tr_res = [transform([ex.result() for ex in e_res_1 if ex.result()], types)
         for types in [STREAM_PLAY]]
     
-
     feeds = get_feeds(exchanges, payloads=tr_res, flow={'flow_id':flow_id, 'flow_name':flow_name}) 
     
     conns = get_conn(feeds, flow_name)         

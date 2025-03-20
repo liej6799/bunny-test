@@ -357,6 +357,7 @@ cdef class PlayerModel:
     # common
     cdef readonly object stream
     cdef readonly object browser
+    cdef readonly object iter
 
     def __init__(self, stream, browser):
         self.stream = stream
