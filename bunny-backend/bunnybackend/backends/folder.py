@@ -19,6 +19,7 @@ class Folder():
 
 
     async def write(self, updates: list):
+       
         return self._write(updates)
      
 
@@ -38,10 +39,18 @@ class ScreenshotFolder(Folder):
 
        
 class LogFolder(Folder):
-    def _write(self):
+    def _write(self, args):
         from pathlib import Path
-        self.file = 'log' + '-' + self.iter + '.png'
-        
-        Path(self.folder).mkdir(parents=True, exist_ok=True)
+        import io
+        import os
+        from PIL import Image
+        import jsonpickle
      
+        for i in args:
+            
+            self.folder = os.path.join(self.base_folder, i.library + '-' + i.stream.id + '-' + i.browser.id)
+            Path(self.folder).mkdir(parents=True, exist_ok=True)
+            file = os.path.join(self.folder, 'log' + '-' + str(i.iter) + '.txt')
+            with open(file, 'w') as json_file:
+                json_file.write(jsonpickle.encode(i))
          

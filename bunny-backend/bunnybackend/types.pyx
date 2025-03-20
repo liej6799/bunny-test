@@ -414,8 +414,8 @@ cdef class StreamPlay:
         self.screenshot = screenshot
 
     @staticmethod
-    def from_dict(data: dict) -> PlayerModel:
-        return PlayerModel(
+    def from_dict(data: dict) -> StreamPlay:
+        return StreamPlay(
             data['library'],
             data['stream'],
             data['browser'],
