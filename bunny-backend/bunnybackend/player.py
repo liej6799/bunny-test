@@ -20,27 +20,23 @@ class Player(Exchange):
         self.exception = list()
     
     def exit_playwright(self):
-        self.page.screenshot(path='screenshot.png')
+        self.screenshot = self.page.screenshot()
         self.browser.close()
 
-    def run_playwright(self):
-        print('run_playwright')
+    def run_playwright(self, process):
         import time
         with sync_playwright() as playwright:
             self.playwright = playwright
             self.init_playwright()
             
-            self.process_stream_play()
+            process()
             time.sleep(10)
         
             self.exit_playwright()
             return [self.console, self.error, self.exception]
         
         return []          
-    
-    def process_stream_play():
-        raise NotImplementedError()
-    
+
     def set_browser(self):
         if self.payload.browser == CHROME:
             self.browser = self.playwright.chromium.launch(channel="chrome", headless=True)

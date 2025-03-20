@@ -61,4 +61,4 @@ ALL_BROWSER=[CHROME,MSEDGE,FIREFOX]
 BROWSER = 'BROWSER'
 STREAM = 'STREAM'
 
-BUNNY_STREAM = 'https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8'
+BUNNY_STREAM = 'https://s3.amazonaws.com/_bc_dml/example-content/sintel_dash/sintel_vod.mpd'

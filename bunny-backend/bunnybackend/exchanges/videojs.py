@@ -13,6 +13,7 @@ class VideoJS(Player):
     id = VIDEOJS
     lib_url = 'https://liej6799.github.io/bunny-test/bunny-flow/script/videojs/'
 
+
     def refresh_video_library(self):
         return [VIDEOJS_STREAM_PLAY]
     
@@ -21,8 +22,7 @@ class VideoJS(Player):
         self.page.locator('#btn').click()
 
     def stream_play_test(self):
-        self.run_playwright()
-        print('stream_play_test')
+        return self.run_playwright(self.process_stream_play)
 
     def message_handler(self, type, msg, symbol=None):
         return []
@@ -42,5 +42,5 @@ class VideoJS(Player):
             return self.refresh_video_library
         
         elif key == VIDEOJS_STREAM_PLAY:
-            return self.run_playwright
+            return self.stream_play_test
         
