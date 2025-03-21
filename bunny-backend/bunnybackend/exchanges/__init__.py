@@ -9,10 +9,11 @@ from bunnybackend.defines import *
 from .bunny import Bunny
 from .common import Common
 from .videojs import VideoJS
-
+from .hls import Hls
 # Maps string name to class name for use with config
 EXCHANGE_MAP = {
     BUNNY: Bunny,
     COMMON: Common,
-    VIDEOJS: VideoJS
+    VIDEOJS: VideoJS,
+    HLS: Hls
 }

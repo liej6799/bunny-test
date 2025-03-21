@@ -48,5 +48,5 @@ def transform_stream(msg):
     return list(set([PlayerModel(stream=(j['STREAM']), iter=(k), browser=(j['BROWSER'])) for i in msg if i[1] == STREAM_PLAY for j in i[0] for k in range(0,3)]))
 
 if __name__ == '__main__':
-    (flow("VIDEOJS"))
+    (flow([HLS, VIDEOJS]))
 

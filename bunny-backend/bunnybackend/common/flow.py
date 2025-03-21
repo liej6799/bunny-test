@@ -3,11 +3,12 @@ from datetime import time
 from bunnybackend.backends.postgres import FlowPostgres, TargetPostgres
 from bunnybackend.defines import *
 from bunnybackend.exchanges.common import Common
+from bunnybackend.exchanges.hls import Hls
 from bunnybackend.exchanges.videojs import VideoJS
 from prefect import task, flow, get_run_logger
 from bunnybackend.types import Flow
 from bunnybackend.exchanges import Bunny
-
+from prefect.task_runners import ConcurrentTaskRunner
 
 def is_exchange_valid(exchanges):
     if [exchange for exchange in exchanges if exchange not in EXCHANGES_LIST]:
@@ -41,6 +42,8 @@ def _initiate(exchange, payload, flow):
         return Common(config='config.yaml',payload=payload,flow=flow)
     elif exchange == VIDEOJS:
         return VideoJS(config='config.yaml',payload=payload,flow=flow)
+    elif exchange == HLS:
+        return Hls(config='config.yaml',payload=payload,flow=flow)
 
 @task
 def _initiate_connection(feed, type):
@@ -125,6 +128,15 @@ def get_feeds_empty(exchanges, flow):
 def get_conn(feeds, type):
 
     return [_initiate_connection.submit(feed.result(), type) for feed in feeds]
+
+
+# @flow(task_runner=ConcurrentTaskRunner())
+# def get_extract(conns):
+#     run_tasks = [run.submit(*task) for task in batch]
+#     results = []
+#     for run_task in run_tasks:
+#         results.append(run_task.result())
+#     return results
 
 
 def get_extract(conns):

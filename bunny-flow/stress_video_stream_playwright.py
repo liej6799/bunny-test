@@ -116,7 +116,7 @@ def process(res):
 
 @flow(task_runner=ConcurrentTaskRunner())
 def process_batch(batch):
-    run_tasks = [run.submit(*task) for task in batch]
+    return [run.submit(task) for task in batch]
     results = []
     for run_task in run_tasks:
         results.append(run_task.result())
