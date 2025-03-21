@@ -24,9 +24,9 @@ class Test():
 class DemoTest(Test):
     def _read(self):
         return [
-            {BROWSER:FirefoxBrowser(),STREAM:BunnyStream(stream_type=HLS)}
-            # {BROWSER:FirefoxBrowser(),STREAM:SintelStream(stream_type=HLS)},
-            # {BROWSER:ChromeBrowser(),STREAM:BunnyStream(stream_type=HLS)},
-            # {BROWSER:ChromeBrowser(),STREAM:SintelStream(stream_type=HLS)},
+            {BROWSER:FirefoxBrowser(),STREAM:BunnyStream(stream_type=HLS)},
+            {BROWSER:FirefoxBrowser(),STREAM:SintelStream(stream_type=HLS)},
+            {BROWSER:ChromeBrowser(),STREAM:BunnyStream(stream_type=HLS)},
+            {BROWSER:ChromeBrowser(),STREAM:SintelStream(stream_type=HLS)},
             ]
   

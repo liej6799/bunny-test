@@ -19,10 +19,12 @@ class VideoJS(Player):
     lib_url = 'https://liej6799.github.io/bunny-test/bunny-flow/script/videojs/'
 
 
-    def refresh_video_library(self):
+    def refresh_stream_play(self):
         return [VIDEOJS_STREAM_PLAY]
     
     def process_stream_play(self):
+        
+        self.page.goto(self.lib_url)
         self.page.locator('#url').fill(self.payload.stream.get_url())
         self.page.locator('#btn').click()
 
@@ -63,7 +65,7 @@ class VideoJS(Player):
     def __getitem__(self, key):
         print('getitem', key)
         if key == REFRESH_STREAM_PLAY:
-            return self.refresh_video_library
+            return self.refresh_stream_play
         
         elif key == VIDEOJS_STREAM_PLAY:
             return self.stream_play_test

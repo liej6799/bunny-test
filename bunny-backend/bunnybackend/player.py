@@ -56,7 +56,6 @@ class Player(Exchange):
         self.page.on("console", lambda msg: self.console.append(msg.text))
         self.page.on("error", lambda msg: self.error.append(msg.text))       
 
-        self.page.goto(self.lib_url)
 
 
 

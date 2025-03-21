@@ -6,12 +6,12 @@ associated with this software.
 '''
 
 from bunnybackend.defines import *
-from bunnybackend.exchange import Exchange
+from bunnybackend.player import Player
 from bunnybackend.connection import RestEndpoint, Routes
 from bunnybackend.exchanges.mixins.bunny_rest import BunnyRestMixin
 from bunnybackend.exceptions import UnsupportedSymbol
 from time import strftime, localtime
-
+from bunnybackend.types import StreamPlay
 from typing import Dict, List, Tuple, Union
 from decimal import Decimal
 import csv
@@ -21,8 +21,10 @@ from bunnybackend.types import RefreshVideoLibrary, Video, VideoStream
 from prefect import flow, task
 
 
-class Bunny(Exchange, BunnyRestMixin):
+class Bunny(Player, BunnyRestMixin):
     id = BUNNY
+    lib_url = 'https://liej6799.github.io/bunny-test/bunny-flow/script/bunny/index.html'
+
     rest_endpoints = [RestEndpoint(
         'https://api.bunny.net/', routes=Routes(['query?function=LISTING_STATUS']))]
     key_seperator = ','
@@ -79,6 +81,10 @@ class Bunny(Exchange, BunnyRestMixin):
                 pass
         return data
  
+
+    def refresh_stream_play(self):
+        return [BUNNY_STREAM_PLAY]
+    
     def _get_video_stream(self, msg, ts):
         data = []
         # print(msg['video'])
@@ -104,7 +110,37 @@ class Bunny(Exchange, BunnyRestMixin):
         except Exception as a:
             print(a)
             pass  
-        return data    
+        return data 
+    
+    def process_stream_play(self):
+        
+        self.page.goto(self.lib_url + '?src_name='+self.payload.stream.get_url())
+        self.page.mouse.click(0,0)
+
+    def stream_play_test(self):
+        return self.run_playwright(self.process_stream_play)
+
+    def _stream_play_test(self, msg, ts):
+        data = []
+        try:
+            data.append(StreamPlay(
+                        library=self.id,
+                        stream=(self.stream),
+                        browser = (self.selected_browser),
+                        iter=self.iter,
+                        screenshot=self.screenshot,
+
+                        console=(msg['console']),
+                        error=(msg['error']),
+                        exception=(msg['exception']),
+                        
+                        ))
+   
+        except Exception as a:
+            print(a)
+            pass
+        return data
+    
     def message_handler(self, type, msg, symbol=None):
 
         try:
@@ -120,7 +156,10 @@ class Bunny(Exchange, BunnyRestMixin):
         
         elif type == BUNNY_VIDEO_STREAM:
            return self._get_video_stream(msg, time())   
-               
+        
+        elif type == BUNNY_STREAM_PLAY:
+           return self._stream_play_test(msg, time())   
+                           
     def __getitem__(self, key):
         if key == REFRESH_VIDEO_LIBRARY:
             return self.refresh_video_library
@@ -136,4 +175,9 @@ class Bunny(Exchange, BunnyRestMixin):
             return self.refresh_video_stream
         elif key == BUNNY_VIDEO_STREAM:
             return self.get_video_stream
-    
+        elif key == REFRESH_STREAM_PLAY:
+            return self.refresh_stream_play
+        
+        elif key == BUNNY_STREAM_PLAY:
+            return self.stream_play_test
+        
